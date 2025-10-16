@@ -1,0 +1,121 @@
+@charset "utf-8";
+#conts.conts_ranking{padding: 50px 20px 60px;}
+.tit_date{padding: 36px 0 30px;font-family: AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic",sans-serif;font-size:26px;color:#00b523;text-align:center;}
+.rank_top{position:relative;padding-bottom: 0px;}/* // MELONUIT-520 190611 */
+.rank_top .ctr{position:absolute;top:11px;right:0;}
+
+.rank_top .select_design{min-width: 280px;}
+.rank_top .select_design .select_open a {padding:5px 18px;font-size:14px;color:#333;}
+.rank_top .select_design .select_open ul{overflow-y:scroll;height:184px;}
+.rank_top .select_design .select_box .sel_r{font-size:14px;padding:9px 40px 9px 4px;}
+
+/* UX-1323 */ƒƒ
+.rank_top .ctl{position:absolute;top:11px;left:130px; z-index: 999;}
+.rank_top .ctl .select_design{min-width: 140px;}
+.rank_top .ctl .select_design .select_open ul {height: 90px;}
+/* UX-1323 */
+
+.box_ranking_list{width:1009px;}
+.box_ranking_list thead th{padding: 11px 4px;border-top:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;font-weight:normal;font-size:12px;color:#333;}
+.box_ranking_list thead th.mid{padding-right: 18px;}
+.box_ranking_list tbody td{padding: 14px 0 14px;text-align:center;border-bottom: 1px solid #e9e9e9;font-size:13px;}
+.box_ranking_list tbody td.fst{position:relative;}
+.box_ranking_list tbody td.lst{padding: 0; font-size: 14px;}/* // MELONUIT-520 190611 */
+.box_ranking_list tbody td .ranking {position:absolute;top: 49px;left: 54px;width: 34px;height:32px;font-size:30px;color:#333;line-height:32px;text-align:center;font-family: AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";}
+.box_ranking_list tbody td .change {position:absolute;top:84px;left:62px;width:19px;height:20px;font-size:12px;line-height:18px;color:#888;text-align:center;}
+.box_ranking_list tbody td .change .ico_change {display:inline-block;height:20px;padding-left:11px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/ico_change.png) no-repeat;vertical-align:top}
+.box_ranking_list tbody td .change .ico_up {background-position:0 0;color:#f0780b;padding-top:2px}
+.box_ranking_list tbody td .change .ico_down {background-position:0 -20px;color:#00be37;padding-top:1px}
+
+/* MELONUIT-602 : 201900716 */
+.box_ranking_list tbody td .show_infor{display: table; position: relative; width: 100%; height:126px;padding-right:25px;text-align: left;overflow: hidden; *display: block;}
+.box_ranking_list tbody td .show_infor .img{display: table-cell; vertical-align: middle; *display: block; *position: absolute; *top: 0; *left :0;}
+.box_ranking_list tbody td .show_infor .img a{display:block;overflow:hidden;width:90px;height:125px}
+.box_ranking_list tbody td .show_infor .img a img{width:90px}
+.box_ranking_list tbody td .show_infor .infor_text{display: table-cell; width: 256px; font-size:13px; vertical-align: middle; *display: block; *padding: 35px 0 0 119px;}
+.box_ranking_list tbody td .show_infor .infor_text .ico_list{padding:0 4px 0;margin-bottom:5px}
+.box_ranking_list tbody td .show_infor .infor_text .ico_list1{padding:1px 4px 1px;}
+.box_ranking_list tbody td .show_infor .infor_text .show_title{clear: both; display:block;width:255px;overflow:hidden;font-size:16px;}
+.box_ranking_list tbody td .show_infor .infor_text .show_title a{line-height:18px;color:#333;}
+.box_ranking_list tbody td .show_infor .infor_text .show_title a:hover{color:#000;}
+/* //MELONUIT-602 : 201900716 */
+
+.box_ranking_list tbody td .show_date{padding: 0 20px; letter-spacing:0}
+.box_ranking_list tbody td .show_date li{text-align: right;line-height: 22px;}
+.box_ranking_list tbody td .percent{padding-bottom: 10px;font-size:24px;color:#888;font-family: AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic",sans-serif;letter-spacing:0;}
+.box_ranking_list tbody td .btn_rank{padding: 7px 30px;border:1px solid #ccc;}/* // MELONUIT-520 190611 */
+.box_ranking_list tbody td .btn_rank:hover{border:1px solid #666; color:#000}
+.box_ranking_list tbody td .ranking.top, .box_ranking_list tbody td .ranking.rank_top, .box_ranking_list tbody td .percent.top{color:#00be37;font-family: AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic",sans-serif;}
+
+.list_rank_info{padding-top:30px;}
+.list_rank_info .tit_sub_float{margin-left:0;font-weight:normal}
+.list_rank_info ul{margin-left:4px}
+
+.box_ranking_list tbody td.result_null{margin-top: 20px;padding: 117px 0;font-size: 28px;line-height: 32px;color: #333;font-family: AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";text-align: center;}
+
+/* 랭킹 new */
+.box_ranking_list tbody td .change .ico_new {background-position:0 -46px;padding-left:14px;margin-top:4px;margin-left:0;height:14px}
+
+/* MELONUIT-520 190611 */
+.dimmed{display:none;position:fixed;width:100%;height:100%;top:0;left:0;background:rgba(255,255,255,0.0);z-index:10;}
+.box_ranking .tit_sub_float{color:#333333;font-weight:normal;}
+.box_ranking .box_rank_info{position:absolute;right:6px;bottom:14px;}
+.box_rank_info .tit_rank_info{font-size:12px;color:#666666;cursor:pointer;background:url(//cdnticket.melon.co.kr/resource/image/web/common/icon_alert_gray.png) no-repeat right top;padding-right:22px;}
+.layerPop.layer_rank_info{display:none; width:413px;right:21px;}
+.layerPop.layer_rank_info .layer_arrow{left:auto;right:0;} /* // 190904 */
+.layerPop.layer_rank_info .la_middle .la_con{margin-top:10px;}
+.layerPop.layer_rank_info .la_footer{height:32px;background-position: 0 -58px;}
+.layerPop.layer_rank_info .la_footer .la_footer1{height:32px;background-position: right -58px;}
+.layerPop.layer_rank_info .txt_now{margin-bottom:15px;font-size:14px;color:#666666;font-weight:bold;line-height:18px;}
+.layerPop.layer_rank_info .dotlist1x1 li{margin-top:10px;}
+.layerPop.layer_rank_info.on{display:block;}
+
+.wrap_soting {display:block;position:relative;height:42px;line-height:42px;margin:0 auto;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_soting9.png) no-repeat;}
+/* MELONUIT-991 : 20200131 */
+.wrap_soting_n3 .btn_soting {display:block;position:absolute;top:0;width:190px;height:42px;outline:none;z-index:0;color:#666;font-family: AppleSDGothicNeo-Regular, '맑은 고딕', 'Malgun Gothic';font-size: 18px;}
+/* //MELONUIT-991 : 20200131 */
+.wrap_soting_n3 .btn_soting.on{z-index:2;color:#333;}
+.wrap_soting_n3 .btn_soting:hover{color:#000;}
+.wrap_soting_n3{width:538px;background-position:0 0;}
+.wrap_soting_n3.nth1_on {background-position:0 0;}
+.wrap_soting_n3.nth2_on {background-position:0 -42px;}
+.wrap_soting_n3.nth3_on {background-position:0 -84px;}
+.wrap_soting_n3 .nth1 {left:0;}
+.wrap_soting_n3 .nth2 {left:174px;}
+.wrap_soting_n3 .nth3 {right:0;}
+
+.wrap_rank_date{position:relative;margin:0 auto;}
+.tit_rank_date{margin:36px auto 20px;font-family: AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic",sans-serif;font-size:26px;color:#00b523;text-align:center;cursor: pointer;line-height:27px;display:table;}/* // 190909 */
+.tit_rank_date p{position:relative; display: inline-block;padding-right:28px;}
+.tit_rank_date .bg_arrow{display:block;position:absolute;right:0;top:9px;width:18px;height:9px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/btn_arrow_green.png) no-repeat right 0;background-position: 0 0;}
+.tit_rank_date.on .bg_arrow{background-position: 0 -27px;}
+
+.wrap_select_drop{display:none;width:515px;position:absolute;left:50%;top:42px;z-index:99; margin-left: -257px;}
+.wrap_select_drop.on{display:block;}
+
+.select_drop{width:515px;}
+.select_drop .la_rank_header, .select_drop .la_rank_header .la_rank_header1,
+.select_drop .la_rank_footer, .select_drop .la_rank_footer .la_rank_footer1{display:block; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_layer_rank_01.png) no-repeat;}
+.select_drop .la_rank_middle,
+.select_drop .la_rank_middle .la_rank_middle1{display:block; background:#fff url(//cdnticket.melon.co.kr/resource/image/web/common/bg_layer_rank_02.png) repeat-y;}
+.select_drop .la_rank_header{width:100%;height:14px;background-position:0 0;}
+.select_drop .la_rank_header .la_rank_header1{width:100%;height:14px;background-position:right 0;}
+.select_drop .la_rank_footer{width:100%;height:20px;background-position:0 -20px;}
+.select_drop .la_rank_footer .la_rank_footer1{width:100%;height:20px;background-position:right -20px;}
+.select_drop .la_rank_middle{width:100%;padding:0;background-position:0 0;background-color:#fff;}
+.select_drop .la_rank_middle .la_rank_middle1{width:100%;padding:0 0 0 0;background-position:right 0;background-color:#fff;}
+
+.wrap_select_date{padding:0 12px 0 32px;}
+.list_date_category{overflow:hidden;position:relative;display:block;width:100%;}
+.list_date_category .tit{position:absolute;left:0;width:86px;height:45px;border-right: 1px solid #e9e9e9;}
+.list_date_category .tit a{display:block;height:45px;font-weight: normal;font-size:14px;color:#666666;line-height:45px;font-family: AppleSDGothicNeo-Regular, "돋움",Dotum;text-align: left;}
+.list_date_category .nth1 .tit{top:0;}
+.list_date_category .nth2 .tit{top:45px;}
+.list_date_category .nth3 .tit{top:90px;}
+.list_date_category .nth4 .tit{top:135px;}
+.list_date_category .on .tit a{color:#00b523;}
+.list_date_category .box_cont{display:none;padding-left:115px;overflow-y:auto;height:180px;}
+.list_date_category .on .box_cont{display:block;}
+.list_date_category .list_date li{height:36px;line-height:36px;font-size:14px;color:#666666;font-family: AppleSDGothicNeo-Regular, "돋움",Dotum;text-align: left; cursor: pointer;}
+.list_date_category .list_date li.on{color:#00b523;}
+/* // MELONUIT-520 190611 */

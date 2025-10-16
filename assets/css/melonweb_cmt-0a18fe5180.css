@@ -1,0 +1,1417 @@
+  @charset "utf-8";
+
+/********** 댓글CSS: 공통CSS는 댓글CSS위로 입력 부탁 드립니다. *****************************************************/
+
+.btn_flexible_ico41{display:inline-block;height:16px;padding-left:11px;}
+.btn_flexible_ico41 span{display:inline-block;height:16px;padding-right:11px;font-size:11px;line-height:18px;text-align:center;vertical-align:top}
+.btn_flexible_ico41 {background-position:left -410px;padding-left:9px;}
+.btn_flexible_ico41 span {background-position:right -410px;padding-right:8px;color:#00b523;}
+
+/*base*//*141217 추가 lyr*/
+#d_cmtpgn div,#d_cmtpgn span,#d_cmtpgn object,#d_cmtpgn iframe,#d_cmtpgn h1,#d_cmtpgn h2,#d_cmtpgn h3,#d_cmtpgn h4,#d_cmtpgn h5,#d_cmtpgn h6,#d_cmtpgn p,#d_cmtpgn blockquote,#d_cmtpgn pre,#d_cmtpgn a,#d_cmtpgn abbr,#d_cmtpgn acronym,#d_cmtpgn address,#d_cmtpgn code,#d_cmtpgn del,#d_cmtpgn dfn,#d_cmtpgn em,#d_cmtpgn img,#d_cmtpgn q,#d_cmtpgn dl,#d_cmtpgn dt,#d_cmtpgn dd,#d_cmtpgn ol,#d_cmtpgn ul,#d_cmtpgn li,#d_cmtpgn fieldset,#d_cmtpgn form,#d_cmtpgn label,#d_cmtpgn legend,#d_cmtpgn table,#d_cmtpgn caption,#d_cmtpgn tbody,#d_cmtpgn tfoot,#d_cmtpgn thead,#d_cmtpgn tr,#d_cmtpgn th,#d_cmtpgn td,#d_cmtpgn article,#d_cmtpgn aside,#d_cmtpgn dialog,#d_cmtpgn figure,#d_cmtpgn footer,#d_cmtpgn header,#d_cmtpgn hgroup,#d_cmtpgn nav,#d_cmtpgn section	{margin:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;letter-spacing:0}
+#d_cmtpgn ol,#d_cmtpgn ul,#d_cmtpgn li {list-style:none;font-weight:normal;}
+#d_cmtpgn table	    {border-collapse:collapse; border-spacing:0; table-layout:fixed;}
+#d_cmtpgn caption, th, td	    {text-align:left;font-weight:normal;float:none !important;}
+
+#d_cmtpgn table, th, td		{vertical-align:top;}
+#d_cmtpgn a img {border:none;}
+#d_cmtpgn img	  {border:none;line-height:0;font-size:0;}
+#d_cmtpgn em {font-style:normal;}
+#d_cmtpgn fieldset {border:0; line-height:0;}
+#d_cmtpgn legend   {position:absolute; top:-7000px; left:-7000px; height:0; /* visibility:hidden */}		
+
+#d_cmtpgn textarea	{height:20px;padding-top:3px;border-top:1px solid #a8a8a8; border-right:1px solid #d9d9d9; border-bottom:1px solid #d9d9d9; border-left:1px solid #bababa;color:#b3b3b3;}
+#d_cmtpgn textarea:focus	{border-color:#666;}
+#d_cmtpgn select	{background-color:#fff;}
+#d_cmtpgn textarea {margin:0; padding:5px; border:1px solid #ccc; color:#666; font-size:12px; font-family: AppleSDGothicNeo-Regular, dotum,"돋움","Apple Gothic",sans-serif; line-height:1.6em; overflow-x:hidden; overflow-y:scroll;}
+
+/* input_text */
+#d_cmtpgn input[type=text], #d_cmtpgn input[type=password], #d_cmtpgn input[type=url], #d_cmtpgn input[type=email], #d_cmtpgn input.text {height:24px; padding:0 7px; border:1px solid #dadada;color:#1a1a1a; font-size:11px; font-family: AppleSDGothicNeo-Regular, dotum,"돋움","Apple Gothic",sans-serif;}
+@media \0screen {#d_cmtpgn input[type=text], #d_cmtpgn input[type=password], #d_cmtpgn input[type=url], #d_cmtpgn input[type=email], #d_cmtpgn input.text {line-height:24px;}} /* IE8 */
+#d_cmtpgn input[type=text], #d_cmtpgn input[type=password], #d_cmtpgn input[type=url], #d_cmtpgn input[type=email], #d_cmtpgn input.text {*line-height:24px;} /* IE7 */
+#d_cmtpgn input[type=text].mhover, #d_cmtpgn input[type=password].mhover, #d_cmtpgn input[type=url].mhover, #d_cmtpgn input[type=email].mhover, #d_cmtpgn input.text.mhover, #d_cmtpgn input.title.mhover {border:1px solid #888; border-right:1px solid #999; border-bottom:1px solid #999;}
+#d_cmtpgn input[type=text]:focus, #d_cmtpgn input[type=password]:focus, #d_cmtpgn input[type=url]:focus, #d_cmtpgn input[type=email]:focus, #d_cmtpgn input.text:focus, #d_cmtpgn input.title:focus {border-color:#41d26b; color:#1a1a1a;}
+#d_cmtpgn input[type=text]::-webkit-input-placeholder, #d_cmtpgn input[type=password]::-webkit-input-placeholder, #d_cmtpgn input[type=url]::-webkit-input-placeholder, #d_cmtpgn input[type=email]::-webkit-input-placeholder { color:#999; }
+#d_cmtpgn input[type=text]::-moz-placeholder, #d_cmtpgn input[type=password]::-moz-placeholder, #d_cmtpgn input[type=url]::-moz-placeholder, #d_cmtpgn input[type=email]::-moz-placeholder { color:#999; } /* firefox */
+#d_cmtpgn input[type=text]:-ms-input-placeholder, #d_cmtpgn input[type=password]:-ms-input-placeholder, #d_cmtpgn input[type=url]:-ms-input-placeholder, #d_cmtpgn input[type=email]:-ms-input-placeholder { color:#999; } /* ie */
+
+#d_cmtpgn input.text31 {height:38px; padding:0 7px; font-size:14px;}
+@media \0screen {#d_cmtpgn input.text31 {line-height:29px;}} /* IE8 */
+#d_cmtpgn input.text31 {*line-height:29px;} /* IE7 */
+
+/* radio_checkbox */
+#d_cmtpgn input {vertical-align:middle;}
+#d_cmtpgn .input_radio {vertical-align:-2px;}
+#d_cmtpgn .input_radio {*margin-left:-3px; *vertical-align:middle;} /* ie7 */
+
+/* Anchor Property */
+#d_cmtpgn a	{color:#1a1a1a; text-decoration:none;}
+#d_cmtpgn a:link {color:#1a1a1a; text-decoration:none;}
+#d_cmtpgn a:hover {color:#1a1a1a; /*text-decoration:underline;*/}
+#d_cmtpgn a:visited	{color:#1a1a1a; text-decoration:none;}
+
+#d_cmtpgn .fl_left {float:left;font-weight:bold}
+#d_cmtpgn .fl_right	{float:right;}
+
+#d_cmtpgn .clfix:after {content: "."; display: block; height: 0px; clear: both; visibility: hidden; font-size:0; line-height:0;}
+#d_cmtpgn .clfix {display: inline-block;}
+#d_cmtpgn .clfix {display: block;}
+#d_cmtpgn * html .clfix {height: 1%;} /* Hides from IE-mac */
+#d_cmtpgn .clfix {zoom:1;} /*for IE 5.5-7*/
+#d_cmtpgn .clfix .line01 {position:relative; top:4px; *top:0;}
+
+/* Color */
+#d_cmtpgn .fc_strong {color:#333 !important}
+#d_cmtpgn a.fc_strong {text-decoration:underline !important;}
+#d_cmtpgn .fc_lgray	{color:#999 !important;}
+#d_cmtpgn .fc_point	{color:#7cb710 !important;}/* 140421_수정 aty */
+
+/* Spacing */
+#d_cmtpgn .mb8 {margin-bottom:8px !important;}
+#d_cmtpgn .mb15	{margin-bottom:15px !important;}
+#d_cmtpgn .mb20	{margin-bottom:20px;}
+
+/* font-size */
+#d_cmtpgn .f11 {font-size:11px; color:#666; letter-spacing:-1px;}
+
+
+/*layout none text-indent 처리*/
+#d_cmtpgn .none {position: absolute;top: -5000em;left: 0;width: 0;height: 0;line-height: 0;overflow: hidden;font-size: 12px;text-indent: -9999px;}/*141217 수정 lyr*/
+
+/*141217 추가 lyr*/
+/* 텍스트 링크 리스트 */
+#d_cmtpgn .list_sort {}
+/*
+#d_cmtpgn .list_sort li {float:left; margin-left:4px; padding:0 4px 0 9px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_gray_bar.png) no-repeat 0 3px;font-size:16px;}
+#d_cmtpgn .list_sort li.first_child {margin-left:8px; background:none;}
+#d_cmtpgn .list_sort li a {color:#666;}
+#d_cmtpgn .list_sort li.on a {color:#1a1a1a; font-weight:bold;}
+#d_cmtpgn .list_sort li.on strong {color:#1a1a1a; font-weight:bold;}
+*/
+
+#d_cmtpgn .list_sort li {float:left; padding:0 20px; font-size:16px; line-height:28px; background:url(//cdnticket.melon.co.kr/resource/image/web/detailview/detail_bg_bar.gif) left 9px no-repeat;}
+#d_cmtpgn .list_sort li.on {color:#0ca92a;}
+#d_cmtpgn .list_sort li:first-child {background:none;}
+#d_cmtpgn .list_sort li:last-child {padding-right:0;}
+
+
+/* layer */
+#d_cmtpgn .l_popup {position:absolute; z-index:15;} 
+#d_cmtpgn .l_popup .l_cntt {padding:0 16px; background-color:#fff; border:1px solid #666;}
+#d_cmtpgn .l_popup .l_cntt {*zoom:1;} /* ie7 */
+#d_cmtpgn .l_popup .l_title {margin:0 -16px; padding:12px 22px 11px; border-bottom:1px solid #a6a6a6; font-family: AppleSDGothicNeo-Regular, "맑은 고딕", "Malgun Gothic",arial,"돋움","dotum",sans-serif, "Apple Gothic", sans-serif; color:#1a1a1a; font-size:16px; line-height:1.4em; font-weight:bold;letter-spacing:-1px;}
+#d_cmtpgn .l_popup .shadow {display:block; position:absolute; left:2px; right:0; top:2px; bottom:0; z-index:-1; width:100%; height:100%; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_shadow.png) repeat left top;}
+#d_cmtpgn .l_popup .btn_close {position:absolute; right:16px; top:16px;}
+#d_cmtpgn .l_popup .btn_close .odd_span {width:15px; height:15px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -1155px top; overflow:hidden; text-indent:-9999px;}
+#d_cmtpgn .l_popup .bullet {display:block; position:absolute; left:50%; top:-7px; width:13px; height:8px; margin-left:-7px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -962px top;}
+#d_cmtpgn .l_popup .bullet_vertical {display:block; position:absolute; left:-7px; top:9px; width:8px; height:13px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -472px top;}
+#d_cmtpgn .l_popup .bullet_right {display:block; position:absolute; right:-7px; top:9px; width:8px; height:13px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -472px -16px;}
+#d_cmtpgn .l_popup .bullet_bottom {display:block; position:absolute; right:9px; bottom:-7px; width:13px; height:8px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -472px -32px;}
+#d_cmtpgn .l_popup .bullet_top {display:block; position:absolute; right:9px; top:-7px; width:13px; height:8px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -472px -43px;}
+#d_cmtpgn .l_popup .l_cntt .list_title {padding-top:16px;}
+#d_cmtpgn .l_popup .l_cntt .list_title strong {font-size:16px;color:#1a1a1a !important;}
+
+#d_cmtpgn .l_popup .l_cntt .list_bullet li	a	{line-height:15px; word-wrap:break-word; word-break:break-all; *zoom:1;}
+
+#d_cmtpgn .l_popup.small .l_cntt {padding:8px 28px 8px 8px;}
+#d_cmtpgn .l_popup.small .btn_close {right:12px; top:12px;}
+#d_cmtpgn .l_popup.small .btn_close .odd_span {width:11px; height:11px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -452px top; overflow:hidden; text-indent:-9999px;}
+
+/* bullet - List */
+#d_cmtpgn .list_bullet li {margin-top:6px; padding-left:9px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_list_bullet.png) no-repeat left 6px; color:#1a1a1a; font-size:12px; line-height:1.4em; word-wrap:break-word; word-break:break-all;}
+#d_cmtpgn .list_bullet li {*background-position:0 7px;}  /* ie7 */
+#d_cmtpgn .list_bullet li.first_child {margin-top:0 !important;}
+#d_cmtpgn .list_bullet li a {color:#1a1a1a;}
+
+/* search */
+#d_cmtpgn .wrap_search {margin-top:24px; text-align:center;}
+#d_cmtpgn .wrap_search .select_wrap {*margin-top:2px;*padding-right:4px} 
+
+/* Select Skin */
+#d_cmtpgn .select_wrap {display:inline-block; *display:inline; position:relative; z-index:1; text-align:left; vertical-align:top; *zoom:1}
+#d_cmtpgn .select_wrap.on {z-index:2;}
+#d_cmtpgn .select_wrap select {min-width:0;}
+#d_cmtpgn .select_type01 .select_box {display:inline-block; position:relative; height:31px; padding-left:9px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_selectbox.png) no-repeat 0 0; font-size:12px; line-height:18px;}
+#d_cmtpgn .select_type01 .select_box .sel_r {display:inline-block; height:24px; padding: 7px 31px 0 0; background: url(//cdnticket.melon.co.kr/resource/image/web/common/bg_selectbox.png) no-repeat right 0; color:#666; cursor:pointer; vertical-align:middle; *vertical-align:top;}
+#d_cmtpgn .select_type01 .select_box.mhover {background-position:left -40px;}
+#d_cmtpgn .select_type01 .select_box.mhover .sel_r {background-position:right -40px;}
+#d_cmtpgn .select_type01 .select_box.open {background-position:left -80px;}
+#d_cmtpgn .select_type01 .select_box.open .sel_r {background-position:right -80px;}
+
+#d_cmtpgn .select_type01 .select_open {display:block; position:absolute; top:30px; left:0; width:100%; z-index:5;}
+#d_cmtpgn .select_type01 .select_open ul {position:relative; border:1px solid #999; border-left-color:#888; max-height:208px; margin:0; padding:4px 0; background-color:#fff; overflow-y:auto; z-index:5;}
+#d_cmtpgn .select_type01 .select_open li {font-size:12px; line-height:18px;}
+#d_cmtpgn .select_type01 .select_open li.mhover {background-color:#f5f5f5;}
+#d_cmtpgn .select_type01 .select_open li a {color:#666; display:block; min-height:23px; padding:3px 0 0 7px;}
+#d_cmtpgn .select_type01 .select_open li a:hover {color:#1a1a1a;}
+
+#d_cmtpgn .select_type01 .select_box.disabled {background-position:left -247px;}
+#d_cmtpgn .select_type01 .select_box.disabled .sel_r {background-position:right -247px; color:#999; cursor:default;}
+
+#d_cmtpgn .select_type02 .select_box {display:inline-block; position:relative; height:26px; padding-left:9px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_selectbox.png) no-repeat 0 -131px; font-size:12px; line-height:18px;}
+#d_cmtpgn .select_type02 .select_box .sel_r {overflow:hidden; display:inline-block; height:21px; padding: 5px 31px 0 0; background: url(//cdnticket.melon.co.kr/resource/image/web/common/bg_selectbox.png) no-repeat right -131px; color:#666; cursor:pointer; vertical-align:middle;}
+#d_cmtpgn .select_type02 .select_box.mhover {background-position:left -166px;}
+#d_cmtpgn .select_type02 .select_box.mhover .sel_r {background-position:right -166px;}
+#d_cmtpgn .select_type02 .select_box.open {background-position:left -201px;}
+#d_cmtpgn .select_type02 .select_box.open .sel_r {background-position:right -201px;}
+
+#d_cmtpgn .select_type02 .select_open {display:block; position:absolute; top:25px; left:0; width:100%; z-index:5;}
+#d_cmtpgn .select_type02 .select_open ul {position:relative; max-height:208px; border:1px solid #999; border-left-color:#888; margin:0; padding:4px 0; background-color:#fff; overflow-y:auto; z-index:5;}
+#d_cmtpgn .select_type02 .select_open li { font-size:12px; line-height:18px;}
+#d_cmtpgn .select_type02 .select_open li.mhover {background-color:#f5f5f5;}
+#d_cmtpgn .select_type02 .select_open li a {color:#666; display:block !important; min-height:23px; margin:0 !important; padding:3px 0 0 7px !important;} 
+#d_cmtpgn .select_type02 .select_open li a:hover {color:#1a1a1a;}
+#d_cmtpgn .select_type02 .select_box.disabled {background-position:left -288px;}
+#d_cmtpgn .select_type02 .select_box.disabled .sel_r {background-position:right -288px; color:#999; cursor:default;}
+
+/* paginate */
+#d_cmtpgn #d_cmtpgn .page .page_num {color:#666; font-size:12px; line-height:1.2em; font-family:arial,"돋움","dotum",sans-serif, "Apple Gothic", sans-serif; vertical-align:middle;}
+#d_cmtpgn .page .page_num strong {color:#333;}
+#d_cmtpgn .page .wrap_btn {display:inline-block; margin-left:3px; vertical-align:middle;}
+#d_cmtpgn .page .wrap_btn {*zoom:1;} /* ie7 */
+#d_cmtpgn .page .wrap_btn .btn {*margin:0;} /* ie7 */
+#d_cmtpgn .page .wrap_btn .btn_pre, #d_cmtpgn .page .wrap_btn .btn_next {float:left; margin-right:0;}
+#d_cmtpgn .page .wrap_btn .btn_pre {margin-right:-1px;}
+
+#d_cmtpgn .paginate {margin-top:24px; text-align:center;}
+#d_cmtpgn .paginate a {display:inline-block; position:relative; margin:0 1px;width:34px;height:24px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/btn_comm.png) no-repeat 0 0; vertical-align:middle;}
+#d_cmtpgn .paginate a:hover	{text-decoration:none; z-index:1;}
+#d_cmtpgn .paginate a span	{border:none; font-size:0; line-height:0;}
+
+#d_cmtpgn .paginate .btn_first	{background-position:-360px -27px;}
+#d_cmtpgn .paginate .btn_pre	{background-position:-400px -27px; margin-right:5px;}
+#d_cmtpgn .paginate .btn_next	{background-position:-440px -27px; margin-left:5px;}
+#d_cmtpgn .paginate .btn_last	{background-position:-480px -27px; }
+#d_cmtpgn .paginate .btn_first:active, #d_cmtpgn .paginate .btn_first.mactive	{background-position:0 -72px;}
+#d_cmtpgn .paginate .btn_pre:active, #d_cmtpgn .paginate .btn_pre.mactive	{background-position:-26px -72px;}
+#d_cmtpgn .paginate .btn_next:active, #d_cmtpgn .paginate .btn_next.mactive	{background-position:-84px -72px;}
+#d_cmtpgn .paginate .btn_last:active, #d_cmtpgn .paginate .btn_last.mactive	{background-position:-110px -72px;}
+
+#d_cmtpgn .paginate .btn_first.disabled	{background-position:-360px -27px;}
+#d_cmtpgn .paginate .btn_pre.disabled	{background-position:-400px -27px;}
+#d_cmtpgn .paginate .btn_next.disabled	{background-position:-440px -27px;}
+#d_cmtpgn .paginate .btn_last.disabled	{background-position:-480px -27px; }
+
+#d_cmtpgn .paginate .page_num {display:inline-block;font-family: AppleSDGothicNeo-Regular, "돋움","dotum",sans-serif, "Apple Gothic", sans-serif; color:#000; vertical-align:middle;}
+#d_cmtpgn .paginate .page_num a	 {display:inline-block;padding:0 8px 0 7px;height:24px;line-height:24px;width:auto;text-decoration:none;vertical-align:middle; font-size:15px;font-family: AppleSDGothicNeo-Regular, "돋움","dotum",sans-serif, "Apple Gothic", sans-serif; color:#666;background:none;}
+#d_cmtpgn .paginate .page_num a.first_child	 {margin-left:0; background:none;}
+#d_cmtpgn .paginate .page_num a:hover, #d_cmtpgn .paginate .page_num a.mactive {color:#00cd3c; z-index:1;}
+#d_cmtpgn .paginate .page_num strong {position:relative; display:inline-block; padding:0 8px 0 7px;height:24px;line-height:24px;color:#00cd3c;font-size:15px; vertical-align:middle; text-decoration:none; z-index:2;}
+#d_cmtpgn .paginate .page_num strong {*zoom:1;} /* ie7 */
+
+
+/* 댓글 - icon */
+#d_cmtpgn .icon_ancm {display:inline-block; width:33px; height:16px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_sprite_cmt.png) no-repeat 0 0; overflow:hidden; vertical-align:-3px;}
+#d_cmtpgn .icon_best {display:inline-block; width:36px; height:16px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_sprite_cmt.png) no-repeat -35px 0; overflow:hidden; vertical-align:-3px;}
+#d_cmtpgn .icon_new {display:inline-block; width:16px; height:16px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_sprite_cmt.png) no-repeat -165px 0; overflow:hidden; vertical-align:-3px;}/* 140522_수정 aty */
+
+#d_cmtpgn .icon_atist {display:inline-block; width:15px; height:18px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_sprite_cmt.png) no-repeat -72px 0; overflow:hidden; vertical-align:-7px;}
+
+#d_cmtpgn .icon_dj_cmt {display:inline-block; width:23px; height:13px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_sprite_cmt.png) no-repeat -285px 0; overflow:hidden; vertical-align:-2px;}
+#d_cmtpgn .icon_dj_cmt {*vertical-align:middle;} /* ie7 */
+
+#d_cmtpgn .icon_reg_mobile {display:inline-block; width:7px; height:11px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_sprite_cmt.png) no-repeat -91px 0; overflow:hidden; vertical-align:middle;margin-top:1px;}/*140828 수정 lyr*/
+
+#d_cmtpgn .icon_secrt {display:inline-block; width:9px; height:12px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_sprite_cmt.png) no-repeat -202px 0; overflow:hidden; vertical-align:-1px;}
+#d_cmtpgn .icon_secrt {margin-right:4px; *vertical-align:0;} /* ie7 */
+
+/* icon */
+#d_cmtpgn .icon_agellevel {display:inline-block; width:13px; height:13px; margin-top:-2px; margin-right:2px; background-image:url(//cdnticket.melon.co.kr/resource/image/web/common/ico_lvl.png); background-repeat:no-repeat; overflow:hidden; text-indent:-9999px; *text-indent:0; *font-size:0px;line-height:0;vertical-align: middle}
+#d_cmtpgn .icon_agellevel.age_all {background-position:0 0;}
+#d_cmtpgn .icon_agellevel.age_12 {background-position:0 -26px;}
+#d_cmtpgn .icon_agellevel.age_15 {background-position:0 -39px;}
+#d_cmtpgn .icon_agellevel.age_19 {background-position:0 -13px;}
+
+/* icon - 곡 */
+#d_cmtpgn .icon_song.title {display:inline-block; width:35px; height:16px; margin-top: -1px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/icon_sprite_songlist02.png) no-repeat 0 1px; overflow:hidden; text-indent:-9999px; *text-indent:0; *font-size:0px; *line-height:0; vertical-align:top;} /* title */ 
+#d_cmtpgn .icon_song.hot {display:inline-block; width:29px; height:16px; margin-top: -1px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/icon_sprite_songlist02.png) no-repeat -38px 1px; overflow:hidden;text-indent:-9999px; *text-indent:0; *font-size:0px; *line-height:0; vertical-align:top;} /* hot */ 
+#d_cmtpgn .icon_song.live {display:inline-block; width:31px; height:16px; margin-top: -1px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/icon_sprite_songlist02.png) no-repeat -70px 1px; overflow:hidden; text-indent:-9999px; *text-indent:0; *font-size:0px; *line-height:0; vertical-align:top;} /* live */ 
+#d_cmtpgn .icon_song.free {display:inline-block; width:36px; height:16px; margin-top: -1px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/icon_sprite_songlist02.png) no-repeat -104px 1px; overflow:hidden; text-indent:-9999px; *text-indent:0; *font-size:0px; *line-height:0; vertical-align:top;} /* free */ 
+#d_cmtpgn .icon_song.hold {display:inline-block; width:13px; height:16px; margin-top: -1px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/icon_sprite_songlist02.png) no-repeat -144px 1px; overflow:hidden; text-indent:-9999px; *text-indent:0; *font-size:0px; *line-height:0;vertical-align:top;} /* 홀드백 */ 
+#d_cmtpgn .icon_song.age_19 {display:inline-block; width:13px; height:16px; margin-top: -1px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/icon_sprite_songlist02.png) no-repeat -162px 1px; overflow:hidden; text-indent:-9999px; *text-indent:0; *font-size:0px; *line-height:0;vertical-align:top;} /* 19금 */ 
+#d_cmtpgn .icon_song.orign {display:inline-block; width:25px; height:18px; margin-top: -1px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/icon_sprite_songlist02.png) no-repeat -177px 3px; overflow:hidden; text-indent:-9999px; *text-indent:0; *font-size:0px; *line-height:0; vertical-align:top;} /* 원곡 */ 
+#d_cmtpgn .icon_recm {display:inline-block; width:33px; height:16px; padding-top:3px; *padding-top:2px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/icon_sprite_songlist02.png) no-repeat 0 -45px; overflow:hidden; text-indent:-9999px; *text-indent:0; *font-size:0px; *line-height:0; vertical-align:middle;}/*추천*/
+
+/* icon - 곡(비할성화) */
+#d_cmtpgn .icon_song.title.disabled {background-position:0 -22px;} /* title */
+#d_cmtpgn .icon_song.hot.disabled {background-position:-38px -22px;} /* hot */
+#d_cmtpgn .icon_song.live.disabled {background-position:-70px -22px;} /* live */
+#d_cmtpgn .icon_song.free.disabled {background-position:-104px -22px;} /* free */
+#d_cmtpgn .icon_song.hold.disabled {background-position:-144px -22px;} /* 홀드백 */
+#d_cmtpgn .icon_song.age_19.disabled {background-position:-162px -22px;} /* 19금 */
+
+/* 댓글 - button */
+/*141217 추가 lyr*/
+/* button */
+#d_cmtpgn button,#d_cmtpgn .btn {border: 1px solid red; display:inline-block; zoom:1; margin:0; padding:0; background:none; border:none; text-decoration:none !important; text-align:center; vertical-align:middle; white-space:nowrap; cursor:pointer;}
+#d_cmtpgn button,#d_cmtpgn .btn {*margin:0 2px; *overflow:visible;} /* ie7 */
+
+#d_cmtpgn button span.odd_span, #d_cmtpgn .btn span.odd_span, #d_cmtpgn button span.even_span, #d_cmtpgn .btn span.even_span {display:block; position:relative;}
+#d_cmtpgn .btn input {margin:0 -8px; border:0; vertical-align:middle; cursor:pointer;}
+#d_cmtpgn button::-moz-focus-inner {padding:0; border:0;} /* 파이어폭스 버튼 내부 여백 제거 */
+#d_cmtpgn button.disabled,#d_cmtpgn .btn.disabled {cursor:default;}
+
+#d_cmtpgn .btn_base span.odd_span {padding-left:8px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_base.png) no-repeat left top;}
+#d_cmtpgn .btn_base span.even_span {min-width:22px; height:26px; padding-right:8px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_base.png) no-repeat right top; color:#333; font-size:11px; line-height:29px; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif; letter-spacing:-1px;}
+#d_cmtpgn .btn_base span.even_span {*line-height:26px;} /* ie7 */
+#d_cmtpgn .btn_base.mhover span.odd_span, #d_cmtpgn .btn_base:focus span.odd_span {background-position:left -37px;}
+#d_cmtpgn .btn_base.mhover span.even_span, #d_cmtpgn .btn_base:focus span.even_span {background-position:right -37px;}
+#d_cmtpgn .btn_base.mhover.mactive span.odd_span	{background-position:left -74px;}
+#d_cmtpgn .btn_base.mhover.mactive span.even_span {background-position:right -74px;}
+#d_cmtpgn .btn_base.mactive span.odd_span {background-position:left -74px;}
+#d_cmtpgn .btn_base.mactive span.even_span {background-position:right -74px;}
+#d_cmtpgn .btn_base.disabled span.odd_span {background-position:left -111px;}
+#d_cmtpgn .btn_base.disabled span.even_span {background-position:right -111px; color:#ccc;}
+
+#d_cmtpgn .btn_base02 span.odd_span {padding-left:8px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_base.png) no-repeat left top;}
+#d_cmtpgn .btn_base02 span.even_span {min-width:22px; height:26px; padding-right:8px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_base.png) no-repeat right top; color:#666; font-size:11px; line-height:29px; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif; letter-spacing:-1px;}
+#d_cmtpgn .btn_base02 span.even_span {*line-height:26px;} /* ie7 */
+#d_cmtpgn .btn_base02.mhover span.odd_span, #d_cmtpgn .btn_base02:focus span.odd_span {background-position:left -37px;}
+#d_cmtpgn .btn_base02.mhover span.even_span, #d_cmtpgn .btn_base02:focus span.even_span {background-position:right -37px;}
+#d_cmtpgn .btn_base02.mactive span.odd_span {background-position:left -74px;}
+#d_cmtpgn .btn_base02.mactive span.even_span {background-position:right -74px;}
+#d_cmtpgn .btn_base02.disabled span.odd_span {background-position:left -111px;}
+#d_cmtpgn .btn_base02.disabled span.even_span {background-position:right -111px; color:#ccc;}
+#d_cmtpgn .btn_base02 .icon {display:inline-block; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_icon.png) no-repeat left top; vertical-align:-1px;}
+#d_cmtpgn .btn_base02 .icon {*margin:0 3px; *vertical-align:0;} /* ie7 */
+
+/* button - 텍스트 버튼 */
+#d_cmtpgn .btn_text {cursor:pointer;}
+#d_cmtpgn .btn_text .text {display:inline; color:#666; font-size:11px; line-height:1.2em; letter-spacing:-1px; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif;}/*140129_수정 kcu*/
+#d_cmtpgn .btn_text .text.fc_b3 {color:#aaa;}
+#d_cmtpgn .btn_text .icon {display:inline-block; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_icon.png) no-repeat left top; vertical-align:middle;}
+#d_cmtpgn .btn_text.mhover .text, #d_cmtpgn .btn_text.mactive .text {text-decoration:underline;}
+
+#d_cmtpgn .btn_text.arrow_r .icon {width:4px; height:7px; background-position:-136px -57px; line-height:7px; vertical-align:1px;}
+#d_cmtpgn .btn_text.arrow_r .icon {*vertical-align:middle;}
+
+#d_cmtpgn .btn_text.arrow_d .icon {width:14px; height:14px; background-position:-150px top; line-height:14px; vertical-align:-3px;}
+#d_cmtpgn .btn_text.arrow_d .icon {*vertical-align:-1px;}
+#d_cmtpgn .btn_text.arrow_d.mhover .icon {background-position:-150px -18px;}
+#d_cmtpgn .btn_text.arrow_d.mactive .icon {background-position:-150px -36px;}
+#d_cmtpgn .btn_text.arrow_d.disabled .icon {background-position:-150px -54px;}
+
+#d_cmtpgn .btn_text.arrow_u .icon {width:14px; height:14px; background-position:-174px top; line-height:14px; vertical-align:-3px;}
+#d_cmtpgn .btn_text.arrow_u .icon {*vertical-align:-1px;}
+#d_cmtpgn .btn_text.arrow_u.mhover .icon {background-position:-174px -18px;}
+#d_cmtpgn .btn_text.arrow_u.mactive .icon {background-position:-174px -36px;}
+
+/* button - 기능성 (기본크기) */
+#d_cmtpgn .btn_icon span.odd_span {display:inline-block; width:23px; height:23px; overflow:hidden; font-size:0; line-height:0; vertical-align:middle;}
+
+/*140529 추가 lyr*/
+#d_cmtpgn .btn_icon_cmt.dl span.odd_span {display: inline-block;width: 23px;height: 23px;overflow: hidden;font-size: 0;line-height: 0;vertical-align: middle;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -1560px top;}
+#d_cmtpgn .btn_icon_cmt.dl.mhover span.odd_span, .btn_icon_cmt.dl:focus span.odd_span {background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_green.png) no-repeat -760px -24px;}
+#d_cmtpgn .btn_icon_cmt.dl.mactive span.odd_span {background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_green.png) no-repeat -760px -24px;}
+#d_cmtpgn .btn_icon_cmt.dl.disabled span.odd_span {background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -1560px top;}
+
+#d_cmtpgn .btn_icon.play span.odd_span {background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -1585px top;}
+#d_cmtpgn .btn_icon.play.mhover span.odd_span, #d_cmtpgn .btn_icon.play:focus span.odd_span {background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_green.png) no-repeat -760px top;}
+#d_cmtpgn .btn_icon.play.mactive span.odd_span {background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_green.png) no-repeat -760px top;}
+#d_cmtpgn .btn_icon.play.disabled span.odd_span {background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -1585px top;}
+
+#d_cmtpgn .btn_more span.odd_span {width:9px; height:18px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_vdo.png) no-repeat -137px 4px; overflow:hidden; line-height:20px; text-indent:-9999px; *text-indent:0; font-size:0;line-height:0;}
+#d_cmtpgn .btn_more.disabled span.odd_span {background-position:-137px -20px;}	
+
+#d_cmtpgn .btn_b31 .odd_span {padding-left:6px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_dgray02.png) no-repeat left -90px;}
+#d_cmtpgn .btn_b31 .odd_span .even_span {min-width:44px; height:31px; padding-right:6px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_dgray02.png) no-repeat right -90px; color:#fff; font-weight:bold; font-size:12px; line-height:33px; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif;}
+#d_cmtpgn .btn_b31.mhover span, #d_cmtpgn .btn_b31:focus .odd_span {background-position:left -125px;}
+#d_cmtpgn .btn_b31.mhover .odd_span .even_span, #d_cmtpgn .btn_b31:focus .odd_span .even_span {background-position:right -125px;}
+#d_cmtpgn .btn_b31.mactive .odd_span {background-position:left -160px;}
+#d_cmtpgn .btn_b31.mactive .odd_span .even_span {background-position:right -160px;}
+
+#d_cmtpgn .btn_text.arrow_u02 .text, #d_cmtpgn .btn_text.arrow_d02 .text  {font-size:12px; line-height:1.4em; color:#333;}
+#d_cmtpgn .btn_text.arrow_u02 .icon, #d_cmtpgn .btn_text.arrow_d02 .icon {width:5px; height:3px; display:inline-block; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_icon.png) no-repeat -291px top; vertical-align:3px;}
+#d_cmtpgn .btn_text.arrow_u02 .icon, #d_cmtpgn .btn_text.arrow_d02 .icon {*vertical-align:middle;}
+#d_cmtpgn .btn_text.arrow_u02 .icon {background-position:-291px -13px;}
+
+#d_cmtpgn .btn_reg .odd_span, #d_cmtpgn .btn_reg .even_span {background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_reg.png) no-repeat left top;}
+#d_cmtpgn .btn_reg .odd_span {padding-left:8px; background-position:left top;}
+#d_cmtpgn .btn_reg .even_span {min-width:64px; height:80px; padding-right:8px; background-position:right top; color:#333; font-weight:bold; font-size:14px; line-height:84px; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif;}
+
+#d_cmtpgn .btn_reg.mhover .odd_span {background-position:left -100px;}
+#d_cmtpgn .btn_reg.mhover .even_span {background-position:right -100px;}
+
+#d_cmtpgn .btn_reg.mactive .odd_span {background-position:left -200px;}
+#d_cmtpgn .btn_reg.mactive .even_span {background-position:right -200px;}
+
+#d_cmtpgn .btn_reg02 .odd_span, #d_cmtpgn .btn_reg02 .even_span {background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_reg.png) no-repeat left top;}
+#d_cmtpgn .btn_reg02 .odd_span {padding-left:8px; background-position:left -288px;}
+#d_cmtpgn .btn_reg02 .even_span {min-width:64px; height:52px; padding-right:8px; background-position:right -288px; color:#666; font-weight:bold; font-size:12px; line-height:54px; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif;}
+
+#d_cmtpgn .btn_reg02.mhover .odd_span {background-position:left -348px;}
+#d_cmtpgn .btn_reg02.mhover .even_span {background-position:right -348px;}
+
+#d_cmtpgn .btn_reg02.mactive .odd_span {background-position:left -408px;}
+#d_cmtpgn .btn_reg02.mactive .even_span {background-position:right -408px;}
+
+#d_cmtpgn .btn_reg03 .odd_span, #d_cmtpgn .btn_reg03 .even_span {background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_reg.png) no-repeat left top;}
+#d_cmtpgn .btn_reg03 .odd_span {padding-left:8px; background-position:left -466px;}
+#d_cmtpgn .btn_reg03 .even_span {min-width:64px; height:24px; padding-right:8px; background-position:right -466px; color:#666; font-size:12px; line-height:26px; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif;}
+
+#d_cmtpgn .btn_reg03.mhover .odd_span {background-position:left -496px;}
+#d_cmtpgn .btn_reg03.mhover .even_span {background-position:right -496px;}
+
+#d_cmtpgn .btn_reg03.mactive .odd_span {background-position:left -526px;}
+#d_cmtpgn .btn_reg03.mactive .even_span {background-position:right -526px;}
+
+#d_cmtpgn .btn_reg04 .odd_span, #d_cmtpgn .btn_reg04 .even_span {background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_reg.png) no-repeat left top;}
+#d_cmtpgn .btn_reg04 .odd_span {padding-left:8px; background-position:left -558px;}
+#d_cmtpgn .btn_reg04 .even_span {min-width:64px; height:87px; padding-right:8px; background-position:right -558px; color:#333; font-weight:bold; font-size:14px; line-height:90px; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif;}
+
+#d_cmtpgn .btn_reg04.mhover .odd_span {background-position:left -653px;}
+#d_cmtpgn .btn_reg04.mhover .even_span {background-position:right -653px;}
+
+#d_cmtpgn .btn_reg04.mactive .odd_span {background-position:left -748px;}
+#d_cmtpgn .btn_reg04.mactive .odd_span .even_span {background-position:right -748px;}
+
+#d_cmtpgn .btn_atach_cmt {position:relative;}
+#d_cmtpgn .btn_atach_cmt.mhover, #d_cmtpgn .btn_atach_cmt:focus, #d_cmtpgn .btn_atach_cmt.mactive {z-index:1;}
+#d_cmtpgn .btn_atach_cmt .odd_span {width:31px; height:28px; background:url(//cdnticket.melon.co.kr/resource/image/web/detailview/detail_ico_attach.png) no-repeat left top; overflow:hidden; line-height:28px; text-indent:-999px;}
+
+#d_cmtpgn .btn_atach_cmt.sound .odd_span {background-position:left top;}
+/* #d_cmtpgn .btn_atach_cmt.sound.mhover .odd_span, #d_cmtpgn .btn_atach_cmt.sound:focus .odd_span {background-position:left -35px;} */
+/* #d_cmtpgn .btn_atach_cmt.sound.mactive .odd_span {background-position:left -70px;} */
+
+#d_cmtpgn .btn_atach_cmt.photo .odd_span {background-position:-40px top;}
+/* #d_cmtpgn .btn_atach_cmt.photo.mhover .odd_span, #d_cmtpgn .btn_atach_cmt.photo:focus .odd_span {background-position:-40px -35px;} */
+/* #d_cmtpgn .btn_atach_cmt.photo.mactive .odd_span {background-position:-40px -70px;} */
+
+#d_cmtpgn .btn_atach_cmt.video .odd_span {background-position:-80px top;}
+/* #d_cmtpgn .btn_atach_cmt.video.mhover .odd_span, #d_cmtpgn .btn_atach_cmt.video:focus .odd_span {background-position:-80px -35px;} */
+/* #d_cmtpgn .btn_atach_cmt.video.mactive .odd_span {background-position:-80px -70px;} */
+
+#d_cmtpgn .btn_atach_cmt.link .odd_span {background-position:-120px top;}
+/* #d_cmtpgn .btn_atach_cmt.link.mhover .odd_span, #d_cmtpgn .btn_atach_cmt.link:focus .odd_span {background-position:-120px -35px;} */
+/* #d_cmtpgn .btn_atach_cmt.link.mactive .odd_span {background-position:-120px -70px;} */
+
+#d_cmtpgn .btn_youtube .odd_span {min-height:12px; padding-left:20px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_youtube.png) no-repeat left top; color:#999; font-size:11px; line-height:1.2em;}/*141217 추가 lyr*/
+
+#d_cmtpgn .wrap_btn_atach_cmt {display:inline-block; clear:both; line-height:28px; vertical-align:middle;}
+#d_cmtpgn .wrap_btn_atach_cmt {*display:inline; *position:relative; *zoom:1;} /* ie7 */
+#d_cmtpgn .wrap_btn_atach_cmt:after {content:""; display:block; clear:both; height:0; visibility:hidden;}
+#d_cmtpgn .wrap_btn_atach_cmt .wrap_btn_attach {position:relative; float:left; margin-left:-1px; font-size:0; line-height:0;}
+#d_cmtpgn .wrap_btn_atach_cmt .wrap_btn_attach .l_popup {font-size:12px; line-height:18px;}
+#d_cmtpgn .wrap_btn_atach_cmt .wrap_btn_attach.mhover {*z-index:1;} /* ie7 */
+#d_cmtpgn .wrap_btn_atach_cmt .btn_atach_cmt {*margin:0;} /* ie7 */
+/*#d_cmtpgn .wrap_btn_atach_cmt .tb_list_search th {color:#888;font-weight:bold;}*//*140828 추가 lyr*/
+#d_cmtpgn .wrap_btn_atach_cmt .tb_list_search .text_search {color:#1a1a1a;text-decoration:none;}/*140828 추가 lyr*/
+#d_cmtpgn .wrap_btn_atach_cmt .l_popup_cmt .wrap_search .wrap_auto_search li {padding:0;border:none;}/*141120 수정 lyr*/
+#d_cmtpgn .wrap_btn_atach_cmt .l_popup_cmt .wrap_search .wrap_auto_search li a {padding: 0 7px}/*140828 추가 lyr*/
+#d_cmtpgn .wrap_btn_atach_cmt .l_popup_cmt .wrap_search .wrap_auto_search li a:hover {background-color:#fafafa;}/*140828 추가 lyr*/
+#d_cmtpgn .wrap_btn_atach_cmt .l_popup_cmt .wrap_search .wrap_auto_search li .text_search {color:#00b523;font-weight:normal;text-decoration:none;}/*140828 추가 lyr*/
+
+#d_cmtpgn .btn_reprt .odd_span {display:inline-block; font-size:12px;line-height:19px;color:#aaa;font-family: AppleSDGothicNeo-Regular, "돋움",Dotum;}/*140828 수정 lyr*/
+#d_cmtpgn .btn_reprt.mhover .odd_span {background-position:0 -27px;}/*140828 수정 lyr*/
+#d_cmtpgn .btn_reprt.mactive .odd_span {background-position:0 -54px;}/*140828 추가 lyr*/
+
+/*140828 추가 lyr*/
+#d_cmtpgn .btn_reprt02 .odd_span {width:10px; height:11px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_cmt.png) no-repeat left top; text-indent:-9999px; vertical-align:middle;}
+#d_cmtpgn .btn_reprt02.mhover .odd_span {background-position:0 -21px;}
+
+
+#d_cmtpgn .btn_recm {height:19px; vertical-align:middle;}
+#d_cmtpgn .btn_recm .odd_span {position:relative; height:19px; padding-left:24px; color:#666; font-size:12px; line-height:19px; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif; text-decoration:none; color:#aaa;}/*140828 수정 lyr*/
+#d_cmtpgn .btn_recm .icon {display:block; position:absolute; left:0; top:0; width:27px; height:19px; background:url(//cdnticket.melon.co.kr/resource/image/web/detailview/detail_btn_recm.png) no-repeat 0 0; font-size:0; line-height:0;}/*140828 수정 lyr*/
+
+#d_cmtpgn .btn_recm.positive .icon {background-position:0 0;}/*140828 수정 lyr*/
+/* #d_cmtpgn .btn_recm.positive.mhover .icon {background-position:0 -27px;}140828 수정 lyr */
+/* #d_cmtpgn .btn_recm.positive.mactive .icon {background-position:0 -54px;}140828 수정 lyr */
+#d_cmtpgn .btn_recm.positive.on .icon,
+#d_cmtpgn .btn_recm.positive.on.mhover .icon {background-position:0 -20px;}/*140828 수정 lyr*/
+#d_cmtpgn .btn_recm.negative .icon {background-position:-50px 0;}/*140828 수정 lyr*/
+/* #d_cmtpgn .btn_recm.negative.mhover .icon {background-position:-27px -27px;}140828 수정 lyr */
+/* #d_cmtpgn .btn_recm.negative.mactive .icon {background-position:-27px -54px;}140828 수정 lyr */
+#d_cmtpgn .btn_recm.negative.on .icon,
+#d_cmtpgn .btn_recm.negative.on.mhover .icon {background-position:-50px -20px;}/*140925 수정 lyr*/
+
+#d_cmtpgn .wrap_btn_recm {}
+#d_cmtpgn .wrap_btn_recm .btn_recm span.odd_span {color:#999}
+#d_cmtpgn .wrap_btn_recm .btn_recm {margin-left:9px;}/*141016 수정 lyr*/
+#d_cmtpgn .wrap_btn_recm .btn_recm.positive {margin-left:0;}
+
+/*140828 추가 lyr*/
+#d_cmtpgn .btn_recm02 {height:17px; vertical-align:middle;}
+#d_cmtpgn .btn_recm02.negative {margin-left:18px;}
+#d_cmtpgn .btn_recm02 .odd_span {position:relative; height:17px; padding-left:18px; color:#999; font-size:12px; line-height:18px; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif; text-decoration:none;}
+#d_cmtpgn .btn_recm02 .icon {display:block; position:absolute; left:0; top:0; width:13px; height:17px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_sprite_cmt.png) no-repeat 0 0; font-size:0; line-height:0;}
+
+#d_cmtpgn .btn_recm02.positive .icon {background-position:-239px 0;}
+#d_cmtpgn .btn_recm02.positive.mhover .icon {background-position:-239px -20px;}
+#d_cmtpgn .btn_recm02.positive.mactive .icon {background-position:-239px -40px;}
+#d_cmtpgn .btn_recm02.positive.on .icon,
+#d_cmtpgn .btn_recm02.positive.on.mhover .icon {background-position:-239px -60px;}
+#d_cmtpgn .btn_recm02.negative .icon {background-position:-262px 0;}
+#d_cmtpgn .btn_recm02.negative.mhover .icon {background-position:-262px -20px;}
+#d_cmtpgn .btn_recm02.negative.mactive .icon {background-position:-262px -40px;}
+#d_cmtpgn .btn_recm02.negative.on .icon,
+#d_cmtpgn .btn_recm02.negative.on.mhover .icon {background-position:-262px -60px;}
+
+#d_cmtpgn .btn_emphs_small span.odd_span {padding-left:15px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_emphs_small_140814.png) no-repeat left top;}
+#d_cmtpgn .btn_emphs_small span.even_span {min-width:42px; height:32px; padding-right:15px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_emphs_small_140814.png) no-repeat right top; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif; color:#fff; font-size:12px; font-weight:bold; line-height:32px;}
+#d_cmtpgn .btn_emphs_small span.even_span {*line-height:34px;}
+:root #d_cmtpgn .btn_emphs_small span.even_span {line-height:34px\9;}
+#d_cmtpgn .btn_emphs_small.mhover span.odd_span, #d_cmtpgn .btn_emphs_small:focus span.odd_span {background-position:left -40px;}
+#d_cmtpgn .btn_emphs_small.mhover span.even_span, #d_cmtpgn .btn_emphs_small:focus span.even_span {background-position:right -40px;}
+#d_cmtpgn .btn_emphs_small.mactive span.odd_span {background-position:left -80px;}
+#d_cmtpgn .btn_emphs_small.mactive span.even_span {background-position:right -80px;}
+#d_cmtpgn .btn_emphs_small.disabled span.odd_span {background-position:left -120px;}
+#d_cmtpgn .btn_emphs_small.disabled span.even_span {background-position:right -120px;color:#c0c0c0;}
+
+#d_cmtpgn .btn_emphs02_small span.odd_span {padding-left:15px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_emphs02_small.png) no-repeat left top;}
+#d_cmtpgn .btn_emphs02_small span.even_span {min-width:42px; height:32px; padding-right:15px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_emphs02_small.png) no-repeat right top; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif; color:#666; font-size:12px; font-weight:bold; line-height:32px;}
+#d_cmtpgn .btn_emphs02_small span.even_span {*line-height:34px;}
+:root #d_cmtpgn .btn_emphs02_small span.even_span {line-height:34px\9;}
+#d_cmtpgn .btn_emphs02_small.mhover span.odd_span, #d_cmtpgn .btn_emphs02_small:focus span.odd_span {background-position:left -40px;}
+#d_cmtpgn .btn_emphs02_small.mhover span.even_span, #d_cmtpgn .btn_emphs02_small:focus span.even_span {background-position:right -40px;}
+#d_cmtpgn .btn_emphs02_small.mactive span.odd_span {background-position:left -80px;}
+#d_cmtpgn .btn_emphs02_small.mactive span.even_span {background-position:right -80px;}
+#d_cmtpgn .btn_emphs02_small.disabled span.odd_span {background-position:left -120px;}
+#d_cmtpgn .btn_emphs02_small.disabled span.even_span {background-position:right -120px; color:#a3a3a3;}
+
+/* button - wrap */
+#d_cmtpgn .wrap_btn_c {text-align:center;}
+#d_cmtpgn .wrap_btn_l {text-align:left;}
+#d_cmtpgn .wrap_btn_r {text-align:right;}
+
+/* bullet */
+#d_cmtpgn .bul_info02 {display:inline-block; padding-top:10px; /*background:url(//cdnticket.melon.co.kr/resource/image/web/common/bul_info02.png) no-repeat left 1px;*/ color:#999; font-size:12px; line-height:1.4em;}
+#d_cmtpgn .bul_info02 {*display:inline; *padding:0 0 2px 18px;} /* ie7 */
+
+
+/* 댓글 - 타이틀 */
+.re_title {margin:30px 0 12px 0; color:#1a1a1a; font-weight:bold; font-size:18px; line-height:24px; font-family: AppleSDGothicNeo-Regular, "Malgun Gothic","맑은 고딕","Dotum", "돋음", "Apple Gothic",sans-serif;}
+.re_title.arr {padding-left:11px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bul_title.png) no-repeat 0 6px;}
+
+/* 댓글 - 총 검색 결과 수 */
+#d_cmtpgn .wrap_list_totcnt strong.fc_strong {padding-left:9px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bul_arrow_gray02.png) no-repeat left 2px; font-weight:normal;}
+#d_cmtpgn .wrap_list_totcnt strong.fc_strong .fc_point, #d_cmtpgn .wrap_list_totcnt strong.fc_strong .cnt {font-weight:bold;}
+
+/* 댓글 - 리뷰 입력창 */
+#d_cmtpgn .re_notice {display:block;position:relative; padding:20px 125px 20px 24px; background-color:#fcfcfc; z-index:40;zoom:1;}/*140828 수정 lyr*/
+#d_cmtpgn .re_notice:after {content: "."; display: block; height: 0px; clear: both; visibility: hidden; font-size:0; line-height:0;}/*140828  추가 lyr*/
+
+#d_cmtpgn .re_notice .re_text, #d_cmtpgn .re_notice .wrap_cmt_box_thum {margin-bottom:13px;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum {position:relative;width:576px;margin-top: 14px;padding: 8px 0;border-top: 1px dotted #d9d9d9;border-bottom: 1px dotted #d9d9d9;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .ellipsis {display: inline-block;overflow: hidden;vertical-align: middle;white-space: nowrap;text-overflow: ellipsis;}/*141124 추가 lyr*/
+
+/*140828 추가 lyr*/
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum {}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum .cntt {display:inline-block;padding:0 15px;}
+
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.mv dl {display:inline-block;width:400px;}/*140925 추가 lyr*/
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.mv .cntt {padding-top:12px;width:auto;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.mv .title {max-width:210px;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.mv .artist_name {*display:inline;width:auto;}/*140925 수정 lyr*/
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.mv .artist_name .ellipsis {max-width:210px;}
+
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.album .cntt dl {width:419px;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.album .cntt {padding-top:8px;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.album .title {max-width:200px;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.album .artist_name,
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.album .artist_name .ellipsis {max-width:195px;}
+
+/*140924 추가 lyr*/
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.song .cntt dl {width:419px;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.song .cntt {padding-top:8px;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.song .title {max-width:200px;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.song .artist_name,
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.song .artist_name .ellipsis {max-width:195px;}
+
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.youtube .cntt {width:419px;min-height:59px;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.youtube .cntt .title span {overflow:hidden;display:inline-block;height:30px;word-wrap: break-word;word-break: break-all;}/*140902 추가 lyr*/
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.youtube .cntt .wrap_bnt {left:15px;}
+
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.atist {max-height:49px;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.atist .cntt {padding-top:8px;width:485px;}
+
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_thum.atist .cntt .title {max-width:520px;}
+
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_image span.thumb {cursor:auto;}
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_image span.thumb .icon,
+#d_cmtpgn .re_notice .wrap_cmt_box_thum .cmt_box_image span.thumb .icon_viewlk_image {display:none;}
+
+#d_cmtpgn .re_notice .wrap_check {margin-top:5px;}/*140828 수정 lyr*/
+#d_cmtpgn .re_notice .wrap_btn {margin-top:8px;}
+#d_cmtpgn .re_notice .wrap_btn {*height:28px; *zoom:1;} /* ie7 */
+#d_cmtpgn .re_notice .wrap_btn:after {content:""; display:block; clear:both; height:0; visibility:hidden;}
+#d_cmtpgn .re_notice .wrap_btn .wrap_btn_atach_cmt {float:left; clear:none;}
+#d_cmtpgn .re_notice .wrap_btn .wrap_btn_atach_cmt .wrap_btn_attach.first_child {margin:0;}/*140902 추가 lyr*/
+#d_cmtpgn .re_notice .wrap_btn .wrap_btn_atach_cmt .l_popup_cmt .wrap_search .wrap_auto_search {width:358px;}/*140828 추가 lyr*/
+#d_cmtpgn .re_notice .wrap_btn .wrap_btn_sns {float:right; clear:none;}
+#d_cmtpgn .re_notice .wrap_btn02 {position:absolute; right:24px; top:20px;}
+#d_cmtpgn .re_notice .wrap_btn02 {*top:13px;} /* ie7 */
+#d_cmtpgn .re_notice .wrap_btn02 button {*margin:0;} /* ie7 */
+#d_cmtpgn .re_notice.no_btn_wrap {padding-bottom:15px;}/*140430 추가 lyr*/
+
+/*140828*/
+#d_cmtpgn .re_notice .thumb_wrap {position:relative;float:left;}
+#d_cmtpgn .re_notice .thumb_wrap .thumb {display: block; width: 64px;height: 64px;cursor:pointer;}/*140902 수정 lyr*/
+#d_cmtpgn .re_notice .thumb_wrap .thumb .thumb_frame {display:inline-block;position: absolute;top: 0;left: 0;width: 64px;height: 64px;background: url(//cdnticket.melon.co.kr/resource/image/web/common/frame_64_64_radius.png) no-repeat;}
+#d_cmtpgn .re_notice .thumb_wrap .thumb .thumb_frame2 {display:inline-block;position: absolute;top: 0;left: 0;width: 25px;height: 25px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/qna_comment.png) no-repeat 0 -40px;}
+#d_cmtpgn .re_notice .re_textarea_wrap {float:right;width:785px}
+#d_cmtpgn .re_notice .re_textarea_wrap2 {float:right;width:860px}
+/*141124 추가 lyr*/
+#d_cmtpgn .re_notice .playtime {display:block !important; position:absolute !important; bottom:5px; right:5px; margin-left:24px; height:16px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_playtime.png) no-repeat right 0;}
+#d_cmtpgn .re_notice .playtime {*cursor:pointer;} /* IE7 */
+#d_cmtpgn .re_notice .playtime .time {display:block; position:relative; top:0; left:-24px; height:16px; margin-right:-19px; padding-left:23px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_playtime.png) no-repeat 0 0; color:#fff; font-size:11px; line-height:16px; font-family:Arial, "Apple Gothic", sans-serif;}
+
+#d_cmtpgn .textarea {position:relative; padding-bottom:19px; border:1px solid #d1d1d1; background-color:#fff; color:#666; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif;}/* 140127_수정 min-height:59px; */
+#d_cmtpgn .textarea .num_board {width:100%;display:block;text-align:right} /* 140110_miok */
+#d_cmtpgn .textarea .ancm {padding:10px 4px 0; color:#b2b2b2;} /* 140124_수정 kcu */
+#d_cmtpgn .textarea .ancm p {padding:3px 4px 0; color:#b2b2b2;letter-spacing:-1px;}
+/* #d_cmtpgn .textarea .ancm p {padding-left:11px; text-indent:-11px;} */
+
+#d_cmtpgn .textarea02 {position:relative; min-height:126px; padding:6px 7px; padding-bottom:4px; border:1px solid #d1d1d1; background-color:#fff; color:#666; font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif;}/* 140110_miok */
+#d_cmtpgn .textarea02 .num_board {width:100%;display:block;text-align:right} /* 140110_miok */
+#d_cmtpgn .textarea02 .ancm {color:#b2b2b2;}
+#d_cmtpgn .textarea02 .ancm p {padding-left:11px; text-indent:-11px;}
+
+#d_cmtpgn .re_text {display:block; resize:none; padding:0;  border:0; overflow:hidden; line-height:18px;}
+
+#d_cmtpgn .num_board {font-size:12px; color:#999;}
+#d_cmtpgn .num_board strong {color:#666}
+
+/* 140429_miok */
+#d_cmtpgn .btn_cmt_sns {position:relative;float:left; margin:0; margin-left:-1px;}
+#d_cmtpgn .btn_cmt_sns.mhover, #d_cmtpgn .btn_cmt_sns:focus, #d_cmtpgn .btn_cmt_sns.mactive, #d_cmtpgn .btn_cmt_sns.on {z-index:1;}
+#d_cmtpgn .btn_cmt_sns span.odd_span {height:28px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_sns2_140822.png) no-repeat left top; overflow:hidden; line-height:28px; text-indent:-999px;}/*140911 수정 lyr*/
+
+#d_cmtpgn .btn_cmt_sns.facebook span.odd_span {width:31px; background-position:0 0;}/*140902 수정 lyr*/
+#d_cmtpgn .btn_cmt_sns.facebook.mhover span.odd_span, #d_cmtpgn .btn_cmt_sns.facebook:focus span.odd_span {width:31px; background-position:0px -44px;}/*140902 수정 lyr*/
+#d_cmtpgn .btn_cmt_sns.facebook.mactive span.odd_span {width:31px; background-position:0px -91px;}/*140902 수정 lyr*/
+#d_cmtpgn .btn_cmt_sns.facebook.on span.odd_span {width:31px; background-position:0px -135px;}/*140902 수정 lyr*/
+
+#d_cmtpgn .btn_cmt_sns.twitter span.odd_span {width:31px; background-position:-30px top;}/*140902 수정 lyr*/
+#d_cmtpgn .btn_cmt_sns.twitter.mhover span.odd_span, #d_cmtpgn .btn_cmt_sns.twitter:focus span.odd_span {width:31px; background-position:-30px -44px;}/*140902 수정 lyr*/
+#d_cmtpgn .btn_cmt_sns.twitter.mactive span.odd_span {width:31px; background-position:-30px -91px;}/*140902 수정 lyr*/
+#d_cmtpgn .btn_cmt_sns.twitter.on span.odd_span {width:31px; background-position:-30px -135px;}/*140902 수정 lyr*/
+/* //140429_miok */
+
+/* 댓글 - 리뷰 입력창 - 방명록 케이스 */
+#d_cmtpgn .re_notice.type02 .re_textarea_wrap {width:532px;}/*140828 추가 lyr*/
+#d_cmtpgn .re_notice.type02 .textarea {min-height:61px;}
+#d_cmtpgn .re_notice.type02 .textarea .ancm {zoom:1; margin-bottom:-12px;}
+
+/*141124 추가 lyr*/
+#d_cmtpgn .re_notice.type02 .re_textarea_wrap .wrap_cmt_box_thum {width:499px;}
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.mv dl {width:364px;}
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.mv .title,
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.mv .artist_name .ellipsis {max-width:165px;}
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.album .cntt dl {width:345px;}
+
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.album .title,
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.album .artist_name, 
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.album .artist_name .ellipsis {max-width:160px;}
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.song .cntt dl {width:345px;}
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.song .title, 
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.song .artist_name, 
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.song .artist_name .ellipsis {max-width:160px;}
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.youtube .cntt {width:350px;}
+#d_cmtpgn .re_notice.type02 .wrap_cmt_box_thum .cmt_box_thum.atist .cntt {width:406px;}
+
+/* 댓글 - 목록형 리스트 */
+#d_cmtpgn caption {width:0; height:0; overflow:hidden; font-size:0; line-height:0; text-indent:-9999px;}
+#d_cmtpgn .tb_list_cmt {border-top:2px solid #b8b8b8; border-bottom:1px solid #b8b8b8;}
+#d_cmtpgn .tb_list_cmt thead th {height:33px; border-bottom:1px solid #cfcfcf; color:#333333; text-align:center; vertical-align:middle; background-color:#fafafa;}
+#d_cmtpgn .tb_list_cmt th.t_left, #d_cmtpgn .tb_list_cmt td.t_left {text-align:left;}
+#d_cmtpgn .tb_list_cmt th.t_right, #d_cmtpgn .tb_list_cmt td.t_right {text-align:right;}
+#d_cmtpgn .tb_list_cmt th.t_center, #d_cmtpgn .tb_list_cmt td.t_center {text-align:center;}
+#d_cmtpgn .tb_list_cmt tbody th, #d_cmtpgn .tb_list_cmt td {height:39px; border-top:1px solid #e6e6e6; text-align:left; vertical-align:middle;}
+#d_cmtpgn .tb_list_cmt tbody tr.first_child th, #d_cmtpgn .tb_list_cmt tbody tr.first_child td {border-top:none;}
+#d_cmtpgn .tb_list_cmt tbody tr.atist {background-color:#edf5f3;}
+#d_cmtpgn .tb_list_cmt th .wrap {position:relative; padding:0 16px 0 0;}
+#d_cmtpgn .tb_list_cmt td .wrap {position:relative; padding:0 16px 0 0;}
+#d_cmtpgn .tb_list_cmt td.on .wrap {z-index:1;}
+#d_cmtpgn .tb_list_cmt td.no {font-family: AppleSDGothicNeo-Regular, "Arial", "돋움", "Dotum", "Apple Gothic", sans-serif; text-align:center;}
+#d_cmtpgn .tb_list_cmt th.no .wrap, #d_cmtpgn .tb_list_cmt td.no .wrap {padding-right:16px; padding-left:16px;}
+#d_cmtpgn .tb_list_cmt th.title .wrap, #d_cmtpgn .tb_list_cmt td.title .wrap {padding-right:40px;}
+#d_cmtpgn .tb_list_cmt th.pd_right01 .wrap, #d_cmtpgn .tb_list_cmt td.pd_right01 .wrap {padding-right:24px;}
+#d_cmtpgn .tb_list_cmt .ellipsis {display:inline-block; vertical-align:middle; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+#d_cmtpgn .tb_list_cmt .ellipsis {*display:inline; *vertical-align:middle;} /* ie7 */
+#d_cmtpgn .tb_list_cmt .ellipsis a {color:#555;}
+#d_cmtpgn .tb_list_cmt .icon_reg_mobile {vertical-align:-1px;}
+#d_cmtpgn .tb_list_cmt .icon_atist {vertical-align:middle;}
+
+/*140828 추가 lyr*/
+#d_cmtpgn .tb_list_cmt .btn_recm {height:17px;}
+#d_cmtpgn .tb_list_cmt .btn_recm .odd_span {height: 17px;padding-left: 18px;line-height: 18px;}
+#d_cmtpgn .tb_list_cmt .btn_recm .icon {width:13px;height:17px;}
+#d_cmtpgn .tb_list_cmt .btn_recm.positive .icon {background-position: 0 -118px;}
+#d_cmtpgn .tb_list_cmt .btn_recm.positive.mhover .icon {background-position:0 -135px;}
+#d_cmtpgn .tb_list_cmt .btn_recm.positive.mactive .icon {background-position:0 -152px;}
+#d_cmtpgn .tb_list_cmt .btn_recm.positive.on .icon,
+#d_cmtpgn .tb_list_cmt .btn_recm.positive.on.mhover .icon {background-position:0 -169px;}
+#d_cmtpgn .tb_list_cmt .btn_recm.negative .icon {background-position:-41px -116px;}
+#d_cmtpgn .tb_list_cmt .btn_recm.negative.mhover .icon {background-position:-41px -133px;}
+#d_cmtpgn .tb_list_cmt .btn_recm.negative.mactive .icon {background-position:-41px -150px;}
+#d_cmtpgn .tb_list_cmt .btn_recm.negative.on .icon,
+#d_cmtpgn .tb_list_cmt .btn_recm.negative.on.mhover .icon {background-position:-41px -167px;}
+
+/* 댓글 - 목록형 리스트 - 확장영역 */
+#d_cmtpgn .tb_list_cmt .tr_cntt td {border-top:none;}
+#d_cmtpgn .tb_list_cmt .tr_cntt td .wrap {padding:0;}
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt {position:relative; padding:8px 0 11px 72px; color:#333; line-height:1.4em;}/*140828 수정 lyr*/
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt div.text {padding-right:180px;}/*140828 추가 lyr*/
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .text {margin-bottom:8px;color:#555;}
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .text.fc_b3 {color:#b3b3b3;}
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum {margin:12px 0 16px;padding: 8px 0;}/*140828 수정 lyr*/
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .cmt_box_thum {z-index:2;}/*140828 추가 lyr*/
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .cmt_box_link {margin:-14px 0 -10px;}
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .album .cntt dl {width:780px;}
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .artist_name {width:365px;}
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .title,
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .artist_name .ellipsis {max-width:350px;}
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .atist .cntt dl {width:830px;}
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .atist .title {max-width:820px;}
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .youtube .cntt dl {width:790px;}
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .youtube .cntt, 
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .youtube .title {width:780px;max-width:780px;}
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_cmt_box_thum .mv .cntt dl {width:790px;}
+
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_btn_cmt {position:absolute; right:16px; bottom:8px;}/*140828 수정 lyr*/
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .wrap_btn_cmt {top:auto;}/*140911 추가 lyr*/
+#d_cmtpgn .tb_list_cmt .tr_cntt .wrap .tb_cmt_cntt .cmt_box_thum .wrap_btn {margin-top:5px;}
+
+/* 댓글 - 목록형 리스트 - 댓글목록 */
+#d_cmtpgn .list_cmt02 li {border-top:1px dotted #d9d9d9;}
+#d_cmtpgn .list_cmt02 .wrap_cmt {position:relative; padding:11px 0 11px 90px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_cmt_arrow.png) no-repeat 72px 13px;}/*140828 수정 lyr*/
+#d_cmtpgn .list_cmt02 .wrap_cmt {*zoom:1;} /* ie7 */
+#d_cmtpgn .list_cmt02 .wrap_cmt:after {content:""; display:block; clear:both; height:0; visibility:hidden;}
+#d_cmtpgn .list_cmt02 .wrap_nicnmname {float:left;*display:inline; width:120px;}/*140828 수정 lyr*/
+#d_cmtpgn .list_cmt02 .wrap_cntt {display:inline-block;width:613px;padding-right:138px;color:#555;vertical-align:middle;}/*140828 수정 lyr*/
+#d_cmtpgn .list_cmt02 .wrap_cntt {*display:inline;}/*140828 추가 lyr*/
+#d_cmtpgn .list_cmt02 .wrap_cntt {float:none;}/*140911 추가 lyr*/
+#d_cmtpgn .list_cmt02 .wrap_cntt .btn_like {vertical-align:0;}
+#d_cmtpgn .list_cmt02 .wrap_cntt .btn_like {*vertical-align:middle;} /* ie7 */
+#d_cmtpgn .list_cmt02 .wrap_cmt .wrap_btn_cmt {display:inline-block;*display:inline;vertical-align:middle;}/*140828 수정 lyr*/
+#d_cmtpgn .list_cmt02 .wrap_cmt .wrap_btn_cmt {position:static;}/*140911 추가 lyr*/
+#d_cmtpgn .list_cmt02 .bar {margin:0 3px; color:#ccc; font-style:normal; font-size:11px; line-height:14px; font-family: AppleSDGothicNeo-Regular, "Dotum", "Apple Gothic", sans-serif; vertical-align:middle;}
+
+/* 댓글 - 목록형 리스트 - 댓글입력 */
+#d_cmtpgn .wrap_insert_cmt {border-top:0px dotted #d9d9d9;background-color:#fcfcfc;}/*140828 수정 lyr*/
+#d_cmtpgn .wrap_insert_cmt .wrap_bg_insert {position:relative; padding:11px 16px 11px 90px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_cmt_arrow.png) no-repeat 72px 13px;}
+#d_cmtpgn .wrap_insert_cmt .wrap_bg_insert {*zoom:1;} /* ie7 */
+#d_cmtpgn .wrap_insert_cmt .wrap_bg_insert button {*margin:0; *margin-left:4px;} /* ie7 */
+#d_cmtpgn .wrap_insert_cmt div.wrap_all {border:1px solid #dcdcdc;height:26px;background-color:#fff;} /* 140902 수정 lyr */
+#d_cmtpgn .wrap_insert_cmt div.wrap_all.wide {width:654px;float:left}/* 140828 수정 lyr */
+#d_cmtpgn .wrap_insert_cmt div.wrap_all.wide.wide_type {width:450px;} /* 140529_수정 aty */
+#d_cmtpgn .wrap_insert_cmt div.wrap_all.wide.wide_type .wrap_input .input_text {width:340px;} /* 140529_수정 aty */
+#d_cmtpgn .wrap_insert_cmt .wrap_input {display:inline-block; position:relative;padding-top:2px}
+#d_cmtpgn .wrap_insert_cmt .wrap_input .input_text {border:0px;box-shadow:0 0 0 0 rgba(0,0,0,0.05) inset;} /* 140110_miok */
+#d_cmtpgn .wrap_insert_cmt .wrap_input .wrap_staus {width:88px;float:left;text-align:right;margin-top:2px} /* 140113_miok_추가 */
+#d_cmtpgn .wrap_insert_cmt .wrap_input .wrap_staus {*margin-top:4px}
+#d_cmtpgn .wrap_insert_cmt .wrap_check {margin-top:5px;}
+#d_cmtpgn .wrap_insert_cmt .no_staus {display:inline-block;padding-left:8px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_cmt_num_board.png) no-repeat left 50%; color:#999; font-size:11px; line-height:1.4em;} /* 140110_miok */
+#d_cmtpgn .wrap_insert_cmt .no_staus .no {color:#666; font-weight:bold;}
+#d_cmtpgn .wrap_insert_cmt .btn_base02 .even_span {min-width:64px;}
+
+/* 댓글 - 요약형 - 1depth 댓글 */
+#d_cmtpgn .list_cmt {position:relative; z-index:20; border:1px solid #e6e6e6; border-right:0; border-left:0;}
+#d_cmtpgn .list_cmt .none {font-size:12px;text-indent:-9999px;}/*140912 추가 lyr*/
+#d_cmtpgn .list_cmt ul li {border-top:1px solid #e6e6e6;}
+#d_cmtpgn .list_cmt ul li {*zoom:1; *vertical-align:top;} /* ie7 */
+#d_cmtpgn .list_cmt ul li.first_child {border-top:0;}
+#d_cmtpgn .list_cmt ul li.on {position:relative; z-index:20;}
+#d_cmtpgn .list_cmt ul li.on .wrap_cmt_cntt .wrap_cntt {position:relative;z-index:1;}/*140828 추가 lyr*/
+/*#d_cmtpgn .list_cmt ul li.personally .wrap_cntt {padding-right:208px;}141016 삭제 lyr*/
+#d_cmtpgn .list_cmt ul li.personally .wrap_cmt_cntt .wrap_cntt .wrap_btn .wrap_btn_right {background-color:#ffffff;}/*150112 수정 lyr*/
+#d_cmtpgn .list_cmt ul li.personally .wrap_cmt_cntt .wrap_cntt .wrap_btn {padding-right:0px;}/*150112 추가 lyr*/
+#d_cmtpgn .list_cmt ul li.personally .wrap_cmt_cntt .wrap_cntt .wrap_btn .wrap_btn_right .wrap_btn_report {padding-top:3px;*padding-top:5px;}/*141016 추가 lyr*/
+#d_cmtpgn .lower_cmt li.personally .wrap_btn_recm {padding:1px 6px 0px 0px;}/*150112 수정 lyr*/
+#d_cmtpgn .lower_cmt li.personally .wrap_btn_report {*padding-top:5px;}/*141016 추가 lyr*/
+
+/*댓글 - 곡상세*//*141016 추가 lyr*/
+#d_cmtpgn .list_cmt.song_detail .wrap_btn_report {position:absolute;}
+#d_cmtpgn .list_cmt.song_detail .personally .wrap_btn_report {right:23px;}/*150112 추가 lyr*/
+
+
+#d_cmtpgn .list_cmt .wrap_insert_cmt .wrap_bg_insert {padding:16px; padding-left:252px; margin-bottom:20px; background-position:235px 16px;overflow:hidden}/* 140828 수정 lyr*/
+#d_cmtpgn .list_cmt .wrap_insert_cmt .wrap_bg_insert div.wrap_btn_r {margin-top:0;*margin-top:-2px} /* 140114_miok, 140808_update kiok */
+#d_cmtpgn .list_cmt .ellipsis {display:inline-block; overflow:hidden; vertical-align:middle; white-space:nowrap; text-overflow:ellipsis;color: #aaa;margin-top:4px}
+#d_cmtpgn .list_cmt .ellipsis {*display:inline; *vertical-align:middle;} /* ie7 */
+#d_cmtpgn .list_cmt .ellipsis a {color: #aaa}
+#d_cmtpgn .list_cmt .ellipsis .icon_atist {*vertical-align:middle;} /*  */
+#d_cmtpgn .list_cmt .bar {margin:0 3px; color:#ccc; font-style:normal; font-size:11px; line-height:14px; font-family: AppleSDGothicNeo-Regular, "Dotum", "Apple Gothic", sans-serif; vertical-align:middle;}
+#d_cmtpgn .list_cmt .date {font-size:11px;color:#aaa;}
+#d_cmtpgn .list_cmt .wrap_cmt_box_thum {*margin-bottom:5px;}
+#d_cmtpgn .list_cmt .text_search,
+#d_cmtpgn .tb_list_cmt .text_search{color:#7CB710; font-weight:bold; text-decoration:underline;}
+#d_cmtpgn .list_cmt .search_wrong {padding:90px 0; color:#1a1a1a; font-size:18px; line-height:20px; font-family: AppleSDGothicNeo-Regular, "돋움","dotum",sans-serif; letter-spacing:-1px; text-align:center;}
+#d_cmtpgn .list_cmt .search_loading {padding:68px 0 63px; text-align:center;}
+#d_cmtpgn .list_cmt .search_loading p {color:#1a1a1a;}
+#d_cmtpgn .list_cmt .search_loading p {*margin-top:5px;} /* ie7 */
+#d_cmtpgn .list_cmt .time {margin-left:3px;}
+
+#d_cmtpgn .list_cmt .playtime {display:block !important; position:absolute !important; bottom:5px; right:5px; margin-left:24px; height:16px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_playtime.png) no-repeat right 0;}
+#d_cmtpgn .list_cmt .playtime {*cursor:pointer;} /* IE7 */
+#d_cmtpgn .list_cmt .playtime .time {display:block; position:relative; top:0; left:-24px; height:16px; margin-right:-19px; padding-left:23px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_playtime.png) no-repeat 0 0; color:#fff; font-size:11px; line-height:16px; font-family:Arial, "Apple Gothic", sans-serif;}
+
+#d_cmtpgn .list_cmt .btn_text .text {font-size:12px;}/*141016 추가 lyr*/
+
+#d_cmtpgn .wrap_btn_list {position:relative;}
+#d_cmtpgn .wrap_btn_list .btn_big {position:absolute; right:0; top:16px;}
+#d_cmtpgn .wrap_btn_list .btn_big span.odd_span {padding-left: 15px;background: url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_base.png) no-repeat left -570px;}/*150121 추가 lyr*/
+#d_cmtpgn .wrap_btn_list .btn_big span.even_span {min-width: 0px;height: 31px;padding-right: 15px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_base.png) no-repeat right -222px;color: #666;font-weight: bold;font-size: 12px;line-height: 33px;font-family: AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif;letter-spacing: -1px;}/*150121 추가 lyr*/
+#d_cmtpgn .wrap_btn_list .btn_big.mhover span.odd_span, 
+#d_cmtpgn .wrap_btn_list .btn_big:focus span.odd_span {background-position:left -648px;}/*150121 추가 lyr*/
+#d_cmtpgn .wrap_btn_list .btn_big.mhover span.even_span, 
+#d_cmtpgn .wrap_btn_list .btn_big:focus span.even_span {background-position:right -305px;}/*150121 추가 lyr*/
+#d_cmtpgn .wrap_btn_list .btn_big.mactive span.odd_span {background-position:left -689px;}/*150121 추가 lyr*/
+#d_cmtpgn .wrap_btn_list .btn_big.mactive span.even_span {background-position:right -346px;}/*150121 추가 lyr*/
+#d_cmtpgn .wrap_btn_list .btn_big.disabled span.odd_span {}/*150121 추가 lyr*/
+#d_cmtpgn .wrap_btn_list .btn_big.disabled span.even_span {}/*150121 추가 lyr*/
+
+#d_cmtpgn .wrap_cmt_cntt {display:block; position:relative; padding:20px 15px 15px 0; padding-left:235px;}/*141120 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt {*zoom:1;*z-index:1;} /* ie7 *//*141120 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt:after {content:""; display:block; clear:both; height:0; visibility:hidden;}
+#d_cmtpgn .wrap_cmt_cntt .wrap_nicnmname {overflow:hidden;float:left; width:199px; margin-left:-235px; padding:0 0 0 23px;}/*140912 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_nicnmname .thumb_wrap {position:relative;display:inline-block;float:left;padding-right:7px;}/*140912 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_nicnmname .thumb_wrap .thumb {display: block;width: 64px;height: 64px;cursor:pointer;}/*140902 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_nicnmname .thumb_wrap .thumb2 {display: block;width: 25px;height: 25px;cursor:pointer;}/*140902 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_nicnmname .thumb_wrap .thumb .thumb_frame {display: inline-block;position: absolute;top: 0;left: 0;width: 64px;height: 64px;background: url(//cdnticket.melon.co.kr/resource/image/web/common/frame_64_64_radius.png) no-repeat;}
+#d_cmtpgn .wrap_cmt_cntt .wrap_nicnmname .thumb_wrap .thumb2 .thumb_frame2 {display: inline-block;position: absolute;top: 0;left: 0;width: 25px;height: 25px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/qna_comment.png) no-repeat 0 -40px;}
+
+#d_cmtpgn .wrap_cmt_cntt .wrap_nicnmname .ellipsis a {color:#999999;}
+
+#d_cmtpgn .wrap_cmt_cntt .wrap_nicnmname .icon_reg_mobile {}/*140911 추가 lyr*/
+#d_cmtpgn li.on .wrap_cmt_cntt .wrap_cntt {position:relative;z-index:1;}/*140828 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt {padding-right:0;}/*140911 추가 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .cntt {word-break:break-all;color:#333;}/* 140828 수정 lyr */
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .cntt .cmt_text {}/*140925 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .cntt .cmt_text .cmt_cont {padding-right:24px;}/*140925 추가 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .cntt .btn_text {margin-left:4px; vertical-align:0;}
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .cntt .btn_text {*margin-top:-5px; *margin-left:6px; *vertical-align:-2px;} /* ie7 */
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .cntt .wrap_cmt_box_thum {margin-top:12px;padding:8px 0;}/*140912 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .cntt .wrap_cmt_box_thum .cmt_box_link {}/*140828 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .wrap_btn {overflow:hidden;margin-top:3px;}/*141016 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .wrap_btn  .btn_text.arrow_d02,
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .wrap_btn  .btn_text.arrow_u02 {float:left;margin-top:6px;}/*140912 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .wrap_btn .wrap_btn_right {float:right;}/*141016 추가 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_cntt .wrap_btn .wrap_btn_recm {display:inline-block;padding-right:6px;vertical-align:top;}/*141016 수정 lyr*/
+
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice {padding-right:0;}/*140911 추가 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .re_notice {margin-bottom:5px; padding:20px 125px 40px 17px; background-color:#ffffff;}
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .re_notice .textarea {padding:6px 7px; padding-bottom:5px;} /* 140110_miok */
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .btn_reg02, #d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .btn_reg03 {display:block;}
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .btn_reg03 {margin-top:4px;}
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .btn_reg03 {*margin-top:0;} /* ie7 */
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .wrap_btn {margin-top: 3px;padding-right: 16px;}/*141120 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .wrap_btn .btn_text.arrow_d02 {float:left;}/*140828 추가 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .wrap_btn .wrap_btn_right {float:right;}/*141016 추가 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .wrap_btn .wrap_btn_recm {padding-right: 9px;letter-spacing: -1px;}/*140828 추가 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_btn_report {display:inline-block;position:static; right:16px; bottom:7px;vertical-align:top;}/*141016 수정 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_btn_report {top: auto;}/*140911 추가 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .wrap_btn_report .bar {vertical-align:-1px;}
+#d_cmtpgn .wrap_cmt_cntt .wrap_btn_report .bar {*vertical-align:2px;} /* ie7 */
+#d_cmtpgn .wrap_cmt_cntt .btn_text.arrow_u02, #d_cmtpgn .wrap_cmt_cntt .btn_text.arrow_d02 {margin-top:6px;}/*140912 추가 lyr*/
+#d_cmtpgn .wrap_cmt_cntt .btn_text.arrow_u02, #d_cmtpgn .wrap_cmt_cntt .btn_text.arrow_d02 {*margin-top:-2px;} /* ie7 */
+
+#d_cmtpgn .wrap_cmt_cntt.atist {}
+#d_cmtpgn .wrap_cmt_cntt.atist .wrap_nicnmname .thumb_wrap .thumb .thumb_frame {}/*140828 추가 lyr*/
+
+
+/* 140124_추가 kcu */
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .re_notice .textarea {min-height:59px; padding:0 0 19px 0;}
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .re_notice .textarea .scroll {position:relative; overflow:hidden; overflow-y:auto; padding: 6px 7px 4px;}/*140127 수정 height:41px; */
+#d_cmtpgn .wrap_cmt_cntt .wrap_re_notice .re_notice .textarea .scroll .re_text {padding-bottom:0}
+#d_cmtpgn .re_notice .textarea .scroll {overflow:hidden; position:relative;}/*140127 수정 height:48px; */
+#d_cmtpgn .textarea .num_board {position:absolute; bottom:0; right:10px; width:auto;color:#b2b2b2;font-size:11px;letter-spacing:-1px}
+
+/* 댓글 - 요약형 - 2depth 댓글 */
+#d_cmtpgn .lower_cmt li {position:relative; padding:16px 0 16px 380px; border-top:0px dotted #d9d9d9 !important;background-color:#fcfcfc;}/*140828 수정 lyr*/
+#d_cmtpgn .lower_cmt li {*zoom:1;} /* ie7 */
+#d_cmtpgn .lower_cmt li:after {content:""; display:block; clear:both; height:0; visibility:hidden;}
+#d_cmtpgn .lower_cmt li .wrap_nicnmname {float:left; width:114px; margin-left:-147px; padding:0 16px 0 17px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_cmt_arrow.png) no-repeat 2px 3px;}
+#d_cmtpgn .lower_cmt li .wrap_nicnmname .icon_reg_mobile {vertical-align:-1px;}
+#d_cmtpgn .lower_cmt li .wrap_cntt {display:inline-block;width:373px;vertical-align:middle;}/*140828 수정 lyr*/
+#d_cmtpgn .lower_cmt li .wrap_cntt {*display:inline;}
+#d_cmtpgn .lower_cmt li .wrap_cntt {padding-right:0;}/*140911 추가 lyr*/
+#d_cmtpgn .lower_cmt li .wrap_btn_report {display:inline-block;vertical-align:middle;padding-bottom:3px;text-align:right;line-height:14px;}/*141016 수정 lyr*/
+#d_cmtpgn .lower_cmt li .wrap_btn_report {*display:inline;}
+#d_cmtpgn .lower_cmt li .wrap_btn_report {position:static;}/*140911 추가 lyr*/
+#d_cmtpgn .lower_cmt li .date {*vertical-align:middle;}
+#d_cmtpgn .lower_cmt li .wrap_btn_recm {display:inline-block;width:189px;padding-right:6px;text-align:right;vertical-align:middle;}/*150112 수정 lyr*/
+#d_cmtpgn .lower_cmt li .wrap_btn_recm .btn_area {display:inline-block;width:185px;text-align:right;}/*141016 수정 lyr*/
+#d_cmtpgn .lower_cmt li .wrap_btn_recm button {margin-bottom:3px;}/*140828 추가 lyr*/
+
+/* QNA댓글 - 요약형 - 2depth 댓글 */
+#d_cmtpgn .lower_cmt2 li {position:relative; padding:16px 0 16px 290px; border-top:0px dotted #d9d9d9 !important;background-color:#fcfcfc;}/*140828 수정 lyr*/
+#d_cmtpgn .lower_cmt2 li {*zoom:1;} /* ie7 */
+#d_cmtpgn .lower_cmt2 li:after {content:""; display:block; clear:both; height:0; visibility:hidden;}
+#d_cmtpgn .lower_cmt2 li .wrap_nicnmname {float:left; width:114px; margin-left:-147px; padding:0 16px 0 17px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_cmt_arrow.png) no-repeat 2px 5px;}
+#d_cmtpgn .lower_cmt2 li .wrap_nicnmname .icon_reg_mobile {vertical-align:-1px;}
+#d_cmtpgn .lower_cmt2 li .wrap_cntt {display:inline-block;width:600px;vertical-align:middle;}/*140828 수정 lyr*/
+#d_cmtpgn .lower_cmt2 li .wrap_cntt {*display:inline;}
+#d_cmtpgn .lower_cmt2 li .wrap_cntt {padding-right:0;}/*140911 추가 lyr*/
+#d_cmtpgn .lower_cmt2 li .wrap_btn_report {display:inline-block;vertical-align:middle;padding-bottom:3px;text-align:right;line-height:14px;}/*141016 수정 lyr*/
+#d_cmtpgn .lower_cmt2 li .wrap_btn_report {*display:inline;}
+#d_cmtpgn .lower_cmt2 li .wrap_btn_report {position:static;}/*140911 추가 lyr*/
+#d_cmtpgn .lower_cmt2 li .date {*vertical-align:middle;}
+#d_cmtpgn .lower_cmt2 li .wrap_btn_recm {display:inline-block;width:189px;padding-right:6px;text-align:right;vertical-align:middle;}/*150112 수정 lyr*/
+#d_cmtpgn .lower_cmt2 li .wrap_btn_recm .btn_area {display:inline-block;width:185px;text-align:right;}/*141016 수정 lyr*/
+#d_cmtpgn .lower_cmt2 li .wrap_btn_recm button {margin-bottom:3px;}/*140828 추가 lyr*/
+
+
+/*댓글 - 축소형 - 2depth 댓글*//*140912 추가 lyr*/
+#d_cmtpgn .list_type_small .lower_cmt li {padding:16px 0 16px 235px}
+#d_cmtpgn .list_type_small .lower_cmt li .wrap_cntt {width:246px;}
+#d_cmtpgn .list_type_small .lower_cmt li.personally .wrap_cntt {}/*141016 수정 lyr*/
+#d_cmtpgn .list_type_small .lower_cmt li.personally .wrap_btn_recm {padding-right:8px;}/*141016 추가 lyr*/
+
+#d_cmtpgn .list_type_small .cmt_box_thum.album .cntt dl {width:348px;}
+#d_cmtpgn .list_type_small .cmt_box_thum.album .title {max-width:170px;}
+#d_cmtpgn .list_type_small .cmt_box_thum.album .artist_name {width:153px;}
+#d_cmtpgn .list_type_small .cmt_box_thum.album .cntt dd div.ellipsis {max-width:140px;}
+
+/*140924 추가 lyr*/
+#d_cmtpgn .list_type_small .cmt_box_thum.song .cntt dl {width:348px;}
+#d_cmtpgn .list_type_small .cmt_box_thum.song .title {max-width:170px;}
+#d_cmtpgn .list_type_small .cmt_box_thum.song .artist_name {width:153px;}
+#d_cmtpgn .list_type_small .cmt_box_thum.song .cntt dd div.ellipsis {max-width:140px;}
+
+#d_cmtpgn .list_type_small .cmt_box_thum.atist .cntt {width:410px;}
+
+#d_cmtpgn .list_type_small .cmt_box_thum.youtube .cntt {width:357px;}
+
+#d_cmtpgn .list_type_small .cmt_box_thum.mv .cntt .title {max-width:170px;}/*140925 수정 lyr*/
+#d_cmtpgn .list_type_small .cmt_box_thum.mv .cntt dl {width:365px;}/*140925 추가 lyr*/
+#d_cmtpgn .list_type_small .cmt_box_thum.mv .cntt .artist_name {width:170px;}/*140925 수정 lyr*/
+#d_cmtpgn .list_type_small .cmt_box_thum.mv .artist_name .ellipsis {max-width:154px;}/*140925 수정 lyr*/
+
+#d_cmtpgn .list_type_small .wrap_insert_cmt div.wrap_all.wide {width:378px;}
+
+#d_cmtpgn .list_type_small .cmt_box_thum.mv .cntt {width:350px;}
+
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum {width:337px;}
+
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.mv .title {max-width:85px;}
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.mv .artist_name {max-width:85px;}
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.mv .ellipsis {max-width:85px;}
+
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.album .cntt dl {width:175px;}
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.album .title {width:75px;}
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.album .artist_name,
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.album .artist_name .ellipsis {max-width:75px;}
+
+/*140924 추가 lyr*/
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.song .cntt dl {width:175px;}
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.song .title {width:75px;}
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.song .artist_name,
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.song .artist_name .ellipsis {max-width:75px;}
+
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.youtube .cntt {max-width:188px;}
+
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.atist .cntt {max-width:244px;}
+
+#d_cmtpgn .list_type_small .re_notice .wrap_cmt_box_thum .cmt_box_thum.mv dl {width:200px;}/*140925 추가 lyr*/
+
+/* 댓글 - 첨부파일 */
+#d_cmtpgn .cmt_box_thum {position:relative;width:100%;}/*140828 수정 lyr*/
+#d_cmtpgn .cmt_box_thum {*display:inline; *zoom:1;}
+#d_cmtpgn .cmt_box_thum:after {content: ".";display: block;height: 0px;clear: both;visibility: hidden;font-size: 0;line-height: 0;}/*140828 추가 lyr*/
+#d_cmtpgn .cmt_box_thum {*display:inline; *zoom:1;}
+#d_cmtpgn .cmt_box_thum {border:none;padding-left:0;background:none;display: block;}/*140911 추가 lyr*/
+#d_cmtpgn .cmt_box_thum .image {float:left; border-right:1px solid #d9d9d9;vertical-align:middle;}/*140828 수정 lyr*/
+#d_cmtpgn .cmt_box_thum .image {margin-left:0;}/*140911 추가 lyr*/
+#d_cmtpgn .cmt_box_thum .image a, #d_cmtpgn .cmt_box_thum .image span, #d_cmtpgn .cmt_box_thum .image img {display:block;}
+#d_cmtpgn .cmt_box_thum .image a, #d_cmtpgn .cmt_box_thum .image span {position:relative;}
+#d_cmtpgn .cmt_box_thum .image a .icon_cmt_mv, #d_cmtpgn .cmt_box_thum .image span .icon_cmt_mv {display:block; position:absolute; left:50%; top:50%; width:32px; height:32px; margin:-16px 0 0 -16px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_cmt_mv.png) no-repeat left top;}
+#d_cmtpgn .cmt_box_thum .image a .icon_cmt_mv {*cursor:pointer;} /* ie7 */
+#d_cmtpgn .cmt_box_thum .image a .playtime {display:block; position:absolute; bottom:5px; right:5px; margin-left:24px; height:16px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_playtime.png) no-repeat right 0;}
+#d_cmtpgn .cmt_box_thum .image a .playtime {*cursor:pointer;} /* IE7 */
+#d_cmtpgn .cmt_box_thum .image a .playtime .time {display:block; position:relative; top:0; left:-24px; height:16px; margin-right:-19px; padding-left:23px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_playtime.png) no-repeat 0 0; color:#fff; font-size:11px; line-height:16px; font-family:Arial, "Apple Gothic", sans-serif;}
+#d_cmtpgn .cmt_box_thum .image span .thumb_frame,
+#d_cmtpgn .cmt_box_thum .image a .thumb_frame {display:inline-block;position:absolute;top:0;left:0;width:46px;height:46px;border:1px solid #000;opacity: 0.1; filter: alpha(opacity=10);}/*140828 수정 lyr*/
+#d_cmtpgn .cmt_box_thum .cntt {display:inline-block;padding:0 15px;}/*140828 수정 lyr*/
+#d_cmtpgn .list_cmt ul li.personally .cmt_box_thum .cntt .wrap_btn {padding-right:0;}/*150112 추가 lyr*/
+#d_cmtpgn .cmt_box_thum .cntt .wrap_btn .btn_icon {*margin:0; *margin-left:4px;}
+#d_cmtpgn .cmt_box_thum .title {overflow:hidden;display:block; font-weight:bold; font-size:12px; line-height:14px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;word-break: break-all;vertical-align: top;}/*140912 수정 lyr*/
+#d_cmtpgn .cmt_box_thum .artist_name {float:left;margin-left:12px;padding-left:12px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bl_artist.png) no-repeat left top;line-height:14px;}/*140912 수정 lyr*/
+#d_cmtpgn .cmt_box_thum .artist_name .ellipsis {display:inline-block;*display:inline;width:auto;max-width:270px;vertical-align:top;}/*140912 수정 lyr*/
+#d_cmtpgn .cmt_box_thum .info {clear:both;padding-top:3px;}/*140828 추가 lyr*/
+#d_cmtpgn .cmt_box_thum .info .ellipsis {width:100%;}
+
+
+#d_cmtpgn .cmt_box_thum dd {font-size:12px; line-height:14px;vertical-align:top;color:#999;}/*140828 수정 lyr*/
+#d_cmtpgn .cmt_box_thum dd a, #d_cmtpgn .cmt_box_thum dd span {vertical-align:top;}
+#d_cmtpgn .cmt_box_thum dd span.ellipsis {width:auto;}/*140709 추가 lyr*/
+#d_cmtpgn .cmt_box_thum dd a {color:#666;}
+#d_cmtpgn .cmt_box_thum .btn_close {position:absolute; right:0; top:0;}
+#d_cmtpgn .cmt_box_thum .btn_close {*margin:0;} /* ie7 */
+#d_cmtpgn .cmt_box_thum .btn_close .odd_span {width:14px; height:14px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_close.png) no-repeat left top; overflow:hidden; text-indent:-9999px;}
+#d_cmtpgn .cmt_box_thum .btn_more span.odd_span {height:14px;background-position:-137px 1px;}/*140924 수정 lyr*/
+
+
+#d_cmtpgn .cmt_box_thum.album .cntt {padding-top:8px;vertical-align:middle;}/*140828 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.album .cntt {*padding-top:7px;} /* ie7 */
+#d_cmtpgn .cmt_box_thum.album .title {float:left;width:auto;max-width:290px;}/*140912 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.album .artist_name {width:290px;} 
+#d_cmtpgn .cmt_box_thum.album .cntt .wrap_btn {float:left;margin-top:5px;margin-bottom:5px;width:58px;padding:0;}/*140828 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.album .cntt .wrap_btn {*margin-top:3px;} /* ie7 */
+#d_cmtpgn .cmt_box_thum.album .cntt dl {float:left;width:600px;padding-left:14px;}/*140912 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.album .cntt dd {margin-top:0;}/*140911 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.album .cntt dd div.ellipsis {width:auto;}/*140911 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.album .cntt dd .wrap_atist {display:inline-block; position:relative; vertical-align:top;height:14px;}/*140924 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.album .cntt dd .wrap_atist {*display:inline; *zoom:1;} /* ie7 */
+#d_cmtpgn .cmt_box_thum.album .cntt dd .wrap_atist ul li {border-top:0 !important;}
+
+#d_cmtpgn .cmt_box_thum.album .cntt dd div.ellipsis .none {text-indent:-9999px; *text-indent:0; font-size:11px; line-height:13px; *font-size:0px; *line-height:0; vertical-align:top;}
+
+
+#d_cmtpgn .cmt_box_thum.song .cntt {padding-top:8px;vertical-align:middle;float:left}/*140924 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.song .cntt {*padding-top:7px;} /* ie7 *//*140924 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.song .cntt .wrap_btn {float:left;margin-top:5px;margin-bottom:5px;width:58px;padding:0;}/*140924 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.song .cntt .wrap_btn {*margin-top:3px;} /* ie7 *//*140924 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.song .title {float:left;width:auto;max-width:290px;}/*140924 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.song .artist_name {width:290px;} /*140924 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.song .cntt dl {float:left;width:570px;padding-left:10px;}/*140924 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.song .cntt dd {margin-top:0;}/*140924 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.song .cntt dd div.ellipsis {width:auto;max-width:270px;}/*140924 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.song .cntt dd .wrap_atist {display:inline-block; position:relative;  vertical-align:top;height:14px;}/*140924 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.song .cntt dd .wrap_atist {*display:inline; *zoom:1;} /* ie7 */
+#d_cmtpgn .cmt_box_thum.song .cntt dd .wrap_atist ul li {border-top:0 !important;}
+#d_cmtpgn .cmt_box_thum.song .cntt dd .album_ellipsis {display:inline-block;max-width:280px;white-space: nowrap;text-overflow:ellipsis;overflow: hidden}
+
+#d_cmtpgn .cmt_box_thum.song .cntt dd div.ellipsis .none{text-indent:-9999px; *text-indent:0; font-size:11px; line-height:13px; *font-size:0px; *line-height:0; vertical-align:top;}
+
+#d_cmtpgn .cmt_box_thum.atist .cntt {padding-top:8px;width:660px;}/*140902 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.atist .cntt .title {max-width:680px;}/*140912 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.atist .cntt .title {margin-bottom:0;}/*140911 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.atist.atist_type .cntt .title {max-width:336px;}/* 140528_수정 aty */
+#d_cmtpgn .cmt_box_thum.atist .cntt dd {margin-top:2px;}
+
+#d_cmtpgn .cmt_box_thum.youtube {padding-left:0;}/*140911 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.youtube .image {margin-left:0;}/*14911 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.youtube .cntt {position:relative; display:inline-block;width:613px;min-height:49px; padding-top:10px;vertical-align:middle;}/*140828 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.youtube .cntt {padding:10px 15px 0;}/*140911 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.youtube .cntt .title {display:inline-block;line-height:16px;height: 30px;color: #555;line-height: 16px;white-space: normal;}/*140912 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.youtube .cntt .wrap_bnt {position:absolute; left:15px; bottom:0px;}/*140828 수정 lyr*/
+
+#d_cmtpgn .cmt_box_thum.mv {padding-left:0;}/*140911 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.mv .image {margin-left:0;}/*140911 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.mv .cntt {display: inline-block;width:620px;padding-top: 8px;vertical-align: middle;}/*140902 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.mv .cntt dl {display:inline-block;}/*140912 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.mv .cntt .title {float: left;width: auto;max-width: 290px;}/*140912 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.mv .cntt .artist_name {width:300px;}/*140902 수정 lyr*/
+
+#d_cmtpgn .cmt_box_thum.mv .cntt .info {clear:both;padding-top:3px;}/*140828 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.mv .cntt .info span {}/*140828 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.mv .cntt .info .date {display:inline-block;margin-left:9px;padding-left:9px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bl_artist.png) no-repeat left center;}/*140828 추가 lyr*/
+
+#d_cmtpgn .cmt_box_thum.mv .icon_agellevel {vertical-align:middle;}
+#d_cmtpgn .cmt_box_thum.mv dd {margin-top:0;}/*140911 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.mv .cntt dd div.ellipsis {display:inline-block;*display:inline;white-space: nowrap;text-overflow:ellipsis;overflow: hidden}/* 140410_수정 aty */
+#d_cmtpgn .cmt_box_thum.mv .cntt dd div.ellipsis a {vertical-align:top;}/*140912 추가 lyr*/
+#d_cmtpgn .cmt_box_thum.mv .cntt dd .wrap_atist {display:inline-block; position:relative;  vertical-align:top;height:14px;}/*140924 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.mv .cntt dd .wrap_atist {*display:inline; *zoom:1;} /* ie7 */
+#d_cmtpgn .cmt_box_thum.mv .cntt dd .wrap_atist ul li {border-top:0 !important;}
+#d_cmtpgn .cmt_box_thum.mv .cntt dd div.ellipsis .none {text-indent:-9999px; *text-indent:0; font-size:11px; line-height:13px; *font-size:0px; *line-height:0; vertical-align:top;}
+#d_cmtpgn .cmt_box_image {position:relative;}
+/*140828 추가 lyr*/
+#d_cmtpgn .cmt_box_image .cmt_thumb_wrap {overflow: hidden;position: relative;width: 120px;height: 120px;}/*141121 수정 lyr*/
+#d_cmtpgn .cmt_box_image .cmt_thumb_wrap .thumb {overflow: hidden;position: relative;display: inline-block;width: 120px;height: 120px;font-size: 0;line-height: 0;text-align: center;vertical-align: middle;cursor: pointer;}/*141121 수정 lyr*/
+#d_cmtpgn .cmt_box_image .cmt_thumb_wrap .thumb img {display: inline-block;width: auto;max-width: 120px;height:auto;vertical-align: middle;}/*141121 수정 lyr*/
+#d_cmtpgn .cmt_box_image .cmt_thumb_wrap .thumb .thumb_frame {position: absolute;top: 0;left: 0;width: 118px;height: 118px;border:1px solid #000; opacity:0.2;filter:alpha(opacity=20);}/*141121 수정 lyr*/
+#d_cmtpgn .cmt_box_image .cmt_thumb_wrap .thumb .wrap_vertical {display: inline-block;width: 0px;vertical-align: middle;visibility: hidden;height: 120px;}/*141121 수정 lyr*/
+#d_cmtpgn .cmt_box_image .cmt_thumb_wrap .thumb.ex_height img {max-width: 120px;max-height: none;}
+
+#d_cmtpgn .cmt_box_image .thumb {*display:inline; *zoom:1;} /* ie7 */
+#d_cmtpgn .cmt_box_image a.thumb .thumb_frame {*cursor:pointer} /* ie7 */
+#d_cmtpgn .cmt_box_image .thumb_frame {position:absolute; left:0; right:0; top:0; bottom:0; border:1px solid #000; opacity:0.2;}
+/*#d_cmtpgn .cmt_box_image img {display:block; max-width:120px;}140828 삭제 lyr*/
+#d_cmtpgn .cmt_box_image .icon {display:inline-block;position:absolute;right:5px;bottom:5px;width:24px;height:24px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/ico_img_140902.png) no-repeat;}/*141121 수정 lyr*/
+#d_cmtpgn .cmt_box_image .icon_viewlk_image {position:absolute;display:none;left:0px;top:0px;width:120px;height:120px;margin:0;background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/icon_viewlk_image.png) no-repeat;}/*141121 수정 lyr*/
+@media \0screen {#d_cmtpgn .cmt_box_image .thumb_frame {border:1px solid #d9d9d9;}} /* ie8 */
+#d_cmtpgn .cmt_box_image .thumb_frame {*border:1px solid #d9d9d9;} /* ie7 */
+#d_cmtpgn .cmt_box_image .btn_close {position:absolute; right:0; top:0;}
+#d_cmtpgn .cmt_box_image .btn_close .odd_span {width:14px; height:14px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_close.png) no-repeat left top; overflow:hidden; text-indent:-9999px;}
+
+#d_cmtpgn .cmt_box_image .cmt_thumb_wrap .thumb:hover .icon {display:none;}
+#d_cmtpgn .cmt_box_image .cmt_thumb_wrap .thumb:hover .icon_viewlk_image {display:block;}
+
+#d_cmtpgn .cmt_box_thum.link {padding:7px 0;}/*140828 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.link a {text-decoration:underline;}/*140828 수정 lyr*/
+#d_cmtpgn .cmt_box_thum.link .thumb {vertical-align:middle;}/*140828 수정 lyr*/
+
+/*.cmt_box_link .btn_close {height:7px; margin-left:4px; vertical-align:middle;}
+.cmt_box_link .btn_close {*margin-left:8px; *vertical-align:3px;} ie7
+.cmt_box_link .btn_close .odd_span {width:7px; height:7px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_sprite_gray.png) no-repeat -1338px top; overflow:hidden; line-height:0; text-indent:-9999px;}140828 삭제 lyr*/
+
+/* 댓글 - 첨부파일 레이어 */
+#d_cmtpgn .l_popup_cmt {position:absolute; top:0; color:#666; font-size:12px; line-height:18px;}
+#d_cmtpgn .l_popup_cmt h1 {font-family: AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic"; color:#1a1a1a; font-weight:bold; font-weight:normal; font-size:22px; line-height:22px;height:43px;}
+#d_cmtpgn .l_popup_cmt .cntt {background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/popup_cmt.png) no-repeat left 9px;padding:48px 32px 27px 32px;margin-bottm:15px;}
+#d_cmtpgn .l_popup_cmt .btn_close {position:absolute; right:30px; top:30px;}
+#d_cmtpgn .l_popup_cmt .btn_close .odd_span {display:inline-block;width:23px;height:23px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/btn_layerpop_close.png) repeat-x 0 0;text-indent:-9999px;}
+#d_cmtpgn .l_popup_cmt .shadow {display:block; position:absolute; left:0; bottom:-15px; width:100%; height:42px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/popup_cmt.png) no-repeat left bottom;}
+#d_cmtpgn .l_popup_cmt .bullet {display:block; position:absolute; top:0; left:34px; width:17px; height:11px;background-image:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_layerpopup.png);background-position:0 -120px;}
+#d_cmtpgn .l_popup_cmt .wrap_search {position:relative; margin:0; margin-bottom:13px; text-align:left;z-index:10;}/*140828 수정 lyr*/
+#d_cmtpgn .l_popup_cmt .wrap_search.type02 {margin-bottom:0;}
+#d_cmtpgn .l_popup_cmt .wrap_search.type02 {*margin-bottom:8px;} /* ie7 */
+#d_cmtpgn .l_popup_cmt .wrap_search .btn_b31 {margin:0;}
+#d_cmtpgn .l_popup_cmt .wrap_search .btn_b31 {*margin-left:4px;} /* ie7 */
+#d_cmtpgn .l_popup_cmt .wrap_search.on .btn_b31 {*margin-left:0;}
+#d_cmtpgn .l_popup_cmt .paginate {margin-top:20px;}
+#d_cmtpgn .l_popup_cmt .search_wrong {padding:127px 0 153px; color:#333; font-size:18px; line-height:1.4em; font-family: AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic",arial,"돋움","dotum",sans-serif, "Apple Gothic", sans-serif; letter-spacing:-1px; text-align:center;}
+#d_cmtpgn .l_popup_cmt .search_loading {padding:120px 0 132px; text-align:center;}
+#d_cmtpgn .l_popup_cmt .search_loading p {color:#1a1a1a;}
+#d_cmtpgn .l_popup_cmt .search_loading p {*margin-top:5px;} /* ie7 */
+#d_cmtpgn .l_popup_cmt .wrap_search.on {*z-index:5;}
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search {position:absolute; left:0; top:39px; z-index:5; width:362px; max-height:300px; padding:0; border:1px solid #dadada;background-color:#fff;overflow-x:hidden; overflow-y:auto;}
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search {*top:34px;} /* ie7 */ /* 140410_수정 aty */
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search .btn_b31 {*margin-left:0;} /* ie7 */
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search li {padding:0 7px;}
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search li.mhover {background-color:#f5f5f5;}
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search li a {display:block; height:24px; color:#666; line-height:24px; text-decoration:none; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search li .text_search {color:#00b523; font-weight:bold; text-decoration:underline;}
+/*140828 추가 lyr*/
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 {} 
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result {}
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result li {*margin-top:-2px !important;}/*140902 추가 lyr*/
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result li.cate {position: relative;height: 18px;padding: 6px 0 0 7px;margin: 0 0 -1px 0;background: #f0f0f0;border-top: 1px solid #d9d9d9;border-bottom: 1px solid #d9d9d9;color: #1a1a1a;font-size: 12px;line-height: 12px;font-weight: bold;}/*140902 수정 lyr*/
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result li.class02 {position:relative;}
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result li.class02 a {display: block;height: 48px;padding: 8px 0 0 8px;margin: 0 0 0 1px;border-top: 1px solid #e5e5e5;cursor:pointer;}/*140902 수정 lyr*/
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result li .thumb {display: block;float: left;position: relative;width: 40px;height: 40px;}
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result li .thumb .thumb_frame {position:absolute;left:0;top:0;width:38px;height:38px;border:1px solid #000;opacity:0.2;filter:alpha(opacity=20);}
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result li a .info {float: left;width: 213px;margin: 2px 0 0 11px;}
+
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result li.class02 a .info span {display: inline-block;max-width: 213px;line-height:1.4em;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color:#1a1a1a;font-weight:bold;}/*140828 수정 lyr*/
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result li a .info span strong {color: #00b523;vertical-align: bottom;}
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result li a .info span.artist_info {display:block;font-size:11px;font-weight:normal;letter-spacing: 0;line-height:13px;}/*140828 수정 lyr*/
+#d_cmtpgn .l_popup_cmt .wrap_search .wrap_auto_search.type02 .thumb_result li .btn_wrap {position:absolute;top:16px;right:7px;}
+
+#d_cmtpgn .l_popup_cmt .wrap_btn_c {margin:16px 0;}
+#d_cmtpgn .l_popup_cmt .wrap_btn_c.type02 {margin:0;padding:16px 0;}/*140902 수정 lyr*/
+/*
+.l_popup.album_prev {}
+.l_popup.album_prev .cntt {padding:46px 16px 15px; background-color:#fff; border:1px solid #666;}
+.l_popup.album_prev .wrap_prev {display:block; position:relative; width:496px; height:496px;}
+.l_popup.album_prev .wrap_prev img {display:block;}
+.l_popup.album_prev .wrap_prev .prev_frame {display:block; position:absolute; left:0; top:0; width:496px; height:496px; background:url(//cdnticket.melon.co.kr/resource/image/web/album/bg_frame_prev.png) no-repeat left top;}
+.l_popup.album_prev a.wrap_prev .prev_frame {*cursor:pointer;} 
+.l_popup.album_prev .wrap_prev .icon_viewlk_image {display:none;}
+.l_popup.album_prev a.wrap_prev .icon_viewlk_image {*cursor:pointer;} 
+.l_popup.album_prev a.wrap_prev:hover .icon_viewlk_image {display:block;}141217 삭제 lyr*/
+
+/* 첨부팝업 내 검색결과 sorting */
+#d_cmtpgn .wrap_sort_cmt {margin-bottom:20px;}
+#d_cmtpgn .wrap_sort_cmt {*zoom:1;} /* ie7 */
+#d_cmtpgn .wrap_sort_cmt:after {content:""; display:block; clear:both; height:0; visibility:hidden;}
+#d_cmtpgn .wrap_sort_cmt .line01 {position:relative; top:4px;color:#333}
+#d_cmtpgn .wrap_sort_cmt .line01 label span{ color:#aaa}
+#d_cmtpgn .wrap_sort_cmt .btn_base02 {height:26px;}
+
+/* 댓글 - 검색 리스트 */
+/*#d_cmtpgn .tb_list_search {border-top:1px solid #ccc; border-bottom:1px solid #ccc;}*/
+#d_cmtpgn .tb_list_search th, #d_cmtpgn .tb_list_search td {line-height:1.2em; text-align:center; vertical-align:middle;}
+#d_cmtpgn .tb_list_search th.t_left, #d_cmtpgn .tb_list_search td.t_left {text-align:left;}
+#d_cmtpgn .tb_list_search th.t_right, #d_cmtpgn .tb_list_search td.t_right {text-align:right;}
+#d_cmtpgn .tb_list_search th {height:30px; background-color:#eee;color:#333; font-size:12px; line-height:30px; font-family: AppleSDGothicNeo-Regular, "돋움", "Dotum", "Apple Gothic", sans-serif;}
+#d_cmtpgn .tb_list_search td {height:48px; border-bottom:1px solid #e9e9e9; font-size:12px;line-height:48px;color:#666}
+#d_cmtpgn .tb_list_search tr.on td {background-color:#fafafa;}
+#d_cmtpgn .tb_list_search th .wrap, #d_cmtpgn .tb_list_search td .wrap {padding:0 8px;}
+#d_cmtpgn .tb_list_search th .wrap, #d_cmtpgn .tb_list_search td .wrap {*zoom:1;} /* ie7 */
+#d_cmtpgn .tb_list_search th .wrap.pd_none, #d_cmtpgn .tb_list_search td .wrap.pd_none {padding:0;}
+#d_cmtpgn .tb_list_search th .wrap.left_none, #d_cmtpgn .tb_list_search td .wrap.left_none {padding-left:0;}
+#d_cmtpgn .tb_list_search th .wrap.right_none, #d_cmtpgn .tb_list_search td .wrap.right_none {padding-right:0;}
+#d_cmtpgn .tb_list_search th .wrap.left, #d_cmtpgn .tb_list_search td .wrap.left {padding-left:16px;}
+#d_cmtpgn .tb_list_search td .wrap.left .icon_agellevel {font-size:12px;*text-indent:0;vertical-align:middle;}/* 140410_aty 수정 */
+#d_cmtpgn .tb_list_search th .wrap.right, #d_cmtpgn .tb_list_search td .wrap.right {padding-right:16px;}
+#d_cmtpgn .tb_list_search td .wrap {color:#666;} /* 140122_miok */
+#d_cmtpgn .tb_list_search td .wrap .thumb_frame02 {position:absolute;top:0;left:0;width:56px;height:32px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_frame_48_48.png) no-repeat 0 -48px}/* 140122_miok */
+#d_cmtpgn .tb_list_search .ellipsis {display:inline-block; overflow:hidden; vertical-align:middle; text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;}
+#d_cmtpgn .tb_list_search .ellipsis {*position:relative; *display:inline;}
+#d_cmtpgn .tb_list_search .ellipsis span {vertical-align:middle;}/* 140410_aty 수정 */
+#d_cmtpgn .tb_list_search .wrap_atist {display:inline-block; position:relative; vertical-align:middle; z-index:1;}/*140502 수정 lyr*/
+#d_cmtpgn .tb_list_search .wrap_atist {*display:inline; *zoom:1;} /* ie7 */
+#d_cmtpgn .tb_list_search .thumb {display:inline-block; position:relative; margin-right:12px; vertical-align:middle;}
+#d_cmtpgn .tb_list_search .thumb img {display:block;}
+#d_cmtpgn .tb_list_search .thumb .thumb_frame {display:block; position:absolute; left:0; top:0; width:32px; height:32px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_atach_frame.png) no-repeat left top;}
+#d_cmtpgn .tb_list_search a.thumb .thumb_frame {*cursor:pointer;} /* ie7 */
+#d_cmtpgn .tb_list_search .text_search {color:#7CB710; font-weight:bold; text-decoration:underline;}/* 140410_aty 수정 */
+#d_cmtpgn .tb_list_search .text_search .text_search {display:inline;}
+
+#d_cmtpgn .tb_list_search .no_result .ellipsis,
+#d_cmtpgn .tb_list_search .no_result .ellipsis .text_search {color:#c0c0c0; }
+
+/* 댓글 - 기타 */
+#d_cmtpgn .text_reprt {margin-bottom:6px; padding-bottom:6px; border-bottom:1px solid #e5e5e5;}
+
+/* 이미지 크게 보기 내 댓글 */
+/*150511 수정 lyr : .wrap_viewlk_image_cmt에 #d_cmtpgn 클래스 추가 및 위치 이동*/
+#d_cmtpgn .wrap_viewlk_image_cmt {width:429px; border-left:1px solid #d9d9d9; }/*140526 수정 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .viewlk_image_cmt {height:582px; padding:1px 16px 15px;overflow-y:scroll;}/*140526 수정 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .viewlk_image_cmt {*position:relative;}/*140526 수정 lyr*/
+
+#d_cmtpgn .wrap_viewlk_image_cmt .re_title {margin:0; margin-bottom:11px; font-size:14px;font-weight:bold; line-height:1.2em; font-family: AppleSDGothicNeo-Regular, "돋움","dotum",sans-serif, "Apple Gothic", sans-serif;}/*150511 수정 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .list_cmt .wrap_btn {margin-top:10px;padding:0;}/*140912 추가 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .textarea .ancm {padding:8px; padding-bottom:4px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .re_notice {margin-bottom:10px; padding:0; padding-bottom:4px; border:0; border-bottom:1px solid #e5e5e5;background-color:#fff;}/*140526 수정 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .re_notice .wrap_btn {margin-top:4px;padding-right:0;}/*140526 수정 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .re_notice .wrap_btn .wrap_btn_atach {margin-right:4px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .re_notice .wrap_btn .wrap_btn_sns {float:left;}
+#d_cmtpgn .wrap_viewlk_image_cmt .re_notice .wrap_btn .wrap_btn {float:right; margin-top:1px; padding:0;}
+#d_cmtpgn .wrap_viewlk_image_cmt .re_notice .wrap_btn .wrap_btn {*margin-top:-1px;} /* ie7 */
+#d_cmtpgn .wrap_viewlk_image_cmt .re_notice .wrap_btn .btn_base .even_span {min-width:48px; font-size:12px; letter-spacing:0;}
+#d_cmtpgn .wrap_viewlk_image_cmt .re_notice .wrap_cmt_cntt .wrap_re_notice {padding-right:16px;}
+
+#d_cmtpgn .wrap_viewlk_image_cmt .wrap_cmt_cntt {padding:14px 8px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .wrap_cmt_cntt .wrap_nicnmname {float:none; width:auto; margin:0; margin-bottom:10px; padding:0;}
+#d_cmtpgn .wrap_viewlk_image_cmt .wrap_cmt_cntt .wrap_cntt {padding:0;}
+#d_cmtpgn .wrap_viewlk_image_cmt .wrap_cmt_cntt .wrap_re_notice {margin:0 -24px 0 -8px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .wrap_cmt_cntt .wrap_re_notice {*zoom:1;} /* ie7 */
+#d_cmtpgn .wrap_viewlk_image_cmt .wrap_cmt_cntt .wrap_re_notice .re_notice {padding-right:16px;}
+
+#d_cmtpgn .wrap_viewlk_image_cmt .list_cmt {border-color:#e6e6e6;}
+#d_cmtpgn .wrap_viewlk_image_cmt .list_cmt .date {margin-left:4px;color:#999;}
+#d_cmtpgn .wrap_viewlk_image_cmt .list_cmt .wrap_insert_cmt .wrap_bg_insert {padding:11px 8px 11px 24px; background-position:9px 11px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .list_cmt .wrap_insert_cmt .wrap_bg_insert .wrap_btn_r {margin-top:4px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .list_cmt .wrap_insert_cmt .btn_base02 .even_span {min-width:48px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .list_cmt .wrap_btn .btn_text.arrow_u02, 
+#d_cmtpgn .wrap_viewlk_image_cmt .list_cmt .wrap_btn .btn_text.arrow_d02 {margin-top:0;}/*140912 추가 lyr*/
+
+#d_cmtpgn .wrap_viewlk_image_cmt .lower_cmt li {padding:14px 8px 14px 24px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .lower_cmt .wrap_nicnmname {float:none; width:auto; margin:0 0 8px -17px; padding:0; padding-left:17px; }
+#d_cmtpgn .wrap_viewlk_image_cmt .lower_cmt .wrap_nicnmname .date {margin-left:8px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .lower_cmt .wrap_cntt {padding-right:0;}
+#d_cmtpgn .wrap_viewlk_image_cmt .lower_cmt .wrap_cntt .cntt {margin-bottom:4px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .cmt_box_thum .cntt {padding-right:30px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .view_more	{border:1px solid #d9d9d9; width:411px; height:30px; display:inline-block; margin-left:16px;vertical-align:top;}/*140526 수정 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .view_more button {border: 1px solid red; display:inline-block; zoom:1; margin:0; padding:0; background:none; border:none; text-decoration:none !important; text-align:center; vertical-align:middle; white-space:nowrap; cursor:pointer;text-align:center; font-size:11px; font-family: AppleSDGothicNeo-Regular, "dotum","돋움", "Apple Gothic", sans-serif; color:#666;} /*141217 수정 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .view_more button {*margin:0 2px; *overflow:visible;} /* ie7 *//*141217 추가 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .view_more button span.odd_span {display:block; position:relative;}/*141217 추가 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .view_more button::-moz-focus-inner {padding:0; border:0;} /* 파이어폭스 버튼 내부 여백 제거 *//*141217 추가 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .view_more button.disabled {cursor:default;}/*141217 추가 lyr*/
+
+#d_cmtpgn .wrap_viewlk_image_cmt .view_more .more	{float:left; width:411px; /*border-right:1px solid #d9d9d9;*/ background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_arrow_btm.png) no-repeat 225px 13px; padding:2px 0 0; line-height:1.1em; height:30px;}/*140526 수정 lyr*/
+#d_cmtpgn .wrap_viewlk_image_cmt .view_more .top	{float:right; text-align:left; width:78px; *width:71px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bul_arrow_up2.png) no-repeat 53px 13px; padding:2px 0 0 19px; *padding:6px 0 4px 17px; line-height:1.1em; height:30px;}
+#d_cmtpgn .wrap_viewlk_image_cmt .wrap_cmt_cntt .wrap_btn_report {position:absolute;}/*141016 수정 lyr*/
+
+/*140828 추가 lyr*//*댓글 이미지팝업일 경우 css 해제*/
+#d_cmtpgn .wrap_viewlk_image_cmt .list_cmt .ellipsis a {color:#555;}
+#d_cmtpgn .wrap_viewlk_image_cmt .wrap_cmt_cntt .wrap_btn_report {right:16px;top:16px;bottom:initial;}
+#d_cmtpgn .wrap_viewlk_image_cmt .wrap_cmt_cntt .wrap_re_notice .wrap_btn .btn_text.arrow_d02 {float:none;}
+#d_cmtpgn .wrap_viewlk_image_cmt .wrap_cmt_cntt .wrap_btn .wrap_btn_recm {float:none;}
+#d_cmtpgn .wrap_viewlk_image_cmt .lower_cmt li {background:#fff;}
+#d_cmtpgn .wrap_viewlk_image_cmt .lower_cmt li .wrap_cntt {width:auto;}
+#d_cmtpgn .wrap_viewlk_image_cmt .lower_cmt li .wrap_btn_report {position: absolute;right: 16px;top: 16px;padding:0;}
+#d_cmtpgn .wrap_viewlk_image_cmt .lower_cmt li .wrap_btn_recm {display: inline-block;width: 178px;margin: 0;padding:0 ;text-align: left;vertical-align: middle;}
+
+/*140828 추가 lyr*/
+#d_cmtpgn .list_cmt.list_type_visitor {}
+#d_cmtpgn .list_type_visitor .wrap_cmt_cntt {padding-left:225px;}
+#d_cmtpgn .list_type_visitor .wrap_cmt_cntt .wrap_nicnmname {width:181px;margin-left:-225px;}
+#d_cmtpgn .list_type_visitor .lower_cmt li {padding-left:225px;}
+#d_cmtpgn .list_type_visitor .lower_cmt li .wrap_nicnmname {width:110px;margin-left:-143px;}
+#d_cmtpgn .list_type_visitor .lower_cmt li .wrap_cntt {*display:inline;width:450px;padding-right:14px;}
+#d_cmtpgn .list_type_visitor .lower_cmt .personally .wrap_cntt {padding-right:20px;}/*150112 추가 lyr*/
+#d_cmtpgn .list_type_visitor .wrap_insert_cmt .wrap_bg_insert {padding-left:102px;background-position:84px 20px;}
+
+/* 140312_add kcu  */
+#d_cmtpgn .tb_list .no_result .no, .no_result .ellipsis span{color:#c0c0c0;}
+#d_cmtpgn .tb_list.type02 .ellipsis.rank02 {color:#81a376 !important;}
+#d_cmtpgn .tb_list.type02 .ellipsis.rank02 a{color:#81a376 !important;}
+
+/* 140320_add */
+.d_layer_rel {position: relative;}
+.d_layer_rel.on {z-index: 3;}
+
+
+/* 140502_추가 aty * /
+
+/* 개인정보 제3자 제공 동의 140220_miok  뮤직스토리
+.layer_popup .wrap_agrmt .ico_cau {background-position:0 3px; line-height:18px;}
+.layer_popup .wrap_agrmt .agrmt_info {margin-top:20px; padding:20px 23px; border:1px solid #d9d9d9;}
+.layer_popup .wrap_agrmt .agrmt_info li {color:#666;}
+.layer_popup .wrap_agrmt .tb_agrmt {border-top:2px solid #808080; border-bottom:1px solid #808080;}
+.layer_popup .wrap_agrmt .tb_agrmt table {}
+.layer_popup .wrap_agrmt .tb_agrmt th {padding:11px 10px 10px 24px; background-color:#f7f7f7; border-bottom:1px solid #e6e6e6; color:#1a1a1a;}
+.layer_popup .wrap_agrmt .tb_agrmt td {padding:11px 10px 10px 16px; border-bottom:1px solid #e6e6e6;}*/
+
+
+/* 개인정보 제3자 제공 동의 141208 삭제 lyr
+.layer_popup .wrap_agrmt {}
+.layer_popup .wrap_agrmt .ico_cau {background-position:0 3px; line-height:18px;}
+.layer_popup .wrap_agrmt .agrmt_info {margin-top:12px; padding-top:15px; border-top:1px solid #ebebeb;}
+.layer_popup .wrap_agrmt .agrmt_info li {color:#666;}
+.layer_popup .wrap_agrmt .agrmt_info p {padding:3px 0 0 10px;}
+.layer_popup .wrap_agrmt .agrmt_info p .btn_text .text {font-size:12px;color:#1a1a1a;}
+.layer_popup .wrap_agrmt .tb_agrmt {margin-top:8px;border-top:2px solid #b8b8b8; border-bottom:1px solid #b8b8b8;}
+.layer_popup .wrap_agrmt .tb_agrmt table {}
+.layer_popup .wrap_agrmt .tb_agrmt th {padding:11px 10px 10px 24px; background-color:#f7f7f7; border-bottom:1px solid #e6e6e6; border-right:1px solid #e6e6e6;color:#1a1a1a;}
+.layer_popup .wrap_agrmt .tb_agrmt td {padding:11px 10px 10px 16px; border-bottom:1px solid #e6e6e6;}
+.layer_popup .wrap_agrmt .tb_agrmt tr.last th,
+.layer_popup .wrap_agrmt .tb_agrmt tr.last td {border-bottom:none;}
+.layer_popup .wrap_agrmt .agrmt_text {font-size:11px;color:#999999;letter-spacing:-1px;line-height: 16px;}
+*/
+
+/*wsg 크롭 css 141208 삭제 lyr
+.temp_thum {}
+.temp_thum ul {overflow:hidden;}
+.temp_thum li {float: left;width: 184px;margin-right: 22px;padding-top: 20px;text-align: left;z-index: 1;}
+.temp_thum li .thumb_wrap {position: relative;width: 154px;height: 154px;overflow: hidden;}
+.temp_thum li .thumb_wrap .thumb {overflow: hidden;position: absolute;display: inline-block;width: 1000px;height: 1000px;font-size: 0;line-height: 0;text-align: center;left: -424px;top: -424px;vertical-align: middle;}
+.temp_thum li .thumb .thumb_frame {position: absolute;left:424px;top:424px;width: 154px;height: 154px;
+background: url(//cdnticket.melon.co.kr/resource/image/web/common/bg_album_frame.png) no-repeat -829px -1017px;}
+.temp_thum li .thumb_wrap .thumb img {display: inline-block;max-width: none;max-height: 154px;vertical-align: middle;}
+.temp_thum li .thumb_wrap .thumb .wrap_vertical {display: inline-block;height: 1000px;vertical-align: middle;width: 0px;visibility: hidden;
+}
+.temp_thum .default .thumb_wrap .thumb img {max-width:none;max-height:none;min-width:154px;min-height:154px;}
+
+.temp_thum .ex_height .thumb_wrap {}
+.temp_thum .ex_height .thumb_wrap .thumb img {max-width:154px;max-height:none;}
+.temp_thum .ex_height .thumb_wrap .thumb .wrap_vertical {}
+*/
+/*crop 141208 삭제 lyr
+.crop_type {}
+.crop_type .ex_height {}
+.crop_type .thumb_wrap {overflow:hidden;position:relative;width:96px;height:96px;}
+.crop_type .thumb_wrap .thumb {overflow:hidden;position:absolute;display:inline-block;left:-202px;top:-202px;width:500px;height:500px;font-size:0;line-height:0;text-align:center;vertical-align:middle;cursor:pointer;}
+.crop_type .thumb_wrap .thumb img {display: inline-block;width:auto;height:auto;max-width: none;max-height: 96px;vertical-align: middle;}
+.crop_type .thumb_wrap .thumb .thumb_frame {position: absolute;top: 202px;left:202px;width: 96px;height: 96px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_album_frame.png) no-repeat -683px 0;}
+.crop_type .thumb_wrap .thumb .thumb_frame.frame_partition {background: url(//cdnticket.melon.co.kr/resource/image/web/main/bg_frame.png) no-repeat -503px 0;}
+.crop_type .thumb_wrap .thumb .wrap_vertical {display: inline-block;width: 0px;vertical-align: middle;visibility: hidden;height: 500px;}
+.crop_type .thumb_wrap .thumb .playtime {bottom: 205px;right: 208px;display: block;position: absolute;margin-left: 24px;height: 16px;background: url(//cdnticket.melon.co.kr/resource/image/web/common/bg_playtime.png) no-repeat right 0;}
+.new_conts dd.thum .playtime {*cursor:pointer;} 
+.crop_type .thumb_wrap .thumb .playtime .time {display: block;position: relative;top: 0;left: -24px;
+height: 16px;margin-right: -19px;padding-left: 23px;line-height: 16px;background: url(//cdnticket.melon.co.kr/resource/image/web/common/bg_playtime.png) no-repeat 0 0;color: #fff;font-size: 11px;font-family: Arial, "Apple Gothic", sans-serif;}
+.crop_type .thumb_wrap .thumb .live {display: block;position: absolute;left: 0px;right: 0;top: 0;bottom: 0;}
+.crop_type .thumb_wrap .thumb .live .icon {display: block;position: absolute;top: 5px;left: 5px;width: 50px;height: 18px;background: url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_vdo.png) no-repeat -51px 0;text-indent: -9999px;overflow: hidden;}
+:root .crop_type .thumb_wrap .thumb .live .prvw {padding: 4px 10px 8px\9;}
+.crop_type .thumb_wrap .thumb .live .prvw {display: block;position: absolute;bottom: 0;left: 0;right: 0;padding: 5px 10px 7px;border-top: 1px solid #f30103;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_thumb_mask.png) repeat 0 0;color: #fff;font-size: 12px;line-height: 15px;font-family: AppleSDGothicNeo-Regular, "맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif;letter-spacing: -1px;text-align: center;}
+.crop_type .thumb_wrap .thumb.ex_height img {max-width: 96px;max-height: none;}
+
+.crop_type .partition {position:absolute;left:202px;top:202px;width:96px;}
+.crop_type .partition li {float:left;height:48px;}
+.crop_type .partition li .part_li {vertical-align:top;width:48px;height:48px;display:inline-block;}
+.crop_type .partition li .part_li img {max-width:48px;max-height:48px;}
+.crop_type .partition li .part_li .wrap_vertical {height:48px;}
+*/
+/* error page 141208 삭제 lyr
+.sys_error {padding-top:137px; background:url("//cdnticket.melon.co.kr/resource/image/web/common/img_check_sys.png") no-repeat 50% 0; text-align: center;}
+.sys_error p {color:#666; font-size:12px; line-height:1.4em;}
+.sys_error p.txt_emphs {margin-bottom:14px; color:#1a1a1a; font-weight:bold; font-size:14px; line-height:1.6em;}
+.sys_error .date_check_sys {margin-top:18px;}
+.sys_error .date_check_sys dt, .date_check_sys dd {display:inline;}
+.sys_error .date_check_sys dd {font-weight:bold;}
+.sys_error .sys_check_area {margin:14px 0;padding:19px 0 19px 77px;border:1px solid #cccccc;background-color:#fafafa;text-align:left;}
+.sys_error .sys_check_area ul li {color:#666666;}
+.sys_error .sys_check_area ul li strong em {display:block;font-weight:normal;}
+.sys_error .wrap_btn_c {margin-top: 20px;}
+#conts .sys_error {width:495px; margin: 80px auto 0;}
+#conts .sys_error_btn_hide {display: none;}
+*/
+/*서비스개편 page*//*140807 추가 lyr
+.sys_check {overflow:hidden;width:645px;margin:91px auto 0;}
+.sys_check .sys_check_logo {display:block;text-align:right;border-bottom:2px solid #7cb710;}
+.sys_check .sys_check_txt {padding-top:56px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/img_svc_error.png) no-repeat 0 34px;}
+.sys_check .sys_check_tit {height:143px;padding:0 0 0 33px;}
+.sys_check .sys_check_tit p {padding-top:24px;}
+.sys_check .sys_check_info {padding:34px 32px 45px 33px;border-top:1px solid #ededed;border-bottom:1px solid #ededed;background-color:#f7f7f7;}
+.sys_check .sys_check_info p {line-height:20px;}
+.sys_check .sys_check_list {margin:22px 0 18px;padding:24px 33px 27px;background-color:#fff;}
+.sys_check .sys_check_list li {margin-top:4px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bul_sys_arrow.png) no-repeat 0 5px;}
+.sys_check .sys_check_list li span {margin-right:6px;padding:0 8px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_gray_line06.png) no-repeat right 0;vertical-align: top;}
+.sys_check .sys_check_list li strong {display:inline-block;color:#1a1a1a;}
+.sys_check .sys_check_list li em {display:block;color:#666666;font-weight:normal;}
+
+.d_scrolldiv .wrap_atist {position:static;}
+*/
+
+/* 모달팝업 div - 스크립트 요청 CSS 140227_수정 */
+.layer_popup.d_modal_container,.d_modal_container {position:fixed; left:50%; top:50%; z-index:9999; background-color:#fff; outline:none; background-clip:padding-box;}
+
+/*141217 수정 lyr*/
+.layer_popup.cmt_popup {position:absolute; z-index:30;}
+.layer_popup.cmt_popup button,.layer_popup.cmt_popup .btn {border: 1px solid red; display:inline-block; zoom:1; margin:0; padding:0; background:none; border:none; text-decoration:none !important; text-align:center; vertical-align:middle; white-space:nowrap; cursor:pointer;}/* 140205_수정 kcu */
+.layer_popup.cmt_popup button,.layer_popup.cmt_popup .btn {*margin:0 2px; *overflow:visible;} /* ie7 */
+
+.layer_popup.cmt_popup button span.odd_span,.layer_popup.cmt_popup .btn span.odd_span, .layer_popup.cmt_popup button span.even_span,.layer_popup.cmt_popup .btn span.even_span {display:block; position:relative;}/* 140205_수정 kcu */
+.layer_popup.cmt_popup.btn input {margin:0 -8px; border:0; vertical-align:middle; cursor:pointer;}
+.layer_popup.cmt_popup button::-moz-focus-inner {padding:0; border:0;} /* 파이어폭스 버튼 내부 여백 제거 */
+.layer_popup.cmt_popup button.disabled, .btn.disabled {cursor:default;}
+
+.layer_popup.cmt_popup .layer_cntt {min-width:130px;padding:13px 16px 9px;border:1px solid #ccc;background:#fff url(//cdnticket.melon.co.kr/resource/image/web/common/bg_popup.png) repeat-x left top;} 
+.layer_popup.cmt_popup .layer_cntt {*zoom:1;}
+.layer_popup.cmt_popup .layer_cntt strong {font-size:14px;color:#1a1a1a;}
+.layer_popup.cmt_popup .layer_cntt .img_area {padding-top:13px;text-align: center;}
+.layer_popup.cmt_popup .layer_cntt .img_area img {width:auto;max-width:500px;height:auto;max-height:500px;}/*140902 추가 lyr*/
+.layer_popup.cmt_popup .btn_close {position:absolute; right:8px; top:12px;}
+.layer_popup.cmt_popup .btn_close .odd_span {overflow:hidden;width:16px;height:16px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -452px 0;text-indent:-9999px;}
+.layer_popup.cmt_popup .shadow {display:block; position:absolute; left:2px; right:0; top:2px; bottom:0; z-index:-1; width:100%; height:100%; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_shadow.png) repeat left top;}
+
+
+/*141208 추가 lyr*/
+#d_cmtpgn .l_popup.small .btn_close {right: 12px;top: 12px;}
+#d_cmtpgn .l_popup.small .btn_close .odd_span {width: 11px;height: 11px;background: url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -452px top;overflow: hidden;text-indent: -9999px;}
+
+/*20160310 추가 */
+#d_cmtpgn .box_sorting {overflow:hidden; padding:37px 0 21px; font-family: AppleSDGothicNeo-Regular, "맑은고딕","Malgun Gothic"; font-size:20px; line-height:28px; color:#000;}
+#d_cmtpgn button.btn_reg_write {width:93px; height:80px; background-color:#fff; border:1px solid #dadada; font-weight:bold;}
+#d_cmtpgn button.btn_reg_write .txt {display:inline-block;font-size:14px;line-height:78px;color:#333;font-family: AppleSDGothicNeo-Regular, "돋움",Dotum;}
+#d_cmtpgn .txt_comment {float:left; width:700px; padding:12px 16px 0 16px; height:54px; font-size:12px; line-height:18px; font-family: AppleSDGothicNeo-Regular, "돋움",Dotum; vertical-align:middle; resize:none; border-radius:0; box-shadow:none; -webkit-appearance:none; outline:0 none;overflow-y:auto}
+#d_cmtpgn .d_cmtpgn_atach_music_srch_btn, 
+#d_cmtpgn .d_cmtpgn_atach_video_srch_btn{background-color:#666;color:#fff;height:40px;line-height:40px;width:58px;text-align:center;font-size:14px;font-weight:bold}
+#d_cmtpgn .d_cmtpgn_atach_file_srch_btn{background-color:#666;color:#fff;height:40px;line-height:40px;width:58px;text-align:center;font-size:14px;}
+
+#d_cmtpgn .d_cmtpgn_atach_music_sort_btn, 
+#d_cmtpgn .d_cmtpgn_atach_music_btn, 
+#d_cmtpgn .d_cmtpgn_atach_video_btn, 
+#d_cmtpgn .d_cmtpgn_atach_video_sort_btn{background-color:#fff;color:#333;border:1px solid #dadada;height:24px;line-height:24px;width:38px;text-align:center;font-size:12px}
+
+#d_cmtpgn .d_cmtpgn_atach_image_input{border:1px solid #dadada;}
+#d_cmtpgn .d_cmtpgn_atach_image_btn,
+#d_cmtpgn .d_cmtpgn_atach_link_btn{background-color:#41d26b;text-align:center;width:108px;height:46px;line-height:46px;color:#fff;font-size:14px}
+
+#d_cmtpgn .d_close{background-color:#fff;border:1px solid #ccc;text-align:center;width:108px;height:46px;line-height:46px;color:#666;font-size:14px}
+#d_cmtpgn .d_cmtpgn_adcmt_reg_btn{background-color:#fff;color:#333;border:1px solid #dadada;height:28px;line-height:28px;width:80px;text-align:center;font-weight:bold}
+#d_cmtpgn .d_cmtpgn_cmt_updt_btn{width:93px; height:100px; background-color:#fff; border:1px solid #dadada; font-weight:bold;}
+#d_cmtpgn .d_cmtpgn_cmt_cancel_btn{width:93px; height:28px; background-color:#fff; border:1px solid #dadada;display:inline-block}
+
+#d_cmtpgn input.text31{color:#1a1a1a}
+
+/* 이용안내 바로가기 버튼 추가 */
+.btn_qna{text-align:center;padding-bottom:36px;}
+/* MELONUIT-977 */
+.btn_qna p.txt{font-size:22px;color:#333;font-family:AppleSDGothicNeo-Regular, "맑은고딕","Malgun Gothic";padding:13px 0 12px;}
+/* //MELONUIT-977 */
+.btn_qna p.txt2{font-size:14px;letter-spacing:0}
+.btn_qna p.txt2 a{font-weight:bold;color:#333;text-decoration:underline}
+
+#d_cmtpgn a.d_cmtpgn_temp_act_detail_btn {display: inline-block; position: relative; padding-left: 12px; margin-left: 7px; color: #969696;}
+#d_cmtpgn a span.line {display: inline-block; position: absolute; top: 3px; left: 0; height: 11px; border-left: 1px solid #e5e5e5;}
+
+/* 신고하기 레이어 팝업 */
+body.scroll_no { overflow: hidden; }
+textarea#d_cmtpgn_reprt_reson { overflow-y: hidden; }
+
+/* FTTICKET-231 */
+#reprt_popup.layer_popup {position: absolute; padding-top: 0; width: 528px; z-index: 5; border: 1px solid #ccc; border-top: 3px solid #00cd3c; font-family:"맑은 고딕", "Malgun Gothic", arial, "돋움", dotum, "Apple Gothic", sans-serif; color: #333}
+#reprt_popup.layer_popup .title {padding: 70px 48px 0; font-size: 26px; font-weight: normal; background: #fff; letter-spacing: 1px;}
+#reprt_popup.layer_popup .cntt {padding: 35px 48px 52px; background: #fff;}
+#reprt_popup.layer_popup .heading .txt1 {color: #333; font-size: 15px;}
+#reprt_popup.layer_popup .heading .txt2 {margin-top: 5px; color: #7d7d7d; font-size: 14px;}
+#reprt_popup.layer_popup .entry {margin-top: 30px; overflow: hidden;}
+#reprt_popup.layer_popup .entry .item {float: left; width: 57%; margin-bottom: 16px;}
+#reprt_popup.layer_popup .entry .item:nth-child(2n) {width: 43%;}
+#reprt_popup.layer_popup .entry .item.etc {width: 100%; margin-bottom: 25px;}
+#reprt_popup.layer_popup .entry .item label {display: inline-block; position: relative; min-height: 30px; font-size: 15px;  line-height: 1.13; color: #191919;}
+#reprt_popup.layer_popup .entry .item label .radio {margin-right: 5px;}
+#reprt_popup.layer_popup .entry .item.etc .more {width: 56px; height: 20px; margin-left: 5px; background: url('//cdnticket.melon.co.kr/resource/image/mobile/common/reprt_btn-more-off@2x.png') no-repeat 0 0/56px 20px; text-indent: -9999em;}
+#reprt_popup.layer_popup .entry .item .view {display: none;}
+#reprt_popup.layer_popup .entry .item.open .more {background-image: url('//cdnticket.melon.co.kr/resource/image/mobile/common/reprt_btn-more-on@2x.png');}
+#reprt_popup.layer_popup .entry .item.open .view {display: block; margin-top: 13px;}
+#reprt_popup.layer_popup .text-area-wrap {position: relative; padding: 10px; margin-top: 6px; border: 1px solid #bababa; border-radius: 5px; background-color: #fff;}
+#reprt_popup.layer_popup .text-area-wrap textarea {width: 98%; height: 38px; outline: none; border: 0; color: #b4b4b4; font-size: 14px; resize: none;}
+#reprt_popup.layer_popup .text-area-wrap textarea::placeholder {color: #b4b4b4; font-size: 14px;}
+#reprt_popup.layer_popup .text-area-wrap .count {display: block; color: #646464; font-size: 11px; text-align: right;}
+#reprt_popup.layer_popup .text-area-wrap .count em {color: #666666; font-weight: bold;}
+#reprt_popup.layer_popup .alert {position: relative; top: -10px; padding-left: 9px; font-size: 14px;  line-height: 1.54; color: #7d7d7d;}
+#reprt_popup.layer_popup .alert::before {content: ''; display: inline-block; position: absolute; top: 7px; left: 0; width: 3px; height: 3px; border-radius: 3px; background: rgba(0, 0, 0, 0.2);}
+#reprt_popup.layer_popup .alert a {color: #333333; text-decoration: underline;}
+#reprt_popup.layer_popup .btn_wrap {overflow:hidden; text-align:center;}
+#reprt_popup.layer_popup .btSizeL{display: inline-block;height: 48px;line-height: 46px;font-size: 16px;font-family: AppleSDGothicNeo-Regular, '맑은 고딕', 'Malgun Gothic';}
+#reprt_popup.layer_popup .btColorGreen .btSizeL {height:48px; padding:0 40px; font-size:16px; line-height:44px;color: #fff;}
+#reprt_popup.layer_popup .btColorWhite .btSizeL {height:48px; padding:0 40px; font-size:16px; line-height:44px;color: #333;}
+/* //FTTICKET-231 */

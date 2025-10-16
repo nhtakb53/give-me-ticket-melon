@@ -1,0 +1,239 @@
+@charset "utf-8";
+.wrap_customer{margin-top: 30px;}
+.customer_tit{position:relative;font-family:AppleSDGothicNeo-Regular,'맑은 고딕', 'Malgun Gothic';font-size: 28px;color:#333;}
+.customer_tit .button{position:absolute;top:4px;right:0;font-size:14px;}
+.customer_tit .button .btSizeM{width:112px;}
+.customer_sub_tit{font-family:AppleSDGothicNeo-Regular,'맑은 고딕', 'Malgun Gothic';font-size: 20px;color:#333;}
+.paging_comm{margin-top: 40px;}
+.box_customer {display:block;margin-top:30px;border-top:1px solid #ddd }
+.customer_selectbox{margin-top:12px;}
+.customer_selectbox .select_design_w100{width:160px;}
+.customer_selectbox .select_design_w100 .select_box{width:148px;}
+
+/* 고객센터 탭 */
+.box_customer .list_total_customer {display:block;position:relative;width:100%;padding:72px 0 26px;}
+.box_customer .list_total_customer .tit {position:absolute;top:0;height:48px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;background-color:#f9f9f9;}
+.box_customer .list_total_customer .tit a {display:block;height:48px;font-weight:normal;font-size:18px;line-height:48px;font-family:AppleSDGothicNeo-Regular, '맑은 고딕', 'Malgun Gothic';color:#333;text-align:center;}
+.box_customer .list_total_customer .tit a:hover {text-decoration:none;color:#000}
+.box_customer .list_total_customer .on .tit {background-color:#fff;border-bottom-color:#fff;border-right:1px solid #ddd;}
+.box_customer .list_total_customer .on .tit a {color:#333;}
+
+.box_customer .list_total_customer .nth1 .tit {left:0;width:253px;}
+.box_customer .list_total_customer .nth2 .tit {left:253px;width:253px;}
+.box_customer .list_total_customer .nth3 .tit {left:506px;width:253px;}
+.box_customer .list_total_customer .nth4 .tit {left:759px;width:247px;border-right:1px solid #ddd;}
+
+.box_customer .list_total_customer .box_cont {display:none;}
+.box_customer .list_total_customer .on .box_cont {display:block;padding:0 0;}
+.box_customer .list_total_customer .on .box_cont .tit_sub_float .btn_flexible{margin-left:10px;}
+
+/*테이블 리스트*/
+.wrap_customer .date{letter-spacing:1px;}
+table.customer_list{margin-top:12px;}
+table.customer_list thead th{border-top:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;font-size:12px;font-weight:normal;color:#333;text-align:center;line-height: 39px;}
+table.customer_list tbody td{border-bottom:1px solid #e9e9e9;font-size:14px;color:#666;text-align:center;height:49px;letter-spacing:0;}
+table.customer_list tbody td .ico_list{float:none;vertical-align:middle}
+table.customer_list tbody .txt_left{text-align:left;text-indent:10px;}
+table.customer_list tbody .txt_left a{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:648px;height:49px;line-height:49px;}
+table.customer_list tbody .txt_left a:hover{color:#000}
+
+/*테이블*/
+table.customer_tbl tbody tr{border-top:1px solid #e9e9e9;}
+table.customer_tbl tbody tr.lst{border-bottom:1px solid #e9e9e9;}
+table.customer_tbl tbody td{font-size:14px;color:#666;text-align:center;line-height:49px;letter-spacing:0;}
+table.customer_tbl tbody .txt_top{text-align:left;}
+table.customer_tbl tbody .txt_top a{overflow:hidden;display:block;width:802px;height:50px;}
+table.customer_tbl tbody .txt_left{text-align:left;text-indent:30px;}
+table.customer_tbl tbody .txt_left a{overflow:hidden;display:block;width:626px;height:50px;}
+table.customer_tbl tbody .txt_left.txt_one a{width:850px;}
+table.customer_tbl tbody .txt_left.txt_one a:hover{color:#000}
+
+
+/*공지사항 상세보기*/
+table.customer_tbl{margin-top:15px; table-layout:fixed;}
+table.customer_tbl tbody tr.view td{border-bottom:0;}
+table.customer_tbl tbody td .box_view{margin:30px 30px 15px;font-size:14px;text-align:justify;line-height:26px;}/*상세내용*/
+table.customer_tbl tbody tr.lst{border-bottom: 1px solid #e9e9e9}
+table.customer_tbl tbody tr.fst{border-bottom: 1px solid #e9e9e9}
+.btn_customer{margin-top:50px;text-align:center;}
+.btn_customer .btSizeL{width:170px;}
+
+/*faq*/
+.faq_top .box_sch{margin-top:20px;text-align:center;}
+.faq_top .box_sch label{margin-right:20px;font-family:AppleSDGothicNeo-Regular,'맑은 고딕', 'Malgun Gothic';font-size:17px;color:#333;}
+.faq_top .box_sch .faq_sch{width:350px;margin-right:3px; padding:6px 15px 5px;border:1px solid #cccccc;font-size:14px;color:#888888;}
+.faq_top .box_sch a.btSizeM{width:74px;}
+
+.faq_top .faq_list{margin:40px 0;}
+.faq_top .faq_list li{display:inline-block;width:16.66%;padding:13px 0 12px;margin-left:-4px;border-top:1px solid #e9e9e9;border-right:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;font-size:14px;text-align:center;}/*FTTICKET-424*/
+.faq_top .faq_list li.frt{ border-left:1px solid #e9e9e9;margin-left:0;}/*FTTICKET-424*/
+.faq_top .faq_list li .num{color:#00b523;}
+.faq_top .faq_list .active {color: #000; font-weight: bold;}
+
+/*faq 내용오픈*/
+table.customer_tbl tbody tr.box_faq_view{border:0;background-color:#fafafa;}
+table.customer_tbl tbody tr.box_faq_view td{position:relative;padding:10px 50px 50px 0;line-height:25px;text-align:justify;letter-spacing:-1px;}
+table.customer_tbl tbody tr.box_faq_view td .arrow{width:10px;height:10px;position:absolute;top:18px;left:30px;}
+table.customer_tbl tbody tr.box_faq_view td .arrow span{display:block;width:11px;height:15px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_barB.png) 0 0 no-repeat; }
+/* table.customer_tbl tbody tr.box_faq_view td p{padding:10px 0;} */
+table.customer_tbl tbody tr.box_faq_view td .img_area{padding:10px 0;}
+table.customer_tbl tbody tr.box_faq_view td .img_area img, table.customer_tbl tbody tr.box_faq_view img{max-width:904px}
+table.customer_tbl tbody tr.box_faq_view td .file_add{background-color:#fff;}
+table.customer_tbl tbody tr.box_faq_view td .file_add dt{display:inline-block;padding-left:24px;}
+table.customer_tbl tbody tr.box_faq_view td .file_add dd{display:inline-block;padding:20px 0 20px 24px;color:#333;}
+
+
+/*나의문의내역*/
+table.customer_list .ico1{color:#f0780a;}
+table.customer_list .ico2{color:#00b523;}
+table.customer_list .ico3{color:#666666;}
+
+/*나의문의내역 상세*/
+.box_inquiry_detail{margin-top:14px;}
+.box_inquiry_detail .txt_inquiry{overflow:hidden;width:948px;height:50px;padding:0 30px;border-top:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;font-size:14px;color:#333;line-height:50px;}
+.box_inquiry_detail .box_inquiry{padding:34px 0 0;font-size:14px;line-height:25px;}
+.box_inquiry_detail .box_inquiry .box_ask{padding:0 30px}
+.box_inquiry_detail .box_inquiry .box_ask .ask{padding:0 20px 28px 20px;word-break: break-all;}/* //FTTICKET-155 20200323 */
+.box_inquiry_detail .box_inquiry .list_inquiry{padding-bottom:25px;}
+
+table.customer_tbl02{width:100%; border:1px solid #eeeeee;}
+table.customer_tbl02 thead th {height:63px;}
+table.customer_tbl02 thead td{padding:14px 10px;}
+table.customer_tbl02 tbody{background-color:#fafafa;}
+table.customer_tbl02 th{font-weight:normal;font-size:14px;color:#666;text-align:left;text-indent:20px; height:34px;}
+table.customer_tbl02 td{font-size:14px;color:#333;line-height:34px;padding-left:10px;letter-spacing:0;}
+table.customer_tbl02 .frt th {height:70px;}
+table.customer_tbl02 .frt td{padding:18px 10px;}
+table.customer_tbl02 .lst th, table.customer_tbl02 .lst td{padding-bottom:18px;}
+
+.box_inquiry .box_answer{background-color:#fafafa;padding:0 30px}
+.box_inquiry .box_answer .answer{position:relative;}
+.box_inquiry .box_answer .answer .arrow{width:10px;height:10px;position:absolute;top:27px;left:0;}
+.box_inquiry .box_answer .answer .arrow span{display:block;width:11px;height:15px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_barB.png) 0 0 no-repeat; }
+.box_inquiry .box_answer .answer .box_reply{padding:28px 20px;border-bottom:1px solid #e9e9e9;}
+.box_inquiry .box_answer .answer .cmt_reply .tit_info .name{font-size:14px;color:#00b523;}
+.box_inquiry .box_answer .answer .cmt_reply .tit_info .time{padding-left:10px;color:#999999;letter-spacing:0;}
+.box_inquiry .box_answer .answer .cmt_reply .txt_info{padding-top:5px; }
+.box_inquiry .box_answer .answer .cmt_reply .txt_info p{word-break: break-all;}/* //FTTICKET-155 20200323 */
+.box_inquiry .box_answer .answer .cmt_reply .txt_info img{max-width:100% !important;}/* //FTTICKET-155 20200330 */
+.box_inquiry .box_answer .img_area{padding:10px 0;}
+.box_inquiry .box_answer .img_area img{max-width:900px}
+.box_inquiry .box_answer .file_add{background-color:#fff;margin-top:10px}
+.box_inquiry .box_answer .file_add dt{display:inline-block;padding-left:24px;}
+.box_inquiry .box_answer .file_add dd{display:inline-block;padding:20px 0 20px 24px;color:#333;}
+
+/*나의문의내역 - 1:1문의하기*/
+.box_my_inquiry{margin:16px 0 35px;}
+table.customer_tbl03{margin-top:20px;border:1px solid #eeeeee;}
+table.customer_tbl03 th{font-weight:normal;font-size:14px;color:#333;background-color:#fafafa;text-align:left;text-indent:32px;}
+table.customer_tbl03 th.th_top{vertical-align:top;padding-top:14px;}
+table.customer_tbl03 td{padding:10px 30px;font-size:14px;line-height:35px;}
+table.customer_tbl03 .frt th{padding-top:20px;}
+table.customer_tbl03 .frt td{padding:15px 30px 0;}
+table.customer_tbl03 td.txt_gray{color:#888;}
+table.customer_tbl03 .h30 th{padding:5px 0 15px;}
+table.customer_tbl03 .h30 td{padding:10px 30px 30px;}
+table.customer_tbl03 td .list_inquiry li{display:inline-block;padding-right:38px;}
+table.customer_tbl03 td .list_inquiry li.lst{padding-right:0;}
+table.customer_tbl03 td .inp_txt{height:30px;border:1px solid #ddd;padding:0 10px}
+table.customer_tbl03 td .inp_w763{width:743px;}
+
+table.customer_tbl03 td .btn_inquiry{line-height:0;}
+table.customer_tbl03 td .btn_inquiry .btSizeM{height:30px;}
+table.customer_tbl03 td .btColorGrey.btn_inquiry a{width:87px;}
+table.customer_tbl03 td .btColorBlack.btn_inquiry a{width:102px;}
+
+table.customer_tbl03 td.td_textarea{position:relative;padding-bottom:30px;}/*내용*/
+table.customer_tbl03 td.td_textarea .box_textarea{overflow:hidden; width:765px;height:219px;}
+table.customer_tbl03 td.td_textarea .box_textarea .ancm {position:relative; width:731px; padding:12px 16px; height:193px; border:1px solid #ddd;}
+table.customer_tbl03 td.td_textarea .box_textarea .ancm p {font-size:14px; line-height:18px; color:#aaa;}
+table.customer_tbl03 td.td_textarea .box_textarea .txt_comment {width:731px; padding:12px 16px; height:193px; border:1px solid #dadada; vertical-align:middle; resize:none;border-radius:0;box-shadow:none;-webkit-appearance:none;outline:0 none;}
+table.customer_tbl03 td.td_textarea .num_board {display:inline-block;position:absolute;bottom:10px;right:30px;width:auto;font-size:13px;line-height:18px;letter-spacing: 0}
+
+table.customer_tbl03 td.box_file{position:relative;}
+table.customer_tbl03 td.box_file .txt_file{margin-left:12px;font-size:12px;color:#888;}/*첨부파일*/
+table.customer_tbl03 td.box_file .list_flie{overflow-y:scroll;border:1px solid #ddd;width:691px;height:32px;padding:9px 12px 10px 12px;margin:10px 0;}
+table.customer_tbl03 td.box_file .list_flie li{line-height:20px;}
+table.customer_tbl03 td.box_file .list_flie li button{display:inline-block;width:10px;height:10px;margin-left:4px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/btn_cancel.png) 0 0 no-repeat;vertical-align:middle;white-space: nowrap;
+    cursor:pointer;text-indent:-9999px;}
+table.customer_tbl03 td.box_file .file_num{position:absolute;bottom:10px;right:40px;font-size:13px;color:#666;}
+
+table.customer_tbl03 td.box_sch{padding-bottom: 40px;}
+table.customer_tbl03 td.box_sch .wrap_form_input.box_sch_input{display:inline-block;}
+table.customer_tbl03 td.box_sch .inp_w{width:324px;margin-right:6px;}
+table.customer_tbl03 td.box_sch .ckb{margin:0 5px 0 10px;}
+table.customer_tbl03 td .list_inquiry02 li{display:inline-block;}
+table.customer_tbl03 td .list_inquiry02 .txt_lab02{padding-right:18px;font-size:12px;width: 80px}
+table.customer_tbl03 td .list_inquiry02 .box_select_design{display:inline-block;padding-right:50px;vertical-align:middle;}
+table.customer_tbl03 td .list_inquiry02 .box_select_design .select_design_h30{width:200px;}
+table.customer_tbl03 td .list_inquiry02 .box_select_design .select_design{display:block;}
+table.customer_tbl03 td .list_inquiry02 .box_select_design .select_design li{display:inline-block;width:200px;}
+table.customer_tbl03 td .inp_txt.inp_w220{width:200px;height:28px;vertical-align:middle;}
+table.customer_tbl03 td .inp_txt.inp_phone{width:61px;margin-right:5px; letter-spacing:0}
+table.customer_tbl03 td .inp_txt.inp_mail{width:238px;letter-spacing:0}
+/* TICKET-3589 */
+table.customer_tbl03 td .icon.kakao {display: inline-block; position: relative; top: -2px; width: 16px; height: 16px; margin-right: 5px; background: url(//cdnticket.melon.co.kr/resource/image/web/common/ico_kakao.png) no-repeat 0 0; background-size: 16px 16px; text-indent: -9999em; vertical-align: middle;}
+/* //TICKET-3589 */
+.wrap_btn{margin-top:40px;text-align:center;}
+.wrap_btn .btSizeL{width:170px;}
+/* 220622 FTTICKET-318 */
+.box_personal{padding:25px 17px 0 0;line-height: 1.5em;}
+.box_personal .inner{overflow-x:hidden; overflow-y:auto; max-height:290px;}
+.box_personal .inner_default{overflow-x:hidden; overflow-y:auto; max-height:360px;}
+.box_personal .wrap_tap{margin-bottom:30px;}
+.layerPop .sub_personal li{position:relative;font-size: 13px;line-height: 1.5em;}
+.layerPop .sub_personal li .bu{display:block; width:10px; position: absolute;}
+.layerPop .sub_personal li .para{margin-left:10px;display: inline-block;}
+.layerPop .sub_personal .txt_personal02{font-size: 13px;margin:5px 0 0 0;}
+.layerPop .sub_personal .line{text-decoration: underline;}
+.layerPop .tbl_personal{margin:15px 0 20px;border:1px solid #eee;font-size:13px;color:#333333;background-color:#fff;}
+.layerPop .tbl_personal th{height:40px;line-height:40px;background-color:#fafafa;font-weight:normal;text-align:left;font-size:13px;text-align:center;text-indent: unset;}
+.layerPop .tbl_personal td{padding:15px;font-size:13px;vertical-align: top;text-align:center;}
+.layerPop .tbl_personal .m_bold{font-size: 16px;font-weight: bold;}/* //FTTICKET-241 */
+.account_comm{margin-top:10px;font-size: 13px}
+.account_comm .checkbox{margin-top: -2px;margin-right: 6px;}
+.account_comm .btn_flexible {margin:7px 0 0 5px;vertical-align:top;}
+.box_contact{position:relative;}
+.box_contact .account_comm{margin-top:20px;}
+.box_contact .account_comm .btn_flexible{margin-top:0;}
+/* //220622 FTTICKET-318 */
+
+/*1:1 문의 레이어 팝업 */
+.asking .la_middle .la_con {margin-top: 20px;padding-right: 30px;font-size:16px;line-height: 1.5em;text-align: center}
+
+/*이용안내*/
+.use_guide{padding-top:17px;}
+.use_guide .wrap_soting{width:587px; height:42px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_soting6.png) no-repeat 0 0;font-size:0}
+.use_guide .wrap_soting_n5 .btn_soting{color:#666;font-size:18px;font-family:AppleSDGothicNeo-Regular,'맑은 고딕', 'Malgun Gothic';width:221px; height:42px;position:absolute}
+.use_guide .wrap_soting_n5 .btn_soting.nth2{left:184px;top:0}
+.use_guide .wrap_soting_n5 .btn_soting.nth3{left:367px;top:0;width:220px;}
+.use_guide .wrap_soting_n5.nth2_on{background-position:0 -42px}
+.use_guide .wrap_soting_n5.nth3_on{background-position:0 -84px}
+.use_guide .wrap_soting_n5.nth1_on button.nth1{color:#333;}
+.use_guide .wrap_soting_n5.nth2_on button.nth2{color:#333}
+.use_guide .wrap_soting_n5.nth3_on button.nth3{color:#333}
+.use_guide .inner{padding-top:27px;}
+.use_guide .inner h3{color:#333;font-size:20px;font-family:AppleSDGothicNeo-Regular,'맑은 고딕', 'Malgun Gothic';font-weight:normal;margin-bottom:16px}
+.use_guide .use_guide_box{border-top:1px solid #e9e9e9;padding:27px 0}
+.use_guide .use_guide_box h4{color:#000;font-size:14px;padding:0 27px 10px;font-weight:bold}
+.use_guide .use_guide_box h4 span{padding-left:5px}
+.use_guide .use_guide_box ul{margin:0 30px}
+.use_guide .use_guide_box ul li{font-size:14px;line-height:24px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/dot_4x4.png) no-repeat 0 9px;padding-left:10px}
+.use_guide .use_guide_box ul ul{margin:0}
+.use_guide .use_guide_box ul ul li{font-size:12px;line-height:20px;background:none;padding-left:0px;color:#888}
+.use_guide .use_guide_box .guide_img{ text-align:center;padding:34px 0 13px}
+.use_guide .use_guide_box table{border-top:1px solid #eee;border-left:1px solid #eee;margin:0 30px}
+.use_guide .use_guide_box table th, .use_guide .use_guide_box table td{border:1px solid #eee;border-top:none;border-left:none;height:31px;line-height:31px;letter-spacing:0}
+.use_guide .use_guide_box table th{background-color:#fafafa;text-align:center;font-weight:normal}
+.use_guide .use_guide_box table td{text-align:center;}
+.use_guide .use_guide_box table td.txt_left{text-align:left;text-indent:30px;}
+.use_guide .use_guide_box table td.txt_left2{text-align:left;text-indent:55px;}
+.use_guide .use_guide_box dl{margin:0 30px}
+.use_guide .use_guide_box dl dt{color:#000;font-size:14px;line-height:24px;padding-bottom:4px;padding-top:9px}
+.use_guide .use_guide_box dl dt:first-child{padding-top:0}
+.use_guide .use_guide_box dl dd{font-size:14px;line-height:24px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/dot_4x4.png) no-repeat 0 9px;padding-left:10px}
+
+/* 라디오버튼, 체크박스 디자인 */
+table.customer_tbl03 td .list_inquiry li{padding-right:32px} /*FTTICKET-384*/
+table.customer_tbl03 td .list_inquiry li .radio{margin-top:-4px;margin-right:2px}
+table.customer_tbl03 td.box_sch .checkbox{margin:-3px 7px 0 10px}

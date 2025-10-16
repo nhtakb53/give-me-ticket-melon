@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+.wrap_main_concert.type1{padding-top:0}
+.box_ranking_list{width:1009px;}
+.box_ranking_list thead th{padding: 11px 4px;border-top:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;font-weight:normal;font-size: 12px;color:#333;}
+.box_ranking_list thead th.mid{/* margin-left:10px; */padding-right: 18px;}
+.box_ranking_list tbody td{padding: 14px 20px 14px;text-align:center;border-bottom: 1px solid #e9e9e9;font-size:13px;}
+.box_ranking_list tbody td.fst{position:relative;}
+.box_ranking_list tbody td.lst{padding: 6px 0 27px;}
+.box_ranking_list tbody td .ranking {position:absolute;top: 49px;left: 54px;width: 34px;height:32px;font-size:30px;color:#333;line-height:32px;text-align:center;}
+.box_ranking_list tbody td .change {position:absolute;top:84px;left:62px;width:19px;height:20px;font-size:14px;line-height:18px;color:#888;text-align:center;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";}
+.box_ranking_list tbody td .change .ico_change {display:inline-block;height:20px;padding-left:11px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/ico_change.png) no-repeat;vertical-align:top}
+.box_ranking_list tbody td .change .ico_up {background-position:0 0;color:#f0780b;}
+.box_ranking_list tbody td .change .ico_down {background-position:0 -20px;color:#00be37;}
+
+.box_ranking_list tbody td .show_infor{position: relative;height:126px;text-align: left;overflow: hidden;}
+.box_ranking_list tbody td .show_infor .img{position:absolute;top:0;left:0;background: url(//cdnticket.melon.co.kr/resource/image/web/common/noimg-logo@2x.png) 50% 50%/60px auto no-repeat #F4F4F4;}/* FTTICKET-406 카테고리 개선 */
+.box_ranking_list tbody td .show_infor .img a{display:block;width:90px;height:125px;overflow:hidden}
+.box_ranking_list tbody td .show_infor .img a img{width:90px;}
+.box_ranking_list tbody td .show_infor .infor_text{position:relative; padding-left: 119px;font-size:13px; }
+.box_ranking_list tbody td .show_infor .infor_text .ico_wrap {display: block; overflow: hidden; height: 20px; padding-top: 8px;}
+.box_ranking_list tbody td .show_infor .infor_text .show_title{display:block;overflow:hidden;margin-top: 4px;font-size:16px;}
+.box_ranking_list tbody td .show_infor .infor_text .show_title a{line-height:18px;color:#333;}
+.box_ranking_list tbody td .show_infor .infor_text .show_title a:hover{color:#000;}
+.box_ranking_list tbody td.show_date{padding-left:60px;padding-top:40px;line-height: 22px; color:#666; text-align: left; vertical-align:top; letter-spacing: 0}
+.box_ranking_list tbody td.show_loc{padding-top:40px;vertical-align:top; }
+.box_ranking_list tbody td .percent{padding-bottom: 10px;font-size:24px;color:#888;}
+.box_ranking_list tbody td .btn_rank{padding: 4px 20px;border:1px solid #e9e9e9;}
+.box_ranking_list tbody td .ranking.top, .box_ranking_list tbody td .percent.top{color:#00be37;}
+                          
+/*ctrlViewType - 앨범형 리스트형 */
+#conts.theme{padding-top:40px}
+.theme_area{position:relative; padding-bottom: 70px; border:1px solid #eee;background:#fff; margin-bottom:32px;}
+.srch_category_subject{background:#fafafa; min-height:275px; border-bottom:1px solid #eee;}
+.srch_category_subject>ul{overflow:hidden; padding:24px 0}
+.srch_category_subject .subject{float:left; width:190px; padding-left:61px;font-family:AppleSDGothicNeo-Regular, '맑은 고딕', 'Malgun Gothic';}
+.srch_category_subject .subject strong{display:block; font-size:18px; color:#333; margin-bottom:22px;}
+.srch_category_subject .subject li{margin-bottom:10px;}
+.srch_category_subject .subject li:last-child{margin-bottom:0;}
+.srch_category_subject .subject li input[radio]{margin-right:10px; vertical-align:middle}
+.srch_category_subject .subject li label{margin-left:5px;font-size:14px; vertical-align:middle}
+.theme_area .im_now{display: none; position: absolute; padding:17px 0 17px 20px;font-size:12px; color:#333;}
+.theme_area .im_now button{overflow:hidden; width:36px; height:36px; margin-right:6px; border:1px solid #eee; background:url(//cdnticket.melon.co.kr/resource/image/web/common/icon_geo_loca.png) no-repeat 0 0; vertical-align:middle; text-indent:-9999px;}
+.theme_area .im_now span{text-decoration:underline; color:#00b523}
+
+.theme_area .button{position:absolute; right:20px; bottom:11px; }
+.theme_area .button .btSizeL{width:170px; height:50px; line-height:48px; font-size:16px; }
+.control_list{overflow:hidden; margin-bottom:12px;position:relative;z-index:99}
+.control_list .view_type_control{float:left; font-size:0}
+.control_list .view_type_control button{overflow:hidden; width:36px; height:36px; padding:0; border:1px solid #eee; text-indent:-9999px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/btn_ctrl_view.png) no-repeat -36px 0;}
+.control_list .view_type_control button:first-child{border-right:1px solid #00cd3c;}
+.control_list .view_type_control button:first-child.on, .control_list .view_type_control button:first-child:hover{background-position:-36px -36px;border:1px solid #00cd3c;}
+.control_list .view_type_control button:last-child{background-position:0 -36px;border-left:none}
+.control_list .view_type_control button:last-child.on, .control_list .view_type_control button:last-child:hover{background-position:0 0;border:1px solid #00cd3c;border-left:none;width:35px;}
+.control_list .view_sort_control{float:right; padding-top:10px}
+.control_list .view_sort_control li{float:left; font-size:16px;;font-family:AppleSDGothicNeo-Regular,'맑은 고딕', 'Malgun Gothic';}
+.control_list .view_sort_control li a{padding:0 20px 0 21px; color:#333; vertical-align:middle}
+.control_list .view_sort_control li a:hover{color:#00b523}
+.control_list .view_sort_control li:before{display:inline-block; content:""; width:1px; height:15px; background:#d9d9d9; vertical-align:middle}
+.control_list .view_sort_control li:first-child:before{display:none;}
+.control_list .view_sort_control li.on a{color:#00b523;font-weight:bold}
+.control_list .view_sort_control li.lst a{padding:0 0 0 21px; }
+
+.tapping{display:none!important}/*script 예약어*/
+.tapping.on{display:block!important}
+
+/* 라디오버튼, 체크박스 디자인 */
+.srch_category_subject .subject li .radio{vertical-align:top;margin-right:4px;margin-top:4px}
+
+.concert_highlight {margin-bottom: 60px;}
+/* FTTICKET-406 카테고리 개선 */
+.concert_highlight .sub_tit {height: 31px; margin-bottom: 24px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/sprites-ticket@2x.png) 0 0 / 1008px auto no-repeat; text-indent: -9999em;}
+.concert_highlight .sub_tit.tit_concert {width: 76px; background-position: 0 -156px;} 
+.concert_highlight .sub_tit.tit_musical {width: 140px; background-position: 0 -192px;} 
+.concert_highlight .sub_tit.tit_classic {width: 76px; background-position: 0 -228px;} 
+.concert_highlight .sub_tit.tit_exhibition {width: 115px; background-position: 0 -264px;} 
+.concert_highlight .sub_tit.tit_fan {width: 166px; background-position: 0 -300px;} 
+/* //FTTICKET-406 카테고리 개선 */
+.concert_highlight .list:after {content: ''; display: block; clear: both;}
+.concert_highlight .list .item {float: left; margin-left: 20px;}
+.concert_highlight .list .item:first-child {margin-left: 0;}
+.concert_highlight .thumb {position: relative; width: 237px; height: 333px; margin-bottom: 14px; background-color: #dfdfdf;}
+.concert_highlight .thumb img {width: 237px; height: 333px;}
+.concert_highlight .thumb .frame {position: absolute; top: 0; left: 0; right: 0; bottom: 0; border: 1px solid rgba(0,0,0,0.03);}
+.concert_highlight .info {width: 227px; margin: 0 auto; text-align: center;}
+.concert_highlight .info .title {margin-bottom: 3px; color: #000; font-size: 18px; font-family:AppleSDGothicNeo-Regular, '맑은 고딕', 'Malgun Gothic'; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; display: inline-block; width: 227px;}
+.concert_highlight .info .text {color: #888; font-size: 14px; font-family: AppleSDGothicNeo-Regular,'맑은 고딕', 'Malgun Gothic'; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+
+.sub_tab {padding: 0 10px; margin-bottom: 37px; border: 1px solid #eee;}
+.sub_tab a {display: inline-block; padding: 18px 22px; color: #333333; font-size: 16px; font-family:AppleSDGothicNeo-Regular, '맑은 고딕', 'Malgun Gothic'; }
+.sub_tab a:hover {color: #00b523;}
+.sub_tab a.on {color: #00b523; font-weight: bold;}
+
+.sub_tab.type01 a {padding: 18px 33px;}

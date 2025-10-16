@@ -1,0 +1,1947 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <title>멜론 티켓</title>
+<!-- 파비콘 -->
+<link rel="shortcut icon" type="image/x-icon" href="images/pc_32.ico" />
+<!-- IOS용 -->
+<link rel="apple-touch-icon-precomposed" href="images/ios_120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="images/ios_180.png" />
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=1126"/><!-- 모바일 접속시 컨텐츠 넓이 -->
+<meta name="keywords" content="티켓, 콘서트, 테마/지역, 랭킹, 티켓오픈소식, 이벤트, FouU, 마이티켓" />
+<meta name="description" content="No.1 음악플랫폼 멜론에서 제공하는 공연 예매사이트. 콘서트, 팬미팅, 페스티벌, 추천공연 제공" />
+<meta name="naver-site-verification" content="8912542fdfc7aaf11e289d8bed9e86892deef890"/>
+
+<meta property="og:title" 				content="강예영 1st 정규앨범 콘서트: 우리는 여행하는 거니까"/>
+    <meta property="og:image" 			content="https://cdnticket.melon.co.kr/resource/image/upload/product/2025/10/20251015092137936d4fb8-066f-44c4-87fe-c9543832316f.jpg"/>
+    <meta property="og:url"       			content="https://ticket.melon.com/performance/index.htm?prodId=212072" />
+    <meta property="og:type"     		content="website" />
+    <meta property="og:description" 	content="듣다·보다·만나다, 멜론티켓"/>
+<meta property="og:site_name" content="멜론티켓" /><link rel="stylesheet" type="text/css" href="css/common-f98a521882.css" />
+<link rel="stylesheet" type="text/css" href="css/ranking-bb88684e2f.css" />
+<link rel="stylesheet" type="text/css" href="css/ticketopen-914da7ea10.css" />
+<link rel="stylesheet" type="text/css" href="css/event-2500a36385.css" />
+<link rel="stylesheet" type="text/css" href="css/customer-403bd8f005.css" />
+<link rel="stylesheet" type="text/css" href="css/myticket-164387fbcf.css" />
+<link rel="stylesheet" type="text/css" href="css/foru-3562d36800.css" />
+<link rel="stylesheet" type="text/css" href="css/concert-f25c480e3e.css"  />
+<link rel="stylesheet" type="text/css" href="css/wish-434e2090f0.css" />
+<script type="text/javascript" src="js/socket.io.js"></script>
+
+<script src="js/require.js" type="text/javascript"></script>
+<script src="js/frontEnd/app.js" type="text/javascript"></script>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.inputmask.bundle.js"></script>
+<script src="js/ui_script.js"></script>
+<script type="text/javascript">
+    var NO_IMAGE_URL = 'images/Noimage_%%W%%x%%H%%.png';
+    var NO_IMAGE_URL_ROUND = 'images/Noimage_round_%%W%%.png';
+
+    //이미지 로딩 실패시 처리
+    function noImage(o, width, height)
+    {
+        var _NO_IMAGE_URL =  NO_IMAGE_URL.replace(/%%W%%/g, width).replace(/%%H%%/g, height);
+
+        o.src = _NO_IMAGE_URL;
+        o.width = width;
+        o.height = height;
+        o.onerror = null;
+    }
+
+    function noArtistImage(o, width, height)
+    {
+        var _NO_IMAGE_URL_ROUND = NO_IMAGE_URL_ROUND.replace(/%%W%%/g, width);
+
+        o.src = _NO_IMAGE_URL_ROUND;
+        // o.width = width;
+        // o.height = height;
+        o.onerror = null;
+    }
+
+    //로그인후 새로고침 함수
+    function loginCallback() {
+        location.reload();
+    }
+</script>
+<script src="js/deployPhaseUtils.js"></script>
+<!-- 네이버 광고 로그분석 -->
+<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
+<script type="text/javascript" src="js/wcslog.js"> </script>
+<script type="text/javascript">
+    // console.log("##########################################");
+    // console.log("##########################################");
+    // console.log("네이버 광고 로그 분석 공통 스크립트 실행");
+    // console.log("script_common.jsp");
+    // console.log("##########################################");
+    // console.log("##########################################");
+    if (!wcs_add) var wcs_add={};
+    wcs_add["wa"] = "s_585b06516861";
+    if (!_nasa) var _nasa={};
+    if(window.wcs){
+        wcs.inflow("melon.com");
+        wcs_do(_nasa);
+    }
+</script>
+<!-- END 네이버 광고 로그분석 -->
+<!-- Kakao Pixel Code -->
+<script type="text/javascript" charset="UTF-8" src="js/kp.js"></script>
+<script type="text/javascript">
+    kakaoPixel("1432956840521218273").pageView("WEB-공통");
+</script>
+<!-- End Kakao Pixel Code -->
+<!-- request Url -->
+    </head>
+<body>
+    <div id="wrap" class="index">
+        <div id="skip_nav">
+            <ul>
+                <li><a href="#gnb_menu">메뉴</a></li>
+                <li><a href="#conts_section">본문</a></li>
+                <li><a href="#footer">하단 정보</a></li>
+            </ul>
+        </div>
+
+        <script type="text/javascript">
+	var CURRENT_CHNL_SEQ = 0;  //멜론 프레임웍에서 사용됨 전역변수
+	/** 채널코드 - 기대평 */
+	var CMT_CHNL_EVALUE = 916;
+	/** 채널코드 - 공연후기 */
+	var CMT_CHNL_REVIEW = 917;
+	/** 채널코드 - Q & A */
+	var CMT_CHNL_QNA = 918;
+	/** 채널코드 - 멜론티켓 이벤트 */
+	var CMT_CHNL_EVENT = 919;
+	/** 채널코드 - 위시콘서트 */
+	var CMT_CHNL_WISH = 920;
+
+	</script>
+<link rel="stylesheet" type="text/css" href="css/common-f98a521882.css" />
+<link rel="stylesheet" type="text/css" href="css/detailview-3bdbe536d8.css" />
+<link rel="stylesheet" type="text/css" href="css/event-2500a36385.css" />
+<link rel="stylesheet" type="text/css" href="css/melonweb_cmt-0a18fe5180.css" />
+
+<div id="header">
+	<div id="header_wrap" class="pr_none">
+		<div id="gnb" class="clear_g">
+    <div id="util_menu">
+        <p class="screen_out">상단 빠른 메뉴</p>
+        <div class="top_left">
+            <ul class="clear_g">
+                <li>
+                    <a href="//www.melon.com" class="btn_gnb btn_g_link1">멜론</a>
+                </li>
+            </ul>
+        </div>
+        <div class="top_right">
+            <ul class="clear_g">
+                <li class="name" id="name_area"></li>
+                <li>
+                    <span id="login_area"></span>
+                </li>
+                <li id="sub_area"></li>
+                <li>
+                    <a href="https://ticket.melon.com/customerservice/notice.htm" class="btn_gnb btn_g_customer">고객센터</a>
+                </li>
+                <li>
+                    <a href="https://ticket.melon.com/customerservice/howto.htm" class="btn_gnb btn_g_howto">이용안내</a>
+                </li>
+                <li class="global_link" >
+                    <div id="ticket_global">
+                        <div id="link00">
+                            <span>Language</span>
+                        </div>
+                        <div id="link01">
+                            <a href="//tkglobal.melon.com/main/index.htm?langCd=EN" target="_blank"><span>KOR</span></a>
+                        </div>
+                        <div id="link02">
+                            <a href="//tkglobal.melon.com/main/index.htm?langCd=CN" target="_blank"><span>JAP</span></a>
+                        </div>
+                        <div id="link03">
+                            <a href="//tkglobal.melon.com/main/index.htm?langCd=JP" target="_blank"><span>ENG</span></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h1 id="logo">
+        <a href="https://ticket.melon.com/">
+            <img src="images/logo.png" alt="Melon 티켓" />
+        </a>
+    </h1>
+
+    <div class="srch_set">
+        <fieldset>
+            <legend>통합검색영역</legend>
+            <input type="text" title="검색 입력 편집창"  name="" id="top_search"  placeholder="전 세계가 사랑한 &#039;호아킨 소로야&#039; 전시" />
+            <input type="hidden" id="searchValue" value="호아킨 소로야" >
+            <input type="hidden" id="placeholderValue" value="전 세계가 사랑한 &#039;호아킨 소로야&#039; 전시">
+            <button type="button" class="btn_icon search_m" id="btn_top_search" title="검색" a_value="">
+                <span class="btn_comm">검색</span>
+            </button>
+        </fieldset>
+    </div>
+
+    <div class="cmn_banner">
+            <a href="javascript:;" class="item" onclick="javascript:commonUtil.bannerLanding('PR','100090')">
+                            <img height="75" width="280" src="https://cdnticket.melon.co.kr/resource/image/upload/marketing/2025/02/202502061025230ce79043-ece2-449b-b521-d0ed04cee1f7.png" alt="" />
+                        </a>
+                    <a href="javascript:;" class="item" onclick="javascript:commonUtil.bannerLanding('PR','100089')">
+                            <img height="75" width="280" src="https://cdnticket.melon.co.kr/resource/image/upload/marketing/2025/01/20250121143402a0e8e6a3-a0dc-4c29-bc4b-60deb10f41f3.png" alt="" />
+                        </a>
+                    <a href="javascript:;" class="item" onclick="javascript:commonUtil.bannerLanding('PR','100058')">
+                            <img height="75" width="280" src="https://cdnticket.melon.co.kr/resource/image/upload/marketing/2021/07/202107191048488ee615b7-f65e-40ee-afa2-2d00fa9e4bcc.jpg" alt="" />
+                        </a>
+                    <a href="javascript:;" class="item" onclick="javascript:commonUtil.bannerLanding('PR','100091')">
+                            <img height="75" width="280" src="https://cdnticket.melon.co.kr/resource/image/upload/marketing/2025/04/2025040116040243e2e12e-1a69-4ab4-9da7-b136f0b4f2d4.png" alt="" />
+                        </a>
+                    <a href="javascript:;" class="item" onclick="javascript:commonUtil.bannerLanding('PR','100095')">
+                            <img height="75" width="280" src="https://cdnticket.melon.co.kr/resource/image/upload/marketing/2025/08/20250807175804d736a48b-9a89-4a57-95e8-81cc1afce173.jpg" alt="" />
+                        </a>
+                    <div class="gnb_banner_btn">
+                <a href="javascript:;" class="btn prev d_btn_ctrl" title="이전 이벤트 보기">이전 이벤트 보기</a>
+                <a href="javascript:;" class="btn next d_btn_ctrl" title="다음 이벤트 보기">다음 이벤트 보기</a>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="js/frontEnd/dist/headerController.js"></script>
+    <div id="gnb_menu">
+                <ul class="list_gnb">
+                    <!-- <li class="nth1">
+                        <a href="https://ticket.melon.com/main/index.htm" class="btn_gnb_menu btn_gnb btn_g_menu01">홈</a>
+                    </li> -->
+                    <li class="nth2">
+						<a href="https://ticket.melon.com/concert/index.htm?genreType=GENRE_CON" class="btn_gnb_menu btn_gnb btn_g_menu02">콘서트</a>
+					</li>
+					<li class="nth3">
+						<a href="https://ticket.melon.com/concert/index.htm?genreType=GENRE_ART" class="btn_gnb_menu btn_gnb btn_g_menu03">뮤지컬/연극</a>
+					</li>
+                    <li class="nth12">
+                        <a href="https://ticket.melon.com/concert/index.htm?genreType=GENRE_FAN" class="btn_gnb_menu btn_gnb btn_g_menu12">팬클럽/팬미팅</a>
+                    </li>
+					<li class="nth10">
+						<a href="https://ticket.melon.com/concert/index.htm?genreType=GENRE_CLA" class="btn_gnb_menu btn_gnb btn_g_menu10">클래식</a>
+					</li>
+					<li class="nth11">
+						<a href="https://ticket.melon.com/concert/index.htm?genreType=GENRE_EXH" class="btn_gnb_menu btn_gnb btn_g_menu11">전시/행사</a>
+					</li>
+                    <li class="nth4">
+                        <a href="https://ticket.melon.com/region/index.htm" class="btn_gnb_menu btn_gnb btn_g_menu04">테마/지역</a>
+                    </li>
+                    <li class="nth5">
+                        <a href="https://ticket.melon.com/ranking/index.htm" class="btn_gnb_menu btn_gnb btn_g_menu05">랭킹</a>
+                    </li>
+                    <li class="nth6">
+                        <a href="https://ticket.melon.com/csoon/index.htm" class="btn_gnb_menu btn_gnb btn_g_menu06">티켓오픈소식</a>
+                    </li>
+                    <li class="nth7">
+                        <a href="https://ticket.melon.com/event/index.htm?mid=1" class="btn_gnb_menu btn_gnb btn_g_menu07">이벤트</a>
+                        <div class="lay_menu">
+                            <ul>
+                                <li><a href="https://ticket.melon.com/event/index.htm?mid=1" class="btn_gnb btn_g_menu0701">전체이벤트</a></li>
+                                <li><a href="https://ticket.melon.com/event/announced.htm?mid=3" class="btn_gnb btn_g_menu0703">당첨자발표</a></li>
+                                <li><a href="https://ticket.melon.com/event/my.htm?mid=4" class="btn_gnb btn_g_menu0704">참여이벤트</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- <li class="nth8">
+                        <a href="https://ticket.melon.com/foru/index.htm" class="btn_gnb_menu btn_gnb btn_g_menu08">For U</a>
+                    </li> -->
+                    <li class="nth9">
+                        <a href="https://ticket.melon.com/myticket/index.htm" class="btn_gnb_menu btn_gnb btn_g_menu09">마이티켓</a>
+                        <div class="lay_menu">
+                            <ul>
+                                <li><a href="https://ticket.melon.com/myticket/index.htm" class="btn_gnb btn_g_menu0901">마이티켓홈</a></li>
+                                <li><a href="https://ticket.melon.com/myticket/rsrvList.htm" class="btn_gnb btn_g_menu0902">예매확인/취소</a></li>
+                                <li><a href="https://ticket.melon.com/myticket/coupon.htm" class="btn_gnb btn_g_menu0903">할인쿠폰</a></li>
+                                <li><a href="https://ticket.melon.com/myticket/advtkList.htm" class="btn_gnb btn_g_menu0904">공연예매권</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div></div>
+</div>
+<div id="cont_wrap" class="clear_g">
+	<div id="conts_section" class="pr_none">
+		<div id="conts" class="clear_g">
+			<div class="section_detailview_product">
+				<!-- 상품상단 띠배너 -->
+				<!-- 상품상단 띠배너 -->
+
+				<div class="wrap_consert_product">
+
+					<!-- 상품 상세정보 -->
+					<div class="wrap_consert_cont">
+						<div class="box_consert_thumb thumb_180x254">
+							<img src="https://cdnticket.melon.co.kr/resource/image/upload/product/2025/10/20251015092137936d4fb8-066f-44c4-87fe-c9543832316f.jpg/melon/strip/true/quality/50"
+								onerror="noImage(this, 180, 254)" width="180" alt="" />
+								<span class="frame"></span>
+						</div>
+						<!-- 글로벌 연결 버튼 chk -->
+						<a href="https://tkglobal.melon.com/performance/index.htm?langCd=EN&prodId=212072"
+								   class="btn_global" target="_blank">
+									<span>Foreigner / 外國人</span>
+								</a>
+							<a href="javascript:;" id="btn_add_planner" class="">
+								<span id="foruText"></span>
+							</a>
+						<div class="box_consert_txt">
+								<p class="point">
+									<span class="ico_list_b ico_list_b1">단독판매</span>
+										</p>
+								<p class="tit">강예영 1st 정규앨범 콘서트: 우리는 여행하는 거니까</p>
+								<div class="tit_s"><p><span style="font-size: 11pt;">첫 정규앨범 발매를 기념하여, 함께 떠나는 특별한 여행을 준비했습니다.&nbsp;</span></p><p><span style="font-size: 11pt;">우리는 만남의 다리, 방황의 숲, 후회의 강을 지나 종착지인 환희의 나라에 도착합니다.&nbsp;</span></p><p><span style="font-size: 11pt;">함께하실 분들은 2025년 11월 29일, 수속을 마치고 탑승하시기 바랍니다. </span><span style="white-space: pre; font-size: 11pt;">	</span></p></div>
+								<div class="box_consert_info">
+									<dl class="info_left">
+										<dt class="tit_info">공연기간</dt>
+										<dd class="txt_info" id="periodInfo">2025.11.29 - 2025.11.29</dd>
+										<dt class="tit_info">관람시간</dt>
+										<dd class="txt_info">90분</dd>
+											<dt class="tit_info">장르</dt>
+										<dd class="txt_info">콘서트</dd>
+									</dl>
+
+									<dl class="info_right">
+										<dt class="tit_info">공연장</dt>
+											<dd class="txt_info">
+												<a href="javascript:;" id="performanceHallBtn" class="link" title="CJ아지트 광흥창&nbsp;" >
+															<span class="place">CJ아지트 광흥창&nbsp;</span>
+															<span class="ico_more">바로가기</span>
+														</a>
+													</dd>
+										<dt class="tit_info">관람등급</dt>
+										<dd class="txt_info">8세 이상</dd>
+											<dt class="tit_info">할인혜택</dt>
+											<dd class="txt_info">
+												<a href="javascript:;" class="btn_flexible btn_arr_down"
+													   onclick="openLayerPop('chargeSale',this);"><span>무이자</span></a>
+												</dd>
+										</dl>
+								</div>
+							</div>
+						<div class="link_sns">
+								<a href="javascript:;" class="fw" id="musFacebook" data-producttitle="강예영 1st 정규앨범 콘서트: 우리는 여행하는 거니까"
+								   data-posterimg="/resource/image/upload/product/2025/10/20251015092137936d4fb8-066f-44c4-87fe-c9543832316f.jpg" data-periodinfo="2025.11.29 - 2025.11.29"
+								   data-placename="' _SLASH_ CJ아지트 광흥창 '"	>
+									<span class="ico">페이스북</span>
+								</a>
+								<a href="javascript:;" class="x" id="musTwitter" data-producttitle="강예영 1st 정규앨범 콘서트: 우리는 여행하는 거니까">
+									<span class="ico">X</span>
+								</a>
+							</div>
+						</div>
+					<!-- 상품 상세정보 -->
+
+					<!-- 회차 영역 정보 -->
+					<div id="ticketing_process_box"><!-- [1SS0200] -->
+    <div class="wrap_ticketing_process"><!-- wrap_ticketing_process 상세 예매프로세스 -->
+                <div class="box_ticketing_process" style="display:none;">
+                    <dl class="date_choice">
+                        <dt class="tit_process tit_date_choice"><span class="img">날짜 선택</span></dt>
+                        <dd class="sorting">
+                        <!-- 클래식, 콘서트 -->
+                                <button class="type_calendar">캘린더형</button><!-- 해당유형에 따라 타입 Show -->
+                                <button class="show type_list">리스트형</button>
+                            </dd>
+                        <dd class="cont_process">
+                            <div class="box_type_list" id="box_list_date"
+                                ><!-- 리스트 타입일시 show -->
+                                <ul class="list_type" id="list_date" style="position: relative;">
+                                </ul>
+                            </div>
+                            <div class="box_type_calendar" id="box_calendar" style="display:none"><!-- 캘린더 타입일시 show -->
+                                <div class="box_date">
+                                    <a href="javascript:;" class="btn_calendar_prev ">이전</a>
+                                    <p class="tit_date"><span id="year_month"></span></p>
+                                    <a href="javascript:;" class="btn_calendar_next ">다음</a>
+                                </div>
+                                <table class="tbl_calendar">
+                                    <caption class="hide">날짜선택 캘린더형</caption>
+                                    <colgroup>
+                                        <col style="width:38px;" />
+                                        <col style="width:38px;" />
+                                        <col style="width:38px;" />
+                                        <col style="width:38px;" />
+                                        <col style="width:38px;" />
+                                        <col style="width:38px;" />
+                                        <col style="width:38px;" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="sun">SUN</th><!-- class holi은 공휴일 컬러 -->
+                                            <th scope="col">MON</th>
+                                            <th scope="col">TUE</th>
+                                            <th scope="col">WED</th>
+                                            <th scope="col">THU</th>
+                                            <th scope="col">FRI</th>
+                                            <th scope="col" class="sat">SAT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cal_wrapper">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="time_choice">
+                        <dt class="tit_process tit_time_choice"><span class="img">시간 선택</span></dt>
+                        <dd class="cont_process" id="section_time">
+                            <div class="box_type_comment"><!-- 날짜 선택전 show  -->
+                                <p class="txt_comment">날짜를 선택해주세요!</p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="seat_choice">
+                        <dt class="tit_process tit_seat_choice"><span class="img">좌석 선택</span></dt>
+                        <dd class="cont_process" id="section_seat">
+                            <div class="box_type_comment">
+            <!--                                             <p class="txt_comment">선택한 회차의 잔여석과 가격을 <br />확인할 수 있어요!</p> -->
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <!-- 일반 상품 -->
+                <div style="display:none;" class="btn_ticketing_type">
+                    <div class="btn_table">
+                        <div class="box_txt" id="box_tkt_txt">
+                        2025.10.15(수) 오후 18:00 티켓오픈!</div>
+
+                    </div>
+                </div>
+                </div><!-- //wrap_ticketing_process 상세 예매프로세스 -->
+        <input type="hidden" id="tciketProcessBox_prodTypeCode" value="PT0001"/>
+<input type="hidden" id="tciketProcessBox_perfTypeCode" value="GN0001"/>
+<input type="hidden" id="tciketProcessBox_daylistCount" value="0"/>
+<input type="hidden" id="tciketProcessBox_stateFlg" value="SS0200"/>
+<input type="hidden" id="tciketProcessBox_counterDt" value="20251015180000"/>
+<input type="hidden" id="tciketProcessBox_noticeTextCn" value="2025.10.15(수) 오후 18:00 티켓오픈!"/>
+
+<input type="hidden" id="tciketProcessBox_preSaleCounterUse" value=""/>
+<input type="hidden" id="tciketProcessBox_preSaleAutheTypeCode" value=""/>
+<input type="hidden" id="tciketProcessBox_preSaleTypeCode" value=""/>
+
+<script type="text/javascript">
+    function counterUse() {
+        var flg = 1;
+        if(flg === 1)
+            return true;
+        else
+            return false;
+    }
+    function getCounterEndDt() {
+        return new Date(getCounterDt().replace(/^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/,'$1/$2/$3 $4:$5:$6') + '+0900');
+    }
+    function getCounterDt() {
+        var counterDt = '20251015180000';
+        return counterDt;
+    }
+
+    function getNoticeTextCn() {
+        var str = '2025.10.15(수) 오후 18:00 티켓오픈!';
+        return str;
+    }
+    function getCondNo() {
+        var sellCondNo = '0';
+        
+
+        return sellCondNo;
+    }
+    function getPreAuthFlg() {
+        var paf = 'N';
+        
+
+        return paf;
+    }
+
+</script>
+</div>
+					<!-- 회차 영역 정보 -->
+
+				</div>
+
+				<!-- 상품 중단 띠배너 -->
+				<div class="wrap_banner">
+						<a href="javascript:;" onclick="javascript:commonUtil.bannerLanding('EV', '1470');" >
+									<img src="https://cdnticket.melon.co.kr/resource/image/upload/marketing/2025/10/20251014165800c147df8f-e87e-4ba0-a604-a67f666cffdc.png" alt="[초대권·굿즈 증정] 강예영 단독콘서트 기대평 이벤트" style="width:100%" />
+								</a>
+							</div>
+				<!-- 상품 중단 띠배너 -->
+
+				<!-- 탭 메뉴 영역 -->
+					<!-- tab on에 따라 wrap_detailview_cont / show -->
+					<div class="wrap_detail_tab wrap_detail_tab_6">
+						<ul class="list_detail_menu">
+							<li class="nth1 on" data-type="tab1">
+								<a href="javascript:;">
+									<span class="line">
+										<span class="menu ir_pm">상세정보</span>
+									</span>
+								</a>
+							</li>
+							<li class="nth3" id="perf_tab_evalue" data-type="tab2">
+									<span class="evnet_flag">event!</span>
+									<a href="javascript:;">
+									<span class="line">
+										<span class="menu ir_pm">기대평 </span>
+										<span class="btn_flexible btn_num_radius">
+											<span id="evalueCnt">0</span>
+										</span>
+									</span>
+									</a>
+								</li>
+								<li class="nth2" id="perf_tab_review" data-type="tab3">
+									<a href="javascript:;">
+									<span class="line">
+										<span class="menu ir_pm">관람후기</span>
+										<span class="btn_flexible btn_num_radius">
+											<span id="reviewCnt">0</span>
+										</span>
+									</span>
+									</a>
+								</li>
+								<li class="nth4" id="perf_tab_qna" data-type="tab4">
+									<a href="javascript:;">
+									<span class="line">
+										<span class="menu ir_pm">Q&amp;A</span>
+										<span class="btn_flexible btn_num_radius">
+											<span id="qnaCnt">0</span>
+										</span>
+									</span>
+									</a>
+								</li>
+							<li class="nth5" id="sub_place" data-type="tab5">
+								<a href="javascript:;">
+									<span class="line">
+										<span class="menu ir_pm">공연장정보</span>
+									</span>
+								</a>
+							</li>
+							<li class="nth6" data-type="tab6">
+								<a href="javascript:;">
+									<span class="line">
+										<span class="menu ir_pm">예매안내</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				<!-- 탭 메뉴 영역 -->
+				<!-- 상세정보 -->
+				<div class="wrap_detailview_cont">
+    <p class="none">상세정보 콘텐츠</p>
+
+    <div class="wrap_detail_left_cont">
+
+        <!-- 출연진 & 캐스팅 캘린더 리스트 -->
+        <div class="box_artist_checking">
+        <p class="tit_sub_float">출연진
+            <a href="javascript:;" style="display:none;" class="casting_view" id="castingInfoBtn" data-prodid = "212072" >캐스팅 스케줄 보기</a>
+        </p>
+        <div class="scroll">
+            <ul class="list_artist">
+                <li class="first">
+                        <label for="chk1">
+                                    <span class="check">
+                                        <span class="thumb">
+                                            <span class="crop">
+                                                <img src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/027/50/507/2750507_20250723090331.jpg/melon/thumbnail/320x300" onerror="noArtistImage(this, 100, 100)" alt="" style="vertical-align:top;" />
+                                            </span>
+                                            <span class="frame_100_100_radius"></span>
+                                        </span>
+                                        <input type="button" id="chk_foruArtist_2750507" data-artistid="2750507" class="btn_check" >
+                                        </span>
+                        </label>
+                        <a href="/artist/index.htm?artistId=2750507" class="txt_name">
+                            <strong class="singer">강예영</strong>
+                            </a>
+                    </li>
+                <li >
+                        <label for="chk2">
+                                    <span class="check">
+                                        <span class="thumb">
+                                            <span class="crop">
+                                                <img src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/023/99/781/2399781_20250904133742.jpg/melon/thumbnail/320x300" onerror="noArtistImage(this, 100, 100)" alt="" style="vertical-align:top;" />
+                                            </span>
+                                            <span class="frame_100_100_radius"></span>
+                                        </span>
+                                        <input type="button" id="chk_foruArtist_2399781" data-artistid="2399781" class="btn_check" >
+                                        </span>
+                        </label>
+                        <a href="/artist/index.htm?artistId=2399781" class="txt_name">
+                            <strong class="singer">최항석과 부기몬스터</strong>
+                            </a>
+                    </li>
+                <li >
+                        <label for="chk3">
+                                    <span class="check">
+                                        <span class="thumb">
+                                            <span class="crop">
+                                                <img src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/031/35/344/3135344_20240826102010.jpg/melon/thumbnail/320x300" onerror="noArtistImage(this, 100, 100)" alt="" style="vertical-align:top;" />
+                                            </span>
+                                            <span class="frame_100_100_radius"></span>
+                                        </span>
+                                        <input type="button" id="chk_foruArtist_3135344" data-artistid="3135344" class="btn_check" >
+                                        </span>
+                        </label>
+                        <a href="/artist/index.htm?artistId=3135344" class="txt_name">
+                            <strong class="singer">오아 (OHAH)</strong>
+                            </a>
+                    </li>
+                <li class="no_artist">
+                                    <span class="check">
+                                        <span class="thumb">
+                                            <img src="images/thumb_320_300.png" onerror="noArtistImage(this, 100, 100)" width="100" height="100" alt="" style="vertical-align: top;" />
+                                        </span>
+                                    </span>
+                            <a href="javascript:;" class="txt_name">
+                                <strong class="singer"></strong>
+                                <span class="part"></span>
+                            </a>
+                        </li>
+                    <li class="no_artist">
+                                    <span class="check">
+                                        <span class="thumb">
+                                            <img src="images/thumb_320_300.png" onerror="noArtistImage(this, 100, 100)" width="100" height="100" alt="" style="vertical-align: top;" />
+                                        </span>
+                                    </span>
+                            <a href="javascript:;" class="txt_name">
+                                <strong class="singer"></strong>
+                                <span class="part"></span>
+                            </a>
+                        </li>
+                    <li class="no_artist">
+                                    <span class="check">
+                                        <span class="thumb">
+                                            <img src="images/thumb_320_300.png" onerror="noArtistImage(this, 100, 100)" width="100" height="100" alt="" style="vertical-align: top;" />
+                                        </span>
+                                    </span>
+                            <a href="javascript:;" class="txt_name">
+                                <strong class="singer"></strong>
+                                <span class="part"></span>
+                            </a>
+                        </li>
+                    </ul>
+        </div>
+        </div>
+<div class="box_concert_time">
+                <p class="tit_sub_float">공연시간</p>
+                <p><span style="font-size: 11pt;">2025년 11월 29일(토) 오후 7시&nbsp;</span></p></div>
+        <!-- 가격정보 -->
+        <div class="box_bace_price">
+    <p class="tit_sub_float">가격정보
+        </p>
+    <p class="tit_sub_ss_float">기본가</p>
+    <ul class="list_seat">
+                    <li>
+                            <span class="seat_color " style="background:#BEA886"></span>
+                            <span class="seat_name">VIP석</span>
+                            <span class="price">55,000원</span>
+                        </li>
+                    <li>
+                            <span class="seat_color " style="background:#9076FF"></span>
+                            <span class="seat_name">R석</span>
+                            <span class="price">44,000원</span>
+                        </li>
+                    </ul>
+            </div><div class="box_ticke_notice">
+                <p class="tit_sub_float">예매 공지사항</p>
+                <p><span style="font-size: 11pt; color: rgb(0, 205, 60);"><b>※ 티켓오픈 : 2025년 10월 15일(수) 오후 6시&nbsp;</b></span></p><p><span style="font-size: 11pt; color: rgb(0, 205, 60);"><b>※ 매수제한 : 회원별 1인 4매</b></span></p><p><span style="font-size: 11pt;"><b>- 아이디가 여러개인 경우, 본인인증 받으신 모든 아이디를 합산하여 적용됩니다.</b></span></p><div><br></div><p><img src="https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/20240619175553bf71035f-399c-4c94-aba0-cffaf1ddd52e.png/melon/quality/90/optimize" title=""><br style="clear:both;"><img src="https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/20240619175558032146df-30fb-401e-9d34-9cec9aacd057.png/melon/quality/90/optimize" title=""></p></div>
+        <div class="box_price_info">
+                <p class="tit_sub_float">할인정보</p>
+                <p><span style="font-size: 11pt;">- 조기예매할인 30% (10월 25일까지 기간내 예매 시 적용가능)&nbsp;</span></p><p><span style="font-size: 11pt;">- 뮤지션할인 20% (증빙자료 미지참 시 현장에서 차액지불)</span></p><p><span style="font-size: 11pt;">- 군인할인 20% (증빙자료 미지참 시 현장에서 차액지불)</span></p></div>
+        <div class="box_img_content">
+                <p class="tit_sub_float">작품설명</p>
+                <p><img src="https://cdnticket.melon.co.kr/resource/image/upload/product/2025/09/20250930125441bd789c2a-ebd0-4bdb-be75-dce9238161f2.jpg/melon/quality/90/optimize" title=""><br style="clear:both;">&nbsp;</p></div>
+        <div class="box_agency">
+                <p class="tit_sub_float">기획사 정보</p>
+                <p><span style="font-size: 11pt;">주 최 :&nbsp;T9-H.ENT,&nbsp; Kang Yeyoung Company</span></p><p><span style="font-size: 11pt;">문 의 : t9hceo@t9hent.com,&nbsp; 인스타그램(@kangyeyoung_official)</span></p></div>
+        <!-- 상품정보제공 고시 -->
+        <div class="box_product_notice">
+    <p class="tit_sub_float">상품정보제공 고시</p>
+    <table class="tbl tbl_product_notice" style="width: 100%;">
+        <caption class="none">상품정보제공 고시</caption>
+        <colgroup>
+            <col style="width: 160px;">
+            <col style="width: 530px;">
+        </colgroup>
+        <tr>
+                <th scope="row">주최 / 기획</th>
+                <td>T9-H.ENT,  Kang Yeyoung Company</td>
+            </tr>
+        <tr>
+                <th scope="row">공연 관련 문의</th>
+                <td>t9hceo@t9hent.com, 인스타그램(@kangyeyoung_official)</td>
+            </tr>
+        <tr>
+            <th scope="row">예매 관련 문의</th>
+            <td>1899-0042</td>
+        </tr>
+        <tr>
+                <th scope="row">유효기간(이용조건)</th>
+                <td>2025.11.29 - 2025.11.29 (예매한 공연 회차에 한해 이용가능)</td>
+            </tr>
+        <tr>
+            <th scope="row">취소 / 환불조건</th>
+            <td>
+                <div class="box_tbl_cancel">
+                    <ul class="list_info">
+                        <li>- 취소마감시간 이후 또는 관람일 당일 예매하신 건에 대해서는 취소/변경/환불이 불가합니다.</li>
+                        <li>- 예매수수료는 예매 당일 밤 12시 이전까지 취소 시 환불 가능합니다.</li>
+                        <li>- 배송이 시작된 경우 취소마감시간 이전까지  멜론티켓 고객센터로 티켓을 반환해주셔야 환불이 가능하며, 도착한 일자 기준으로 취소수수료가 부과됩니다. <br />(* 단, 반환된 티켓의 배송료는 환불되지 않으며 일괄배송 상품의 경우 취소에 대한 자세한 문의는 고객센터로 문의해 주시기 바랍니다.)</li>
+                        <li>- 예매취소 시점과 결제 시 사용하신 신용카드사의 환불 처리기준에 따라 취소금액의 환급방법과 환급일은 다소 차이가 있을 수 있습니다.</li>
+                        <li>- 티켓 부분 취소 시 신용카드 할부 결제는 티켓 예매 시점으로 적용됩니다. (무이자할부 행사기간이 지날 경우 혜택 받지 못하실 수 있으니 유의하시기 바랍니다. )</li>
+                        <!-- FTTICKET-363 수정 //-->
+                        <li>- 은행에 따라 오후 11시 30분 이후로는 은행사 점검 및 마감 등 은행사 사정에 따라 입출금이 중단되어 취소가 불가할 수 있습니다.<br> 또한 취소 마감 시간 임박하여 취소 시 인터넷 연결, 통신사 영향 등으로 인하여 취소가 불가하거나 취소수수료 부과 기준이 달라질 수 있으니 여유있게 취소해 주시기 바랍니다. </li>
+                        <!--// FTTICKET-363 수정 -->
+                        <li class="line_h">- 취소일자에 따라 아래와 같이 취소수수료가 부과됩니다.<br />(예매 후 7일 이내라도 취소시점이 관람일로부터 10일 이내라면 관람일 기준의 취소수수료가 부과됩니다.)</li>
+                    </ul>
+                    <table class="tbl tbl_cancel" style="width:100%;">
+                        <caption class="none">취소일에 따른 취소수수료 안내</caption>
+                        <colgroup>
+                            <col style="width:235px;">
+                            <col style="width:235px;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">취소일</th>
+                            <th scope="col">취소수수료</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="first">
+                                <td>예매 후 7일이내</td>
+                                <td>없음</td>
+                            </tr>
+                        <tr >
+                                <td>예매 후 8일 ~ 관람일 10일이내</td>
+                                <td>장당 4000원 (티켓금액의 10% 한도)</td>
+                            </tr>
+                        <tr >
+                                <td>관람일 9일 전 ~ 7일전</td>
+                                <td>티켓금액의 10%</td>
+                            </tr>
+                        <tr >
+                                <td>관람일 6일 전 ~ 3일전</td>
+                                <td>티켓금액의 20%</td>
+                            </tr>
+                        <tr >
+                                <td>관람일 2일 전 ~ 1일전</td>
+                                <td>티켓금액의 30%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div></div>
+
+    <div class="wrap_detail_right_cont">
+        <!-- 오른쪽콘텐츠 시작 -->
+
+        <!-- 포토&영상 -->
+        <!-- 관련 음악 -->
+        <div class="box_music_list">
+        <p class="tit_sub_float">관련음악</p>
+        <form id="frm" name="frm">
+            <ol class="list_music">
+                <input type="checkbox" style="display:none" title="Loved me too?" class="input_check" name="input_check" value="39391746" checked>
+                    <li>
+                            <div class="box">
+                                <span class="rank">
+                                    <strong class="ranking">1</strong>
+                                    <span class="none">위</span>
+                                </span>
+                                <span class="txt">
+                                    <em class="tit_name">
+                                        <a href="javascript:melon.play.playSong('0','39391746');" >Loved me too?</a>
+                                    </em>
+                                    <strong class="singer">강예영</strong>
+                                </span>
+                            </div>
+                        </li>
+                    <input type="checkbox" style="display:none" title="Spring Dream" class="input_check" name="input_check" value="37550603" checked>
+                    <li>
+                            <div class="box">
+                                <span class="rank">
+                                    <strong class="ranking">2</strong>
+                                    <span class="none">위</span>
+                                </span>
+                                <span class="txt">
+                                    <em class="tit_name">
+                                        <a href="javascript:melon.play.playSong('0','37550603');" >Spring Dream</a>
+                                    </em>
+                                    <strong class="singer">강예영</strong>
+                                </span>
+                            </div>
+                        </li>
+                    <input type="checkbox" style="display:none" title="When a puppy loves" class="input_check" name="input_check" value="38289892" checked>
+                    <li>
+                            <div class="box">
+                                <span class="rank">
+                                    <strong class="ranking">3</strong>
+                                    <span class="none">위</span>
+                                </span>
+                                <span class="txt">
+                                    <em class="tit_name">
+                                        <a href="javascript:melon.play.playSong('0','38289892');" >When a puppy loves</a>
+                                    </em>
+                                    <strong class="singer">강예영</strong>
+                                </span>
+                            </div>
+                        </li>
+                    <input type="checkbox" style="display:none" title="Ribbon Love ∞" class="input_check" name="input_check" value="37279694" checked>
+                    <input type="checkbox" style="display:none" title="모든 일엔 때가 있대" class="input_check" name="input_check" value="38289891" checked>
+                    <input type="checkbox" style="display:none" title="Want It? Do It!" class="input_check" name="input_check" value="38152795" checked>
+                    </ol>
+        </form>
+        <a href="javascript:melon.play.playFormSong('0','frm');" class="app_play">멜론에서 전체듣기
+            <span class="btn_comm btn_player_s">재생</span>
+        </a>
+        <div class="ctr">
+            <a href="javascript:commonUtil.openWinEx('/common/popup/popRelationMusic.htm?prodId=212072',480,590, 'RELAT_CONTS_POPUP');" class="ico_more">더보기</a>
+        </div>
+    </div>
+<!-- 관련 앨범 -->
+        <div class="box_album_cont">
+        <p class="tit_sub_float">
+            관련앨범
+            <span class="btn_flexible btn_num_radius">
+                <span>6</span>
+            </span>
+        </p>
+        <ul class="list_album">
+            <li class=" first ">
+                        <a href="//www.melon.com/album/detail.htm?albumId=11929210" target="_blank">
+                            <span class="album thumb_135x135">
+                                <img src="https://cdnimg.melon.co.kr/cm2/album/images/119/29/210/11929210_20250722160741.jpg/melon/resize/234X234/strip/true" onerror="noImage(this, 135, 135)" width="135" alt="" />
+                                <span class="frame"></span>
+                                <span class="btn_comm btn_player_m">재생</span>
+                            </span>
+                            <span class="txt">
+                                <em class="tit_name">Loved me too?</em>
+                                <strong class="singer">강예영</strong>
+                            </span>
+                        </a>
+                    </li>
+                <li class="">
+                        <a href="//www.melon.com/album/detail.htm?albumId=11494098" target="_blank">
+                            <span class="album thumb_135x135">
+                                <img src="https://cdnimg.melon.co.kr/cm2/album/images/114/94/098/11494098_20240521111804.jpg/melon/resize/234X234/strip/true" onerror="noImage(this, 135, 135)" width="135" alt="" />
+                                <span class="frame"></span>
+                                <span class="btn_comm btn_player_m">재생</span>
+                            </span>
+                            <span class="txt">
+                                <em class="tit_name">Spring Dream</em>
+                                <strong class="singer">강예영</strong>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+
+        <div class="ctr">
+                <a href="javascript:commonUtil.openWinEx('/common/popup/popRelationMusic.htm?index=1&prodId=212072',480,590, 'RELAT_CONTS_POPUP');" class="ico_more">더보기</a>
+            </div>
+        </div>
+<!-- 관련 공연 -->
+        <!-- 랭킹 -->
+        <div class="box_ranking">
+        <p class="tit_sub_float">랭킹<span class="txt_category">콘서트/페스티벌</span></p>
+            <ol class="list_ranking">
+                <li class="nth1 on">
+                        <a href="/performance/index.htm?prodId=212063" class="item">
+                            <span class="inner">
+                                <span class="ranking">1</span>
+                                <span class="change">-<span class="screen_out">순위 유지</span></span>
+                                    <strong class="tit">한로로 4TH 단독콘서트 〈자몽살구클럽〉</strong>
+                                <span class="day">2025.11.22 - 2025.11.23</span>
+                                <span class="location">고려대학교 화정체육관 &nbsp; </span>
+                                <span class="thumb">
+                                    <img src="https://cdnticket.melon.co.kr/resource/image/upload/product/2025/10/2025100110271316ffaaee-a472-430b-ace8-45e261b9b3d6.jpg/melon/resize/91x126/strip/true" onerror="noImage(this, 90, 125)" alt="" />
+                                    <span class="frame"></span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+                <li class="nth2">
+                        <a href="/performance/index.htm?prodId=211913" class="item">
+                            <span class="inner">
+                                <span class="ranking">2</span>
+                                <span class="change">-<span class="screen_out">순위 유지</span></span>
+                                    <strong class="tit">Roselia ASIA TOUR 「Neuweltfahrt」 in Seoul</strong>
+                                <span class="day">2025.12.24 </span>
+                                <span class="location">고려대학교 화정체육관 &nbsp; </span>
+                                <span class="thumb">
+                                    <img src="https://cdnticket.melon.co.kr/resource/image/upload/product/2025/09/20250930171526ec5858b2-edcf-47b1-82b8-055386dea724.png/melon/resize/91x126/strip/true" onerror="noImage(this, 90, 125)" alt="" />
+                                    <span class="frame"></span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+                <li class="nth3">
+                        <a href="/performance/index.htm?prodId=212099" class="item">
+                            <span class="inner">
+                                <span class="ranking">3</span>
+                                <span class="change">-<span class="screen_out">순위 유지</span></span>
+                                    <strong class="tit">제76회 라이브 클럽 데이 extended! with SIMF</strong>
+                                <span class="day">2025.10.26 </span>
+                                <span class="location">LIVE CLUB DAY &nbsp; </span>
+                                <span class="thumb">
+                                    <img src="https://cdnticket.melon.co.kr/resource/image/upload/product/2025/10/202510021736528c67a8f2-af03-4fe6-bab8-75db0ac9e573.png/melon/resize/91x126/strip/true" onerror="noImage(this, 90, 125)" alt="" />
+                                    <span class="frame"></span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+                </ol>
+        <div class="ctr">
+            <a href="/ranking/index.htm?genreType=NEW_GENRE_CON" class="ico_more">더보기</a>
+        </div>
+    </div>
+</div>
+    <!-- //오른쪽콘텐츠 끝 -->
+
+</div><!-- 기대평 -->
+					<!-- 기대평배너 -->
+<!-- //기대평배너 -->
+
+<!-- 게시판 운영규정 -->
+<div class="notice_role" style="display: none;">
+	<p>티켓 매매 및 양도,교환의 글은 사전 통보 없이 삭제될 수 있습니다.</p>
+	<div class="button_wrap">
+    	<span class="button btColorWhite"><a href="#none" class="btSizeM" onclick="$('#role1').toggle();">게시판 운영규칙</a></span>
+    	<div class="layerPop" id="role1">
+			<span class="arrow"></span>
+			<div class="la_header">
+				<div class="la_header1">
+					<h3>게시판 운영규정</h3>
+					<div class="popClose">
+		               <a href="#none" class="btn_layerpopup_close" onclick="$('#role1').hide();">레이어팝업닫기</a>
+		            </div>
+				</div>
+			</div>
+			<div class="la_middle">
+				<div class="la_middle1">
+					<div class="la_con">
+						1. 불량 게시물로 판단되는 글은 사전고지 없이 삭제될 수 있으며,<br>
+						지속적으로 불량 게시물을 작성하실 경우 멜론티켓 및 멜론의 댓글 작성 권한이 제한 될 수 있습니다.<br><br>
+						[멜론티켓 불량 게시물 기준 ]<br>
+						① 티켓 매매 및 양도, 교환의 글<br>
+						② 전화번호, 이메일, 메신저ID 등 회원 및 타인의 개인정보 유출이 우려되는 경우<br>
+						③ 해당 공연의 특정 출연자를 비방하는 글<br>
+						④ 욕설, 비방, 음란성, 도배글 등 다른 고객님들께 불쾌감을 주는 글<br><br>
+						2. 게시된 글의 저작권은 글을 작성한 회원에게 있으며 게시물로 인해<br>
+						발생하는 문제는 게시자 본인에게 책임이 있습니다.
+					</div>
+				</div>
+			</div>
+			<div class="la_footer"><div class="la_footer1"></div></div>
+		</div>
+	</div>
+</div>
+<!-- //게시판 운영규정 -->
+<!-- //wrap_detailview_cont 기대평 -->
+<div class="wrap_detailview_cont" style="display: none;margin-top:10px;">
+    <div class='cmt_area' name="cmtpgn" id='cmtpgn' 
+    data-sqwidget='templateType:pc-evalue-type;textareaType:large-size;pageType:generic-page' 
+    data-sqwidget-settings='cmtPocType:pc.web;pocId:WP15;menuId:2;chnlSeq:916;contsRefValue:212072;listPageUrl:http://ticket.melon.com/performance/index.htm?prodId=212072'>
+    </div>
+</div>
+<!-- //wrap_detailview_cont --><!-- 관람후기 -->
+					<!--
+fnSlider 사용법
+- fnSlider 메인 객체(현재는 #slider01) 이하 ul li 까지는 마크업은 유지해주시고, ul의 클래스 바꾸시면 안됩니다..
+- fnSlider 메인 객체 상위 wrap객체 있어야 합니다.
+- 필요없는 옵션은 아예 적지 않으셔도 됩니다. (모두 Default일때 예시 : $("#slider01).fnSlider();)
+- 해당 플러그인은 ui_script.js 에 있습니다.
+-->
+<!-- fnSlider : 슬라이드 -->
+<!-- //fnSlider : 슬라이드 -->
+<a name="review_area"></a>
+
+<!-- 관람후기배너 -->
+<!-- //관람후기배너 -->
+
+<!-- 게시판 운영규정 -->
+<div class="notice_role" style="display: none;">
+	<p>티켓 매매 및 양도,교환의 글은 사전 통보 없이 삭제될 수 있습니다.</p>
+	<div class="button_wrap">
+    	<span class="button btColorWhite"><a href="#none" class="btSizeM" onclick="$('#role2').toggle();">게시판 운영규칙</a></span>
+    	<div class="layerPop" id="role2">
+			<span class="arrow"></span>
+			<div class="la_header">
+				<div class="la_header1">
+					<h3>게시판 운영규정</h3>
+					<div class="popClose">
+		                <a href="#none" class="btn_layerpopup_close" onclick="$('#role2').hide();">레이어팝업닫기</a>
+		            </div>
+				</div>
+			</div>
+			<div class="la_middle">
+				<div class="la_middle1">
+					<div class="la_con">
+						1. 불량 게시물로 판단되는 글은 사전고지 없이 삭제될 수 있으며,<br>
+						지속적으로 불량 게시물을 작성하실 경우 멜론티켓 및 멜론의 댓글 작성 권한이 제한 될 수 있습니다.<br><br>
+						[멜론티켓 불량 게시물 기준 ]<br>
+						① 티켓 매매 및 양도, 교환의 글<br>
+						② 전화번호, 이메일, 메신저ID 등 회원 및 타인의 개인정보 유출이 우려되는 경우<br>
+						③ 해당 공연의 특정 출연자를 비방하는 글<br>
+						④ 욕설, 비방, 음란성, 도배글 등 다른 고객님들께 불쾌감을 주는 글<br><br>
+						2. 게시된 글의 저작권은 글을 작성한 회원에게 있으며 게시물로 인해<br>
+						발생하는 문제는 게시자 본인에게 책임이 있습니다.
+					</div>
+				</div>
+			</div>
+			<div class="la_footer"><div class="la_footer1"></div></div>
+		</div>
+	</div>
+</div>
+<!-- //게시판 운영규정 -->
+<!-- //wrap_detailview_cont 관람후기 -->
+<div class="wrap_detailview_cont" style="display: none;margin-top:10px;">
+                                <div class="wrap_point" id="rank_box" style="display: none;background-color: #fcfcfc;">
+                                    <div class="box_my_star" style="height: 40px; padding-top: 20px;padding-left:100px">나의 평점
+                                        <!--  별점은 0~5까지 10단계 : point00, point05, point10...... point50 -->
+                                        <span id="usr_rate_img" class="ico_star point50">
+                                            <a href="javascript:;" onclick="javascript:setUsrRate(1);" class="btn_star star01">평점1</a>
+                                            <a href="javascript:;" onclick="javascript:setUsrRate(2);" class="btn_star star02">평점2</a>
+                                            <a href="javascript:;" onclick="javascript:setUsrRate(3);" class="btn_star star03">평점3</a>
+                                            <a href="javascript:;" onclick="javascript:setUsrRate(4);" class="btn_star star04">평점4</a>
+                                            <a href="javascript:;" onclick="javascript:setUsrRate(5);" class="btn_star star05">평점5</a>
+                                        </span><!-- 별점 0.0점 -->
+                                        <span class="point"><span class="now" id="usr_rate_txt">5.0</span> / <span class="total">5.0</span></span>
+                                    </div>
+                                    <div class="box_total_star" style="height: 40px; padding-top: 20px;padding-right:23px">현재 종합 평점
+                                        <!--  별점은 0~5까지 10단계 : point00, point05, point10...... point50 -->
+                                        <span class="ico_star point00" id="perf_avr_rate_img"></span><!-- 별점 0.0점 -->
+                                        <span class="point"><span class="now" id="perf_avr_rate_txt">0.0</span> / <span class="total">5.0</span></span>
+                                    </div>
+                                </div>
+    <div class='cmt_area' name="cmtpgn" id='cmtpgn' 
+    data-sqwidget='templateType:pc-review-type;textareaType:large-size;pageType:generic-page' 
+    data-sqwidget-settings='cmtPocType:pc.web;pocId:WP15;menuId:1;chnlSeq:917;contsRefValue:212072;listPageUrl:https://ticket.melon.com/performance/index.htm?prodId=212072'>
+    </div>
+</div>
+<script type="text/javascript">
+
+	var usrRate = 5;
+	var rankInit = true;
+	function setUsrRate(rate) {
+		usrRate = rate;
+		if(!rate) usrRate = 1;
+		$("#usr_rate_img").attr("class", "ico_star point" + usrRate*10);
+		$("#usr_rate_txt").html(usrRate.toFixed(1));
+	}
+
+	function updateAvrRate() {
+		checkPerfRate(212072, CMT_CHNL_REVIEW);
+		if(!perfRate) perfRate = 0;
+		$("#perf_avr_rate_img").attr("class", "ico_star point" + Math.round((perfRate*10)/5)*5);
+		$("#perf_avr_rate_txt").html(perfRate.toFixed(1));
+	}
+</script><!-- Q&amp;A -->
+					<div class="wrap_detailview_cont" style="display: none;margin-top:40px;">
+    <p class="none">Q&amp;A 콘텐츠</p>
+
+    <!-- 20160822 이용안내 문구 수정 -->
+    <div class="btn_qna">
+    	<p class="txt">Q&amp;A 게시판은 여러분 모두 질문과 답변에 참여할 수 있는 공간입니다.</p>
+        <p class="txt2">예매/배송 관련 문의사항은 
+       	 	<a href="/customerservice/qnaWrite.htm">고객센터&gt;1:1문의</a> 또는 
+        	<a href="/customerservice/faq.htm">FAQ</a>나 
+        	<a href="/customerservice/howto.htm">이용안내</a>를 이용해주세요.
+        </p>
+    </div>
+    
+    <div class='cmt_area' name="cmtpgn" id='cmtpgn' 
+    data-sqwidget='templateType:pc-qna-type;textareaType:large-size;pageType:song-page' 
+    data-sqwidget-settings='cmtPocType:pc.web;pocId:WP15;menuId:3;chnlSeq:918;contsRefValue:212072;listPageUrl:https://ticket.melon.com/performance/index.htm?prodId=212072'>
+    </div>
+</div>
+
+<!-- 공연장정보-->
+					<div class="wrap_detailview_cont" style="display: none">
+<p class="none">공연장정보 콘텐츠</p> 
+    <div class="box_consert_profile_in">
+        <div class="box_logo_thumb">
+            <img src="https://cdnticket.melon.co.kr" onerror="noImage(this, 234, 175)" alt="" />
+        </div>
+        <!-- 180*136 -->
+        <div class="box_consert_txt">
+            <p class="tit_consert_area">
+                <a href="/place/index.htm?placeId=329">CJ아지트 광흥창&nbsp;<span class="ico_more">더보기</span></a>
+            </p>
+            <ul class="list_profile">
+                <li>서울 마포구 창전로 14 (신정동, CJ아지트)</li>
+                <li>02-3272-2616</li>
+                <li>
+                <a href="http://www.cjazit.org" target="_blank">http://www.cjazit.org</a>
+				    </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="box_consert_api">
+	        <p class="tit_sub_float">공연장 위치</p>
+	            <iframe id="titleFrame" frameborder=0 framespacing=0 marginheight=0 marginwidth=0 scrolling=no vspace=0 style="overflow:hidden;height:421px;width:100%">
+	            </iframe>            
+	        <div class="ctr box_link">
+	            <a target="_blank" href="http://map.daum.net/link/to/CJ아지트 광흥창,37.544277,126.930252" class="ico_more map">빠른길 찾기</a>
+	        </div>
+	    </div>
+    <div class="box_directions">
+    			<ul class="list_traffic">
+            </ul>
+    </div>
+
+    </div>
+
+<script type="text/javascript">
+    //공연장 이미지 목록
+    function getPlaceImgList()
+    {
+        var images = [];
+        $(".placeImg").each(function(){
+            images.push($(this).attr("data-src"));
+        });
+        return images;
+    }
+</script>
+<!-- 유의사항-->
+					<div class="wrap_detailview_cont" style="display: none">
+    <p class="none">유의사항 콘텐츠</p>
+	<div class="box_ticket_receive">
+		<p class="tit_sub_float">티켓 수령 방법 안내</p>
+		<ul class="list_info">
+			<li class="first">
+				<span class="tit">현장수령</span>
+				<em class="txt">- 예매번호가 포함되어 있는 예매확인서와 예매자의 실물 신분증(복사본 및 사진 불가) 을 매표소에 제출하시면 편리하게 티켓을 수령하실 수 있습니다. <br/>
+										※ 공연별 정책이 상이하니 자세한 내용은 예매페이지 내 상세정보 확인 부탁드립니다.
+				</em>
+			</li>
+			<li>
+				<span class="tit">배송</span>
+				<em class="txt">- 배송을 선택하신 경우 예매완료(결제익일) 기준 4~5일 이내에 예매 시 입력하신 주소로 배송됩니다. (주말/공휴일 제외한 영업일 기준)</em>
+				<em class="txt">- 일괄배송의 경우 공연 별로 배송일자가 상이하며 지정된 배송일자 기준으로 배송이 시작됩니다. (지정된 배송일자는 상세정보 및 예매공지사항에서 확인할 수 있습니다.)</em>
+				<em class="txt">- 지역 및 배송서비스 사정에 따라 배송사가 변경될 수 있으며, 배송일이 추가적으로 소요될 수 있습니다. (CJ대한통운, 우체국 외 1개 업체)</em>
+			</li>
+		</ul>
+	</div>
+
+    <div class="box_refund_info">
+        <p class="tit_sub_float">취소/환불 안내</p>
+        <ul class="list_info">
+            <li>- 취소마감시간 이후 또는 관람일 당일 예매하신 건에 대해서는 취소/변경/환불이 불가합니다.</li>
+            <li>- 예매수수료는 예매 당일 밤 12시 이전까지 취소 시 환불 가능합니다.</li>
+            <li>- 배송이 시작된 경우 취소마감시간 이전까지  멜론티켓 고객센터로 티켓을 반환해주셔야 환불이 가능하며, 도착한 일자 기준으로 취소수수료가 부과됩니다. <br />(* 단, 반환된 티켓의 배송료는 환불되지 않으며 일괄배송 상품의 경우 취소에 대한 자세한 문의는 고객센터로 문의해 주시기 바랍니다.)</li>
+            <li>- 예매취소 시점과 결제 시 사용하신 신용카드사의 환불 처리기준에 따라 취소금액의 환급방법과 환급일은 다소 차이가 있을 수 있습니다.</li>
+            <li>- 티켓 부분 취소 시 신용카드 할부 결제는 티켓 예매 시점으로 적용됩니다. (무이자할부 행사기간이 지날 경우 혜택 받지 못하실 수 있으니 유의하시기 바랍니다. )</li>
+            <!-- FTTICKET-363 수정 //-->
+            <li>- 은행에 따라 오후 11시 30분 이후로는 은행사 점검 및 마감 등 은행사 사정에 따라 입출금이 중단되어 취소가 불가할 수 있습니다.<br> 또한 취소 마감 시간 임박하여 취소 시 인터넷 연결, 통신사 영향 등으로 인하여 취소가 불가하거나 취소수수료 부과 기준이 달라질 수 있으니 여유있게 취소해 주시기 바랍니다. </li>
+            <!--// FTTICKET-363 수정 -->
+            <li class="line_h">- 취소일자에 따라 아래와 같이 취소수수료가 부과됩니다.<br />(예매 후 7일 이내라도 취소시점이 관람일로부터 10일 이내라면 관람일 기준의 취소수수료가 부과됩니다.)</li>
+        </ul>
+        <table class="tbl tbl_cancel">
+            <caption class="none">취소일에 따른 취소수수료 안내</caption>
+            <colgroup>
+                <col style="width: 290px">
+                <col style="width: 718px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">취소일</th>
+                    <th scope="col">취소수수료</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="sub_ject">예매 후 7일이내</td>
+                    <td>없음</td>
+                </tr>
+                <tr>
+                    <td class="sub_ject">예매 후 8일 ~ 관람일 10일이내</td>
+                    <td>장당 4000원 (티켓금액의 10% 한도)</td>
+                </tr>
+                <tr>
+                    <td class="sub_ject">관람일 9일 전 ~ 7일전</td>
+                    <td>티켓금액의 10%</td>
+                </tr>
+                <tr>
+                    <td class="sub_ject">관람일 6일 전 ~ 3일전</td>
+                    <td>티켓금액의 20%</td>
+                </tr>
+                <tr>
+                    <td class="sub_ject">관람일 2일 전 ~ 1일전</td>
+                    <td>티켓금액의 30%</td>
+                </tr>
+                </tbody>
+        </table>
+        </div>
+    <div class="box_ticket_return mt20">
+		<p class="tit_addr">티켓반송주소</p>
+		<p class="txt_addr">(04555) 서울특별시 중구 수표로 34 씨티센터타워 18층 트랜스코스모스코리아 멜론티켓 고객센터</p>
+	</div>
+    <div class="box_card_notice">
+		<p class="tit_sub_float">신용카드 결제방법 안내</p>
+		<table class="tbl tbl_card_notice">
+			<caption class="none">신용카드 결제방법 안내</caption>
+			<colgroup>
+				<col style="">
+				<col style="width:420px;">
+                               <col style="width:420px;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">항목</th>
+					<th scope="col">인터넷 안전 결제(ISP)</th>
+                                   <th scope="col">안심 클릭 서비스</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">결제방식</th>
+					<td>카드번호를 직접 입력하지 않고 카드사에서 발급하는 <br />가상의 인터넷 안전 결제(ISP)의 비밀번호만으로도 안전한 <br />결제 서비스를 이용하실 수 있습니다.</td>
+                                   <td>소유하신 카드에 미리 설정해 둔 전자상거래용의 <br />별도 비밀번호를 입력하여 카드 사용자 본인을 확인 한 후 <br />결제 서비스를 이용하실 수 있습니다.</td>
+				</tr>
+                               <tr>
+					<th scope="row">해당카드</th>
+					<td>국민 / BC / 우리 / 우체국 / 제주은행 / 전북은행 / 광주은행<br /> 수협카드 등</td>
+                                   <td>신한 / 현대 / 삼성 / 롯데 / 하나(구 외환 / 하나SK)<br /> NH / 씨티카드 </td>
+				</tr>
+                               <tr>
+					<th scope="row">신청 및 이용안내</th>
+					<td>
+                          <ol>
+                              <li>배송/결제 페이지 결제 수단 선택 영역 에서 <br /> "신용카드", "할부기간" 선택 후 <strong>[결제하기]</strong> 클릭</li>
+                              <li>안전결제(ISP) EXE 프로그램 설치 (최초 1회)</li>
+                              <li>안전결제(ISP) 서비스 결제창 카드 선택 영역의 <br /><strong>[카드 등록]</strong>버튼 클릭</li>
+                              <li>신용카드 번호와 E-mail 주소를 입력 후 <strong>[다음]</strong> 클릭 </li>
+                              <li>신용카드 비밀번호, CVC코드, 유효기간 입력 후 <strong>[다음]</strong></li>
+                              <li>안전결제(ISP) 비밀번호를 입력 후 <strong>[확인]</strong> 클릭</li>
+                          </ol>
+                      </td>
+                      <td>
+                      	<ol>
+                              <li>배송/결제 페이지 결제수단 선택 영역에서 "신용카드", <br />"할부기간" 선택 후 <strong>[결제하기]</strong> 클릭 </li>
+                              <li>안심클릭 카드사별 EXE프로그램 설치(카드사별 최초 1회)</li>
+                              <li>안심클릭 등록 (최초 안심클릭 서비스 이용 시)
+                              	<ul>
+                                  	<li><span>&sdot;</span>카드번호 입력 후 <strong>[확인]</strong> 클릭</li>
+                                      <li><span>&sdot;</span>주민등록번호/ CVC/ 비밀번호 입력 후 <strong>[확인]</strong> 클릭</li>
+                                      <li><span>&sdot;</span>휴대폰 인증 혹은 공인인증 이후 <strong>[확인]</strong> 클릭</li>
+                                      <li><span>&sdot;</span>이용약관에 동의 후 개인확인 메시지와 <br />&nbsp;&nbsp;안심클릭 비밀번호 등록</li>
+                                  </ul>
+                              </li>
+                              <li>안심클릭 결제
+                              	<ul>
+                                  	<li><span>&sdot;</span>카드번호, 안심클릭 비밀번호, CVC코드 입력 후 결제.</li>
+                                  </ul>
+                              </li>
+                          </ol>
+
+                          <p><strong>*</strong> 안심클릭 서비스 결제창 내의 "간편결제 서비스" 및 <br />&nbsp;&nbsp;"앱카드결제 서비스"를 선택하시면 정보 등록 후 간편하게 <br />&nbsp;&nbsp;이용하실 수 있습니다.</p>
+                      </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+    <div class="box_customer_center">
+		<p>궁금하신 사항이 있다면 고객센터의 FAQ를 확인하거나 1:1문의를 이용해주세요.<a href="/customerservice/faq.htm" class="btn_link"><span>고객센터 바로가기</span></a></p>
+	</div>
+</div></div>
+		</div>
+	</div>
+</div>
+
+<!-- 공통 값 -->
+
+<input type="hidden" id="prodIdNum" value="212072" />
+<input type="hidden" id="global_ticket_alert_message_data" value="" />
+<input type="hidden" id="global_ticket_alert_message_yn" value="" />
+<input type="hidden" id="global_ticket_captcha_yn" value="N" />
+<input type="hidden" id="global_ticket_gate_yn" value="" />
+<input type="hidden" id="global_ticket_perfTypeCode" value="GN0001" />
+<input type="hidden" id="global_ticket_prodTypeCode" value="PT0001" />
+<input type="hidden" id="global_ticket_interlockTypeCode" value="" />
+<input type="hidden" id="global_ticket_castingYn" value="N" />
+<input type="hidden" id="global_ticket_corporateDcData" value="" />
+<input type="hidden" id="global_ticket_gradeCode" value="GR0012" />
+<input type="hidden" id="global_ticket_rsrvInfo" value="" />
+<input type="hidden" id="global_ticket_title" value="강예영 1st 정규앨범 콘서트: 우리는 여행하는 거니까" />
+<input type="hidden" id="global_ticket_performanceHall_locLati" value="37.544277" />
+<input type="hidden" id="global_ticket_performanceHall_locLogi" value="126.930252" />
+<input type="hidden" id="global_ticket_bbsDpPocTypeCode" value="TA0001" />
+<input type="hidden" id="global_ticket_previewDpYn" value="Y" />
+<input type="hidden" id="global_ticket_reviewDpYn" value="Y" />
+<input type="hidden" id="global_ticket_qnaDpYn" value="Y" />
+<input type="hidden" id="global_ticket_landingTab" value="" />
+<input type="hidden" id="global_ticket_expectationBanner" value="N" />
+<input type="hidden" id="global_ticket_tabReViewBeltBanner" value="N" />
+<input type="hidden" id="global_ticket_zamEnabled" value="0" />
+<input type="hidden" id="global_ticket_proFile" value="prd" />
+<input type="hidden" id="simpliedProductYn" value="N" />
+
+
+<!-- 공통 값 -->
+
+<form id="oneForm" method="post" name="oneForm">
+	<input type="hidden" name="prodId" value="" />
+	<input type="hidden" name="pocCode" value="" />
+	<input type="hidden" name="scheduleNo" value="" />
+	<input type="hidden" name="sellCondNo" value="" />
+	<input type="hidden" name="sellTypeCode" value="" />
+	<input type="hidden" name="tYn" value="" />
+	<input type="hidden" name="chk" value="" />
+	<input type="hidden" name="netfunnel_key" />
+	<input type="hidden" name="autheTypeCode" id="autheTypeCode" value="" />
+</form>
+
+<!-- 공지사항 -->
+<div class="my_fold" style="width: 1008px; margin: 0 auto; padding-left: 20px;">
+    <div class="footer_notice">
+        <strong>공지사항</strong>
+        <ul>
+            <li>
+                <p class="n_txt">
+                    <a href="/customerservice/noticeInform.htm?noticeNo=608">
+                        <span class="new">New</span>[시스템작업] 10.12(일) 교보증권 전산작업 안내</a>
+                    <span class="date">2025.10.10</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div><!-- 우측 윙 배너 -->
+<div class="rightWingBanner">
+    </div><!-- 추천할인  팝업-->
+<!-- 추천할인  팝업-->
+<div class="layerPop" id="bestSale" style="width:441px;">
+    <div class="layer_arrow round"></div>
+    <div class="la_header">
+        <div class="la_header1">
+            <h3>추천할인</h3>
+            <div class="popClose">
+                <a class="btn_layerpopup_close" href="#" onclick="closeLayerPop('bestSale'); return false;">레이어팝업닫기</a>
+            </div>
+        </div>
+    </div>
+    <div class="la_middle">
+        <div class="la_middle1">
+            <div class="la_con">
+                <div class="box_result">
+                    <table class="tbl_charge_list" cellpadding="0" cellspacing="0" border="0" border-collapse="collapse" summary="카드 할인 혜택 테이블입니다.">
+                        <colgroup>
+                            <col width="62" />
+                            <col width="*" />
+                        </colgroup>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="la_footer"><div class="la_footer1"></div></div>
+</div>
+<!-- //추천할인 팝업 --><!-- 할인쿠폰  팝업-->
+<!-- 할인쿠폰  팝업-->
+<div class="layerPop" id="couponSale" style="width:360px;">
+    <div class="layer_arrow round"></div>
+    <div class="la_header">
+        <div class="la_header1">
+            <h3>할인쿠폰</h3>
+            <div class="popClose">
+                <a class="btn_layerpopup_close" href="javascript:;" onclick="closeLayerPop('couponSale'); return false;">레이어팝업닫기</a>
+            </div>
+        </div>
+    </div>
+    <div class="la_middle">
+        <div class="la_middle1">
+            <div class="la_con">
+                <div class="box_result">
+                    <div class="discount_couponSale">
+                        <div class="coupon_scroll">
+                            </div>
+                        <div class="guide">
+                            <h4 class="title">[사용안내]</h4>
+                            <ul class="list">
+                                <li>- 쿠폰은 온라인 예매 시에만 사용 가능합니다.</li>
+                                <li>- 타 쿠폰과 중복 사용 불가합니다.</li>
+                                <li>- 예매한 내역 전체 취소 시 사용했던 쿠폰은 복원 됩니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="la_footer"><div class="la_footer1"></div></div>
+</div>
+<!-- //할인쿠폰 팝업 --><!-- 무이자  팝업-->
+<!-- 무이자 할부  팝업-->
+<div class="layerPop" id="chargeSale" style="width: 403px;">
+    <!--  style="width:455px 원래 팝업 넓이 보다 30px 빼고 넣어 주세요 -->
+    <div class="layer_arrow round"></div>
+    <div class="la_header">
+        <div class="la_header1">
+            <h3>무이자 할부 혜택</h3>
+            <div class="popClose">
+                <a class="btn_layerpopup_close" href="javascript:;"
+                   onclick="closeLayerPop('chargeSale'); return false;">레이어팝업닫기</a>
+            </div>
+        </div>
+    </div>
+    <div class="la_middle">
+        <div class="la_middle1">
+            <div class="la_con">
+                <div class="box_result">
+                    <table class="tbl_charge_list" cellpadding="0" cellspacing="0"
+                           border="0" border-collapse="collapse" summary="제휴카드 혜택 설명 테이블입니다.">
+                        <colgroup>
+                            <col width="62" />
+                            <col width="*" />
+                        </colgroup>
+                        <tbody>
+
+                        <tr>
+                                <th>삼성카드</th>
+                                <td>
+                                    5만원 이상 2~3개월 무이자 할부 적용<br>
+                                        (2025.10.01~
+                                        9999.12.31) 
+                                    </td>
+                            </tr>
+                        <tr>
+                                <th>신한카드</th>
+                                <td>
+                                    5만원 이상 2~3개월 무이자 할부 적용<br>
+                                        (2025.10.01~
+                                        9999.12.31) 
+                                    </td>
+                            </tr>
+                        <tr>
+                                <th>BC카드</th>
+                                <td>
+                                    5만원 이상 2~5개월 무이자 할부 적용<br>
+                                        (2025.08.01~
+                                        9999.12.31) 
+                                    </td>
+                            </tr>
+                        <tr>
+                                <th>NH카드</th>
+                                <td>
+                                    5만원 이상 2~6개월 무이자 할부 적용<br>
+                                        (2025.08.01~
+                                        9999.12.31) 
+                                    </td>
+                            </tr>
+                        <tr>
+                                <th>광주카드</th>
+                                <td>
+                                    5만원 이상 2~7개월 무이자 할부 적용<br>
+                                        (2025.08.01~
+                                        9999.12.31) 
+                                    </td>
+                            </tr>
+                        <tr>
+                                <th>국민카드</th>
+                                <td>
+                                    5만원 이상 2~5개월 무이자 할부 적용<br>
+                                        (2025.08.01~
+                                        9999.12.31) 
+                                    </td>
+                            </tr>
+                        <tr>
+                                <th>롯데카드</th>
+                                <td>
+                                    5만원 이상 2~5개월 무이자 할부 적용<br>
+                                        (2025.08.01~
+                                        9999.12.31) 
+                                    </td>
+                            </tr>
+                        <tr>
+                                <th>우리카드</th>
+                                <td>
+                                    5만원 이상 2~5개월 무이자 할부 적용<br>
+                                        (2025.08.01~
+                                        9999.12.31) 
+                                    </td>
+                            </tr>
+                        <tr>
+                                <th>전북카드</th>
+                                <td>
+                                    5만원 이상 2~3개월 무이자 할부 적용<br>
+                                        (2025.08.01~
+                                        9999.12.31) 
+                                    </td>
+                            </tr>
+                        <tr>
+                                <th>하나카드</th>
+                                <td>
+                                    5만원 이상 2~4개월 무이자 할부 적용<br>
+                                        (2025.10.01~
+                                        9999.12.31) 
+                                    </td>
+                            </tr>
+                        <tr>
+                                <th>현대카드</th>
+                                <td>
+                                    5만원 이상 2~3개월 무이자 할부 적용<br>
+                                        (2025.08.01~
+                                        9999.12.31) 
+                                    </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p class="tbl_charge_comm">* 법인카드, 은행계열카드, 체크카드, 기프트카드는 제외됩니다.</p>
+            <p class="tbl_charge_comm">* 카카오페이 무이자 할부 혜택은 카카오페이 결제 시 확인할 수 있습니다.</p>
+            <p class="tbl_charge_comm">* 당월 무이자 할부 혜택은 매월 1일 업데이트 됩니다.</p>
+            <p class="tbl_charge_comm">* 카드사 사정에 따라 당월 무이자 할부 혜택은 늦게 공지될 수 있습니다.</p>
+            <p class="tbl_charge_comm">* 자세한 사항은 카드사 홈페이지에서 확인해주시기 바랍니다.</p>
+        </div>
+    </div>
+    <div class="la_footer">
+        <div class="la_footer1"></div>
+    </div>
+</div>
+<!-- //무이자 할부 팝업 --><!-- 캡챠  팝업-->
+<!-- 인증예매 안내-->
+<div class="layerPop" id="certification" style="width:470px;">
+    <div class="la_header">
+        <div class="la_header1">
+            <h3>인증예매 안내</h3>
+            <div class="popClose">
+                <a class="btn_layerpopup_close" href="#" onclick="closeLayerPop('certification'); return false;">레이어팝업닫기</a>
+            </div>
+        </div>
+    </div>
+    <div class="la_middle">
+        <div class="la_middle1">
+            <div class="la_con">
+                <div class="box_result">
+                    <img src="images/certification_guide_20180802.png" alt="부정예매 방지를 위해 좌석 선택 시 보안 문자 입력이 필요합니다. 좌석을 먼저 확인하고 싶다면, ‘나중에 입력하기’를 클릭하세요!" />
+                </div>
+            </div>
+            <p class="tbl_charge_comm">* 멜론티켓 이용약관 제19조에 따라, 부정한 방법으로 예매 하거나 관람목적이<br />&nbsp;&nbsp;아닌 부정한 활용을 위한 예매로 판단되는 경우 예매제한 또는 해당 예매건에<br/>&nbsp;&nbsp;대한 예매취소 조치를 취할 수 있습니다.</p>
+        </div>
+    </div>
+    <div class="la_footer"><div class="la_footer1"></div></div>
+</div>
+<!-- //인증예매 안내 -->
+<!-- 가격상세보기  팝업-->
+<!-- 제휴사 쿠폰 팝업-->
+<!-- 제휴사 쿠폰 팝업-->
+<div class="discount_coupon_pop type02" id="coopBanner" style="margin-top:-260px;display:none;">
+    <div class="la_header">
+        <div class="la_header1"></div>
+    </div>
+    <div class="la_con">
+        <p class="tit_coupon">
+            <span>NAVER</span> 고객님께만 드리는<br>
+            <span>멜론티켓</span> 할인쿠폰!
+        </p>
+        <div id="affiliateCompanyBannerCouponList">
+        </div>
+        <div class="coupon_download_info" id="bannerComment">
+        </div>
+    </div>
+    <div class="popClose">
+        <input type="checkbox" id="popup_chk" name="popup_chk">
+        <label for="popup_chk">오늘 하루 이 창을 열지 않음</label>
+        <a href="javascript:;" class="btn_layerpopup_close" id="btn_layerpopup_close">레이어팝업닫기</a>
+    </div>
+    <div class="la_footer">
+        <div class="la_footer1"></div>
+    </div>
+    <!-- dim배경 -->
+    <div class="dim_back"></div>
+</div>
+<!-- 긴급 공지사항 템플릿 -->
+<script id="noticeAlert_template" type="text/x-handlebars-template">
+    <div class="layerPop noticeAlert" id="noticeAlert" style="width:440px; display: none;">
+        <div class="la_header">
+            <div class="la_header1">
+                <h3>예매 안내</h3>
+                <div class="popClose">
+                    <a class="btn_layerpopup_close" id="noticeAlert_layerpopup_close" href="javascript:;">레이어팝업닫기</a>
+                </div>
+            </div>
+        </div>
+        <div class="la_middle">
+            <div class="la_middle1">
+                <div class="la_con">
+                    <div class="box_result">{{{objectData}}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="bottomPopClose">
+            <input type="checkbox" id="noticeAlert_layerpopup_cookie" /><label for="noticeAlert_layerpopup_cookie">오늘 하루 이 창을 열지 않음</label>
+        </div>
+        <div class="la_footer"><div class="la_footer1"></div></div>
+        <div class="dim_back"></div>
+    </div>
+</script><!-- 티켓팅 박스 템플릿 -->
+<!-- 미리보기 티켓팅 템플릿 -->
+<script id="TicketingPreView_Template" type="text/x-handlebars-template">
+    <div class="wrap_ticketing_process">
+        <div style="display: block;" class="btn_ticketing_type">
+            <div class="btn_table">
+                <div class="box_txt" id="box_tkt_txt">
+                    페이지 미리보기
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- 회차 일자 템플릿 -->
+<script id="Ticketing_DayList_Template" type="text/x-handlebars-template">
+    {{#each objectData.scheduleData}}
+        <li data-perfday="{{perfDay}}" data-prodid="{{prodId}}" data-poccode="{{pocCode}}"
+          data-perftypecode="{{../objectData.paramsData.perfTypeCode}}" data-selltypecode="{{../objectData.paramsData.sellTypeCode}}"
+          data-seatcntdisplayyn="{{seatCntDisplayYn}}"
+          class="item_date {{#if @first}}first{{/if}}" id="dateSelect_{{perfDay}}" >
+             <button>
+                <span class="txt">{{dateWord perfDay}}</span>
+             </button>
+        </li>
+    {{/each}}
+</script>
+
+<!-- 회차 일자 데이터가 없을 경우 -->
+<script id="Ticketing_DayListEmpty_Template" type="text/x-handlebars-template">
+    <div class="wrap_ticketing_process">
+        <div style="display: block;" class="btn_ticketing_type">
+            <div class="btn_table">
+                <div class="box_txt">
+                    유효한 날짜가 없습니다.
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+
+
+
+
+
+<!-- 회차 - 시간 틀 템플릿 -->
+<script id="Ticketing_TopTimeList_Template" type="text/x-handlebars-template">
+    <div class="box_type_list">
+        <ul class="list_type {{#ifCond objectData.castingUseYn '==' 'Y' }}casting-add-type{{/ifCond}}" id="list_time"></ul>
+    </div>
+</script>
+
+<!-- 회차 - 시간 템플릿 -->
+<script id="Ticketing_TimeList_Template" type="text/x-handlebars-template">
+    {{#each objectData.timeListData }}
+    <li class="item_time {{#if @first}}first{{/if}}" data-prodid="{{prodId}}" data-poccode="{{../objectData.paramsData.pocCode}}" data-perfday="{{perfDay}}"
+        data-scheduleno="{{scheduleNo}}" data-selltypecode="{{sellTypeCode}}" data-seatcntdisplayyn="{{../objectData.paramsData.seatCntDisplayYn}}"
+        data-perftypecode="{{../objectData.paramsData.perfTypeCode}}" data-seatpoc="{{seatPoc}}" data-cancelclosedt="{{cancelCloseDt}}">
+         <button>
+            <span class="txt" {{{castingCalendarStyle1 casting ../objectData.castingUseYn}}} >{{timeFormat perfTime}}
+                {{#ifCond sellTypeCode '==' 'ST0002'}}
+                <span class="ico_list ico_list4 fan">선예매</span>
+                {{/ifCond}}
+                <span class="soldouttext_{{perfDay}}_{{scheduleNo}}_{{sellTypeCode}}" ></span>
+            </span>
+            {{#if casting }}
+            <p class="casting-name">
+                <span class="tit">출연 :</span>{{casting}}
+            </p>
+            {{/if}}
+         </button>
+    </li>
+    {{/each}}
+</script>
+
+<!-- 회차 - 시간 데이터 없을 경우 템플릿 -->
+<script id="Ticketing_TimeListEmpty_Template" type="text/x-handlebars-template">
+    <div class="box_type_comment">
+        <p class="txt_comment">데이터가 없습니다.</p>
+    </div>
+</script>
+
+<!-- 회차 - 시간 매진/매진임박 템플릿 -->
+<script id="Ticketing_TimeList_soldOutText_Template" type="text/x-handlebars-template">
+    {{#ifCond objectData.objResult.printType '==' 'A'}}
+        <span class="ico_list ico_list4 sold_out">매진임박</span>
+    {{else ifCond objectData.objResult.printType '==' 'B'}}
+        <span class="ico_list ico_list4 sold_out sold_color">매진</span>
+    {{/ifCond}}
+</script>
+
+
+
+
+
+
+<!-- 회차 좌석현황 템플릿 -->
+<script id="Ticketing_GradeListEmpty_Template" type="text/x-handlebars-template">
+    <div class="box_type_list box_type_list_all">
+        <p class="seat_text">선택한 회차별 좌석 현황</p>
+        <p class="seat_text2" style="display: block;">선택한 회차의 잔여석과 가격을 <br>확인 할 수 있어요!</p>
+    </div>
+</script>
+
+<!-- 회차 등급 데이터 없을 경우 템플릿 -->
+<script id="Ticketing_GradeEmpty_Template" type="text/x-handlebars-template">
+    <div class="box_type_list box_type_list_all">
+        <p class="seat_text">선택하신 회차는 판매가 마감되었습니다.</p>
+    </div>
+</script>
+
+<!-- 회차 등급 틀 템플릿 -->
+<script id="Ticketing_TopGradeList_Template" type="text/x-handlebars-template">
+    <div class="box_type_list box_type_list_all">
+        <p class="seat_text">선택한 회차별 좌석 현황</p>
+        <ul class="list_seat" id="list_seat"></ul>
+    </div>
+</script>
+
+<!-- 회차 등급 템플릿 -->
+<script id="Ticketing_GradeList_Template" type="text/x-handlebars-template">
+    {{#each objectData.gradeListData }}
+    <li class="item_seat {{#if @first}}first{{/if}}">
+       <p class="">
+            <span class="txt">
+                <span class="in">
+                    <span>{{seatGradeName}}</span>
+                    <strong>{{commaFormat basePrice}}원</strong>
+                </span>
+                {{#ifCond ../objectData.paramsData.seatCntDisplayYn '==' 'Y'}}
+                    <span class="seat prodId_{{prodId}}_gradeNo_{{seatGradeNo}}_schedule_{{scheduleNo}}_sellTypeCode_{{sellTypeCode}}">
+                        <span class="cnt">
+                            <strong>{{gradeCount realSeatCntlk}}</strong>
+                        </span>
+                    </span>
+                {{/ifCond}}
+            </span>
+       </p>
+    </li>
+    {{/each}}
+</script>
+
+<!-- 회차 등급 카운트 템플릿 -->
+<script id="Ticketing_GradeList_Count_Template" type="text/x-handlebars-template">
+    <span class="cnt">
+        <strong>{{gradeCount objectData.obj.realSeatCntlk}}</strong>
+    </span>
+</script><!--넷퍼넬 템플릿 -->
+<!-- 미리보기 티켓팅 템플릿 -->
+<script id="Ticket_netfunnel_Template" type="text/x-handlebars-template">
+    <div class="layerPop standbyState" id="NetFunnel_Skin_Top" style="display:block;width:500px">
+        <div class="la_header">
+            <div class="la_header1">
+                <h3 id="NetFunnel_Title"></h3>
+                <div class="popClose">
+                    <a class="btn_layerpopup_close" href="#none" onclick="javascript:NetFunnel.countdown_stop();return false;" id="close_zam">레이어팝업닫기</a>
+                    </div>
+                </div>
+            </div>
+        <div class="la_middle">
+            <div class="la_middle1">
+                <div class="la_con">
+                    <div class="box_result">
+                        <div class="progress_con">
+                            <div id="state01" class="state_sec02" style="display:none"><span><em>지연</em></span>좌석 선택 진입 중</div>
+                            <div id="state02" class="state_sec02" style="display:none"><span><em>지연</em></span>가격 선택 진입 중</div>
+                            <div id="state03" class="state_sec02" style="display:none"><span><em>지연</em></span>배송/결제 진입 중</div>
+                            <div id="state04" class="state_sec02" style="display:none"><span><em>지연</em></span>결제 대기 중</div>
+                            <div class="state_num">내 대기순서 <span><strong id="NetFunnel_Loading_Popup_Count">0</strong>번째</span></div>
+                            <div class="state_time">뒤에 <span id="NetFunnel_Loading_Popup_NextCnt"></span>명 / <span id="NetFunnel_Loading_Popup_TimeLeft"></span> 소요 예상</div>
+                            <div class="progress_sec">
+                                <div class="progress_bar">
+                                    <ul>
+                                        <li class="progress_bar01">
+                                            <span id="flicker01" class="flicker" style="display:none"></span>
+                                            <span id="progress01" class="progress_success" style="width:0">
+	                                            <img id="progressImg01" src="images/img_progress.gif" style="display:none;vertical-align:top;"/>
+	                                        </span>
+                                        </li>
+                                        <li class="progress_bar02">
+                                            <span id="flicker02" class="flicker" style="display:none"></span>
+                                            <span id="progress02" class="progress_success" style="width:0">
+	                                            <img id="progressImg02" src="images/img_progress.gif" style="display:none;vertical-align:top;"/>
+	                                        </span>
+                                        </li>
+                                        <li class="progress_bar03" style="position:relative">
+                                            <span id="flicker03" class="flicker" style="display:none"></span>
+                                            <span id="progress03" class="progress_success" style="width:0">
+	                                            <img id="progressImg03" src="images/img_progress.gif" style="display:none;vertical-align:top;"/>
+	                                        </span>
+                                            <span id="flicker04" class="flicker" style="display:block;position:absolute;margin-left:126px"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <ol class="step">
+                                    <li id="step01" class="step01">회차선택</li>
+                                    <li id="step02" class="step02">좌석선택</li>
+                                    <li id="step03" class="step03">가격선택</li>
+                                    <li id="step04" class="step04">배송결제</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="info_txt">
+                            <ul>
+                                <li>현재 접속량이 많아 대기 중입니다. 잠시만 기다려 주시면 다음 단계로 <br />안전하게 자동 접속합니다.</li>
+                                <li><strong>새로 고침 하시면 순번이 뒤로 밀리니 주의해주세요.</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="la_footer">
+            <div class="la_footer1">
+            </div>
+        </div>
+    </div>
+</script><!--제휴사 쿠폰 템플릿 -->
+<!-- 제휴사 쿠폰 템플릿 -->
+<script id="Ticket_AffiliateCompany_Template" type="text/x-handlebars-template">
+    {{#each objectData}}
+    <a href="javascript:" class="box_discount_coupon affiliateCompanyCouponDownBtn" data-cupnid="{{CUPN_ID}}">
+        <div class="flag">할인쿠폰</div>
+        <div class="box_dc_num">{{DISC_AMOUNT}}</div>
+        <div class="box_dc_text">
+            {{ifDataCompareOr MINPRICE MAXDISCCNT '('}}
+            {{#if MINPRICE}}
+                {{MINPRICE}}원 이상 결제 시
+            {{/if}}
+            {{{ifDataCompareAnd MINPRICE MAXDISCCNT ', '}}}
+            {{#if MAXDISCCNT}}
+                최대 {{MAXDISCCNT}}매 까지
+            {{/if}}
+            {{ifDataCompareOr MINPRICE MAXDISCCNT ')'}}
+        </div>
+    </a>
+    {{/each}}
+</script>
+
+<!-- 제휴사 쿠폰 템플릿 -->
+<script id="Ticket_AffiliateCompany_bannerComment_Template" type="text/x-handlebars-template">
+    {{#if objectData.bannerListFirstData.COMMENT1}}
+        <p>{{objectData.bannerListFirstData.COMMENT1}}<p>
+    {{/if}}
+
+    {{#if objectData.bannerListFirstData.COMMENT2}}
+        <p>{{objectData.bannerListFirstData.COMMENT2}}<p>
+    {{/if}}
+
+    {{#if objectData.bannerListFirstData.COMMENT3}}
+        <p>{{objectData.bannerListFirstData.COMMENT3}}<p>
+    {{/if}}
+
+    {{#ifCond objectData.bannerListLength '>' '2'}}
+    <div>
+        <a href="javascript:;" class="coupon_download" id="cupnAllDown">쿠폰 한번에 다운받기</a>
+    </div>
+    {{/ifCond}}
+</script>
+<script type="text/javascript" src="js/frontEnd/dist/performanceController.js"></script>
+	<!-- 픽셀 -->
+<!-- Kakao Pixel Code -->
+<script type="text/javascript">
+    kakaoPixel("1432956840521218273").pageView("WEB-ProductDetail");
+    kakaoPixel("1432956840521218273").viewContent({
+        id: $("#prodIdNum").val()
+    });
+</script>
+<!-- End Kakao Pixel Code -->
+<!-- footer -->
+    <div id="footer" class="my_fold">
+        <div class="btn_top_wrap">
+            <a href="#skip_nav" class="btn_top" title="맨 위로 가기" style=""><span>맨 위로 가기</span></a><!-- scrollTop 1800 -->
+        </div>
+        <div class="footer_quick_link">
+            <div class="l_box">
+                <a href="//www.melon.com" class="linking5">Melon</a>
+            </div>
+            <div class="r_box">
+                <a href="https://ticket.melon.com/customerservice/howto.htm" class="r_box_m1">예매가이드</a>
+                <a href="https://ticket.melon.com/customerservice/partnership_guide.htm" class="r_box_m2">티켓판매제휴</a>
+                <!-- 20160317추가 -->
+                <span class="r_box_m3">예매문의(1588-2314)</span>
+            </div>
+        </div>
+        <div class="inner_footer">
+            <!-- UX-1513 -->
+            <ul class="clear_g">
+                <li class="first_child"><a href="https://kakaoent.com/" title="회사소개" target="_blank">회사소개</a></li>
+                <li><a href="javascript:MELON.WEBSVC.POC.link.goTerms('use', 'use');" title="멜론이용약관">이용약관</a></li>
+                <li><a href="#none" onclick="openWinPop2('https://ticket.melon.com/common/popup/ticketAgreementPop.htm',845,750); return false;" title="멜론티켓이용약관">멜론티켓이용약관</a></li>
+                <!-- <li><a href="https://checkout-web.kakao.com/terms/paid" target="_blank" title="전자금융거래약관">전자금융거래약관</a></li> -->
+                <!-- MELONUIT-268 -->
+                <!-- <li><a href="https://info.melon.com/terms/web/terms1_3.html" title="위치기반서비스 이용약관" target="_blank">위치기반서비스 이용약관</a></li> -->
+                <!-- //MELONUIT-268 -->
+                <li><a href="javascript:MELON.WEBSVC.POC.link.goTerms('privateinfo', 'privateinfo');" title="개인정보처리방침"><strong>개인정보처리방침</strong></a></li>
+                <li><a href="javascript:MELON.WEBSVC.POC.link.goTerms('youth', 'youth');" title="청소년보호정책">청소년보호정책</a></li>
+                <li><a href="https://ticketpartner.melon.com/login/loginForm.htm" title="파트너센터" target="_blank">파트너센터</a></li>
+            </ul>
+            <p>
+                <span class="first"><strong>㈜카카오엔터테인먼트</strong></span><span>경기도 성남시 분당구 판교역로 235, 에이치스퀘어 N동 8, 9, 10층</span><span>공동대표이사 : 권기수, 장윤중</span><span class="first">사업자등록번호 : 220-88-02594</span><br />
+                <span class="first">통신판매업신고번호 : 2018-성남분당B-0004 <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2208802594" class="btn-info" title="사업자정보확인" target="_blank">사업자정보확인</a></span><span class="first">고객센터(평일/주말 09:00~18:00) : 1899-0042 (유료)</span><br />
+                <span class="first">호스팅서비스사업자 : (주)카카오엔터테인먼트</span><span>© Kakao Entertainment Corp.</span>
+            </p>
+            <!-- //UX-1513 -->
+            <!-- 20160509 구매안전 서비스 -->
+            <div class="safe_service">
+            	<dl>
+                	<dt>신한은행 구매안전 서비스</dt>
+                    <dd>고객님은 안전거래를 위해 현금으로 결제시 <br>멜론티켓에서 가입한 신한은행으로 <br>구매안전서비스를 이용하실 수 있습니다.</dd>
+                    <dd><a href="https://cdnticket.melon.co.kr/resource/image/web/etc/melonticket_ent_guarantee_2025.pdf" target="_blank">서비스 가입사실 확인</a></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="ban">
+            <a href="//www.melon.com/footer/awrad.htm?pageType=02"><img width="101" height="27" src="images/ban_footer01_190702.png" alt="2019 대한민국 퍼스트브랜드 대상"></a>
+            <a href="//www.melon.com/footer/awrad.htm?pageType=04"><img width="125" height="25" src="images/ban_footer02_190702.png" alt="2019 소비자가 뽑은 가장 신뢰하는 브랜드 대상"></a>
+            <a href="//www.melon.com/footer/awrad.htm?pageType=03"><img width="113" height="25" src="images/ban_footer03_190702.png" alt="한국능률협회컨설팅 2018 브랜드 파워 1위"></a>
+            <!-- <a href="#"><img width="118" height="25" src="http://cdnticket.melon.co.kr/resource/image/web/common/ban_footer04_170316.png" alt="2016 대한민국 브랜드 고객충성도 1위"></a> -->
+            <a href="//www.kdce.or.kr/user/ctf/clmsCtfTransList.do?NmberBusiRegNo=1388105876&amp;websiteName=www.melon.com&amp;SUB=FB" target="_blank"><img width="82" height="22" src="images/ban_footer05_170316.png" alt="음악저작권 이용허락 인증"></a>
+            <a href="//copyrightok.kr/" target="_blank"><img src="images/ban_footer06_200115.png" alt="클린사이트"></a>
+            <!-- MELONUIT-268 ISMSP 인증마크 삭제 -->
+            <!-- <img src="https://cdnticket.melon.co.kr/resource/image/web/common/ban_footer07_200120.png" alt="정보보호 관리체계 ISMS 인증"> -->
+            <!-- MELONUIT-268 -->
+        </div>
+        <a href="#" class="btn_top" title="맨 위로 가기" style="display: none;">맨 위로 가기</a>
+    </div>
+    <!-- //footer -->
+<script type="text/javascript">
+function openWinPop2(url,w,h,options){
+    if(!options) options = "resizable=no toolbar=no menubar=no location=no scrollbars=yes status=yes";
+    var opt = "width=" + w + " height=" + h + " " + options;
+    window.open(url,name,opt);
+};
+if(window['openNewWin'] == void 0){ //old browser's window has object check
+    var openNewWin = function (url,options){
+        if(!options) options = '';
+        window.open(url,'',options);
+    };
+}
+</script>
+</div>
+
+    <!-- login chk -->
+    <input type="hidden" id="global_common_requestURL" value="/performance/index.htm" />
+
+    <script type="text/javascript" src="js/frontEnd/dist/melonlib.min.js"></script>
+        <script type="text/javascript" src="https://cdnimg.melon.co.kr/static/web/resource/script/w1/zz/j/1o6z3dft8cp.js"></script>
+    <script type="text/javascript" src="https://cdnimg.melon.co.kr/static/web/resource/script/w1/fl/7/uot4m6bho9.js"></script>
+
+</body>
+</html>

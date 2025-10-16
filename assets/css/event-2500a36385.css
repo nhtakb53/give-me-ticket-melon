@@ -1,0 +1,418 @@
+@charset "utf-8";
+
+.section_event_page {}/* 이벤트 페이지 전체 wrap */
+
+/* 이벤트쪽 검색창, 검색결과 없는 경우 공통 */
+.wrap_event_search {padding-top:40px;text-align:right;}
+.wrap_event_search .box_event_search {display:inline-block;height:34px;text-align:right;}
+.wrap_event_search .box_event_search .event_search {width:228px;height:32px;padding:0 15px;border:1px solid #dadada;font-size:14px;line-height:34px;color:#666;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_event_search .box_event_search .event_button {margin-left:6px;width:74px;height:34px;border:0;outline:0;background-color:#41d26b;font-size:14px;line-height:34px;color:#fff;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_event_search .box_event_search .event_button:hover{background-color:#00b523;}
+.wrap_event_search .box_event_search .place_holder {top:0;left:15px;font-size:14px;line-height:34px;color:#888;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_event_search_null {border:1px solid #eee;margin-top:20px;padding:117px 0;font-size:28px;line-height:32px;color:#333;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";text-align:center;}
+
+/* 이벤트 진행중 060101*/
+.wrap_event_ing {padding-top:40px;}
+.wrap_event_ing .wrap_main_event_list {padding-top:20px;}
+.wrap_event_ing .wrap_main_event_list .list_event {overflow:hidden;}
+.wrap_event_ing .wrap_main_event_list .list_event li {float:left;width:316px;margin-left:30px;padding-bottom:30px;}
+.wrap_event_ing .wrap_main_event_list .list_event li.first {margin-left:0;}
+.wrap_event_ing .wrap_main_event_list .list_event li .inner {padding:24px 23px 19px;border:1px solid #eee;}
+.wrap_event_ing .wrap_main_event_list .list_event li .inner .link_event_thumb {display:block;position:relative;height:181px;}
+.wrap_event_ing .wrap_main_event_list .list_event li .inner .link_event_thumb img {width:100%; height:120px; vertical-align:top;margin-bottom:12px;}
+.wrap_event_ing .wrap_main_event_list .list_event li .inner .link_event_thumb .tit_event {overflow:hidden;display:block;height: auto; max-height: 40px; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-wrap: break-word;padding:0 0 0;font-size:16px;line-height:21px;color:#666;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_event_ing .wrap_main_event_list .list_event li .inner .link_event_thumb:hover .tit_event{color:#000}
+.wrap_event_ing .wrap_main_event_list .list_event li .inner .box_info {overflow:hidden; height:60px; letter-spacing:0;position:relative}
+.wrap_event_ing .wrap_main_event_list .list_event li .inner .box_info .info {overflow:hidden;font-size:12px;line-height:18px;color:#888;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;margin-bottom:1px}
+.wrap_event_ing .wrap_main_event_list .list_event li .inner .box_info .info .txt_info {display:inline-block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;height:18px;max-width:206px;font-size:12px;line-height:18px;color:#888;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;vertical-align:middle;}
+
+.wrap_event_banner {height:400px;}/* 배너 wrap */
+.wrap_big_banner {display:block;position:relative;float:left;width:660px;height:378px;}/* 왼쪽배너 */
+.wrap_big_banner .list_big_banner {overflow:hidden;display:block;width:661px;height:auto;}
+.wrap_big_banner .list_big_banner li {position:relative;float:left;width:661px;height:auto;}
+.wrap_big_banner .list_big_banner li .txt_banner {position:absolute;bottom:24px;left:30px;z-index:2;width:590px}
+.wrap_big_banner .list_big_banner li .txt_banner .tit_s {font-size:18px;line-height:30px;color:#ddd;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";}
+.wrap_big_banner .list_big_banner li .txt_banner .tit_event {overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:bold;font-size:30px;line-height:40px;color:#fff;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";}
+.wrap_big_banner .list_big_banner li .link_event_view {display:block;width:100%;height:328px}
+.thumb_660x328 .frame{z-index:1}
+.wrap_big_banner .list_big_tit {display:block;position:absolute;bottom:0;left:0;width:661px;height:50px;background-color:#fff;}
+.wrap_big_banner .list_big_tit li {float:left;}
+.wrap_rolling_tab .list_big_tit li {float:left;width:329px;height:48px;border:1px solid #e5e5e5;text-align:center;}
+.wrap_rolling_tab .list_big_tit li a {font-size:16px;line-height:48px;color:#333;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";}
+.wrap_rolling_tab .list_big_tit .on a {color:#00b523;}
+.wrap_rolling_tab .list_big_tit .nth1 {border-right:0;}
+.wrap_rolling_tab .list_big_tit li {float:left;width:219px;height:48px;border:1px solid #e5e5e5;text-align:center;}/* tab3개일시 */
+.wrap_rolling_tab .list_big_tit li a {font-size:16px;line-height:48px;color:#333;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";}
+.wrap_rolling_tab .list_big_tit .on a {color:#00b523;}
+.wrap_rolling_tab .list_big_tit .nth1 {border-right:0;}
+.wrap_rolling_tab .list_big_tit .nth2 {border-right:0;}
+
+
+.wrap_sub_banner {position:relative;overflow:hidden;float:right;width:340px;height:378px;}/* 오른쪽배너 */
+.wrap_sub_banner .list_sub_banner {overflow:hidden;width:340px;height:378px;}
+.fnSlider.full ul.list_sub_banner{height:378px;}
+.wrap_sub_banner .list_sub_banner li {float:left;width:340px;}
+.fnSlider.full ul.list_sub_banner.list_slider li{width:340px;}
+.wrap_sub_banner .list_sub_banner li .link_event_view {display:block;width:100%;}
+.wrap_sub_banner .list_sub_banner li .link_event_view {position:relative;height:328px;}
+.wrap_sub_banner .list_sub_banner li .link_event_view .txt_banner {position:absolute;top:140px;left:15px;width:309px;text-align:center;z-index:2}
+.list_sub_banner .thumb_340x328 .frame{z-index:1}
+.wrap_sub_banner .list_sub_banner li .link_event_view .txt_banner .point_col {font-size:14px;line-height:45px;color:#00cd3c;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";vertical-align:middle;}
+.wrap_sub_banner .list_sub_banner li .link_event_view .txt_banner .tit_s {font-size:16px;line-height:24px;color:#ddd;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";vertical-align:middle;}
+.wrap_sub_banner .list_sub_banner li .link_event_view .txt_banner .tit_event {font-size:28px;line-height:40px;color:#fff;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";vertical-align:middle;display:block;overflow:hidden;height: auto; max-height: 80px; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-wrap: break-word;}
+.wrap_sub_banner .list_sub_banner li .comm {position:relative;width:318px;height:48px;padding:0 10px;border:1px solid #e5e5e5;font-size:16px;line-height:48px;color:#333;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";text-align:center;z-index: 2;display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.wrap_sub_banner .list_sub_banner li .comm strong {display:inline-block;padding-right:12px;font-weight:normal;color:#00cd3c;}
+.wrap_sub_banner .paging {position: absolute;top:10px; right:10px;overflow: hidden;z-index: 2}
+.wrap_sub_banner .paging a {display: inline-block;width:10px; height: 10px;margin-right:6px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/rolling_10x10.png) 0 -10px no-repeat;text-indent:-9999px}
+.wrap_sub_banner .paging a.on {background-position:0 0;}
+
+/* 이벤트 진행중 상세 060102*/
+.wrap_event_view {padding-top:40px;}
+.wrap_event_view .wrap_event_left_cont {float:left;width:692px;}/* 왼쪽 */
+.wrap_event_view .wrap_event_left_cont .box_event_view {overflow:hidden;margin-bottom:53px;}
+.wrap_event_view .wrap_event_left_cont .box_event_view .box_tit {position:relative;border:1px solid #eee;padding:21px 29px 25px;}
+.wrap_event_view .wrap_event_left_cont .box_event_view .box_tit .tit_event {overflow:hidden;max-height:60px;padding-right:90px;font-size:20px;line-height:30px;color:#333;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";}
+.wrap_event_view .wrap_event_left_cont .box_event_view .box_tit .data_info {padding-top:13px;font-size:14px;color:#666;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_event_view .wrap_event_left_cont .box_event_view .box_tit .link_sns {position:absolute;top:29px;right:29px;height:28px;}
+.wrap_event_view .wrap_event_left_cont .box_event_img {width:690px;border:1px solid #eee;border-top:none;}
+.wrap_event_view .wrap_event_left_cont .box_event_img img {vertical-align:top;max-width:690px;}
+.wrap_event_view .wrap_event_left_cont .box_event_txt {overflow:hidden;padding:36px 0 0;}
+.wrap_event_view .wrap_event_left_cont .box_event_txt .big_font {font-weight:normal;font-size:18px;line-height:26px;color:#333;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_event_view .wrap_event_left_cont .box_event_txt .list_txt {padding-top:12px;}
+.wrap_event_view .wrap_event_left_cont .box_event_txt .list_txt li {font-size:14px;line-height:26px;color:#888;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+
+.wrap_event_view .wrap_event_right_cont {margin-left:36px;float:right;width:280px;margin-bottom:53px;}/* 오른쪽 */
+.wrap_event_view .wrap_event_right_cont .tit_sub_float {margin-left:0;height:20px;line-height:20px;}
+.wrap_event_view .wrap_event_right_cont .list_content_area {margin-top:18px; letter-spacing:0}
+.wrap_event_view .wrap_event_right_cont .list_content_area li {overflow:hidden;margin-top:10px;border:1px solid #eee;padding:14px 16px 14px 16px;}
+.wrap_event_view .wrap_event_right_cont .list_content_area li.first {margin-top:0;}
+.wrap_event_view .wrap_event_right_cont .list_content_area li .txt_area {display:block;position:relative;float:left;width:156px;height:90px;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;color:#888;}
+.wrap_event_view .wrap_event_right_cont .list_content_area li .txt_area .ico_list {display:block;width:22px;float:none;color:#00b523;border:1px solid #00b523;}
+.wrap_event_view .wrap_event_right_cont .list_content_area li .txt_area .tit {display:block;overflow:hidden;max-height:36px;padding:6px 6px 0 0;font-weight:normal;font-size:14px;line-height:18px;color:#333;}
+.wrap_event_view .wrap_event_right_cont .list_content_area li .txt_area .txt {display:block;position:absolute;bottom:0;left:0;font-size:12px;line-height:32px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:140px;padding-right:3px}
+.wrap_event_view .wrap_event_right_cont .list_content_area li .txt_area .data {display:block;position:absolute;bottom:20px;left:0;max-height:20px;font-size:12px;line-height:20px;}
+.wrap_event_view .wrap_event_right_cont .list_content_area li .txt_area .area {display:block;position:absolute;bottom:0;left:0;font-size:12px;line-height:20px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:140px;padding-right:3px}
+.wrap_event_view .wrap_event_right_cont .list_content_area li .thumb {display:block;position:relative;float:right;width:90px;height:125px;overflow:hidden}
+.wrap_event_view .wrap_event_right_cont .list_content_area li.artist .thumb, .wrap_event_view .wrap_event_right_cont .list_content_area li.album .thumb{height:auto}
+.wrap_event_view .wrap_event_right_cont .list_content_area li .thumb img{width:90px}
+.wrap_event_view .wrap_event_right_cont .list_content_area .consert {padding-bottom:16px;}
+.wrap_event_view .wrap_event_right_cont .list_content_area .consert .txt_area {height:125px;}
+.wrap_event_view .wrap_event_right_cont .list_content_area .artist .txt_area .ico_list {width:48px;}
+
+.wrap_event_view .wrap_event_btn {padding:40px 0 80px;border-top:1px solid #dadada;text-align:center;}
+.wrap_event_view .wrap_event_btn .link_event_list {width:170px;}
+.wrap_event_view .wrap_event_btn .btColorGreen {margin-left:8px;}
+.wrap_event_view .wrap_event_btn .link_entry {width:170px;}
+
+/* 종료된 이벤트 060103 */
+.wrap_event_finish .wrap_event_list {padding-top:20px;}
+.wrap_event_list .list_event {overflow:hidden;padding-bottom:40px;} /* 참여한 이벤트 리스트와 공통 */
+.wrap_event_list .list_event li {overflow:hidden;margin-top:30px;padding:24px;border:1px solid #eee;}
+.wrap_event_list .list_event li.first {margin-top:0;}
+.wrap_event_list .list_event li .thumb {float:left;width:268px;}
+.wrap_event_list .list_event li .thumb img {width:100%;}
+.wrap_event_list .list_event li .box_info {position:relative;float:right;width:674px;height:120px;padding-left:16px;}
+.wrap_event_list .list_event li .box_info .tit_event {overflow:hidden;max-height:48px;padding-right:110px;font-size:16px;line-height:24px;color:#333;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_event_list .list_event li .box_info .tit_event strong {display:inline-block;font-weight:normal;color:#00b523;}
+.wrap_event_list .list_event li .box_info .tit_event a{color:#333}
+.wrap_event_list .list_event li .box_info .info {position:absolute;bottom:2px;left:16px;font-size:14px;line-height:24px;color:#888;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_event_list .list_event li .box_info .first {bottom:26px;}
+.wrap_event_list .list_event li .box_info .info .txt_info {display:inline-block;font-size:14px;line-height:24px;color:#888;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_event_list .list_event li .box_info .link_prize {position:absolute;top:4px;right:0;}
+
+/* 당첨자 발표 목록 060104 */
+.wrap_prize_board .wrap_prize_board {padding-top:20px;}
+.wrap_prize_board .wrap_prize_board .tbl_prize {table-layout:fixed;width:100%;border-top:1px solid #e9e9e9;}
+.wrap_prize_board .wrap_prize_board .tbl_prize tr th {border-bottom:1px solid #e9e9e9;font-weight:normal;font-size:12px;line-height:40px;color:#333;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_prize_board .wrap_prize_board .tbl_prize tr td {border-bottom:1px solid #e9e9e9;width:150px;font-size:14px;line-height:60px;color:#888;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;text-align:center;}
+.wrap_prize_board .wrap_prize_board .tbl_prize tr td .sub_ject {display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:93%;max-height:60px;/*width:150px;*/font-size:14px;line-height:60px;color:#333;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;text-align:left;}
+.wrap_prize_board .wrap_prize_board .tbl_prize tr td .sub_ject:hover{color:#000}
+.wrap_prize_board .wrap_prize_board .tbl_prize tr td .sub_ject:hover strong{color:#000}
+.wrap_prize_board .wrap_prize_board .tbl_prize tr td .sub_ject strong {display:inline-block;font-weight:normal;color:#00b523;}
+.wrap_prize_board .wrap_prize_board .paging_comm {padding-top:40px;}
+
+/* 당첨자 발표 상세 060105 */
+.wrap_prize_view {margin-top:40px;padding:33px 29px 50px;border:1px solid #eee;}
+.wrap_prize_view .box_tit_area {overflow:hidden;padding-bottom:34px;}
+.wrap_prize_view .box_tit_area .tit_event {overflow:hidden;max-height:60px;font-size:20px;line-height:30px;color:#333;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic"}
+.wrap_prize_view .box_tit_area .link_view {display:inline-block;padding-top:7px;font-size:14px;line-height:30px;color:#7d7d7d;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;vertical-align:top; text-decoration:underline}
+.wrap_prize_view .box_tit_area .link_view .ico_more {display:inline-block;width:12px;height:30px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/ico_more.png) top right no-repeat;text-indent:-9999px;}
+.wrap_prize_view .box_event_txt {padding:34px 0 43px;border-top:1px solid #eee;}
+.wrap_prize_view .box_event_txt p {padding-top:26px;font-size:14px;line-height:26px;color:#666;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_prize_view .box_event_txt p.first {padding-top:0;}
+.wrap_prize_view .box_event_txt .img{width:100%; text-align:center}
+.wrap_prize_view .box_event_txt .img img{max-width:100%}
+.wrap_prize_view .box_prize_list {padding:0 50px;background-color:#fafafa;}
+.wrap_prize_view .box_prize_list .list_user {padding:46px 0 44px}
+.wrap_prize_view .box_prize_list .list_user li {overflow:hidden;padding-top:49px;}
+.wrap_prize_view .box_prize_list .list_user li.first {padding:0;}
+.wrap_prize_view .box_prize_list .list_user li .tit_give {width:102px;float:left;font-weight:bold;font-size:14px;line-height:24px;color:#333;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_prize_view .box_prize_list .list_user li .txt_give {float:left; width:745px; min-height:24px; font-size:14px;line-height:24px;color:#333;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_prize_view .box_prize_list .list_user li .tit_prize_name {width:102px;float:left;padding-top:18px;font-weight:bold;font-size:14px;line-height:24px;color:#333;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_prize_view .box_prize_list .list_user li .txt_info {float:left;width:745px; min-height:29px; padding-top:18px;}
+.wrap_prize_view .box_prize_list .list_user li .txt_info .item {float: left; width: 185px;}
+.wrap_prize_view .box_prize_list .list_user li .txt_info .user_id {display:inline-block;width:68px;font-size:14px;line-height:26px;color:#666;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+.wrap_prize_view .box_prize_list .list_user li .txt_info .user_id.kakao {padding-left: 28px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/ico_kakao.png) no-repeat 0 0;}
+.wrap_prize_view .box_prize_list .list_user li .txt_info .user_name {display:inline-block;width:78px;font-size:14px;line-height:26px;color:#333;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+
+.wrap_prize_btn {padding-top:30px;text-align:center;}
+.wrap_prize_btn .link_event_board {width:170px;}
+
+/* 참여한 이벤트 060106 */
+.wrap_event_participation .wrap_event_list {padding-top:20px;}
+.wrap_event_participation .wrap_event_list .list_event li .box_info .tit_event {max-height:24px;display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.wrap_event_participation .wrap_event_list .list_event li .box_info .tit_event a{color:#333}
+
+/*
+
+댓글영역
+상세쪽 관람후기영역과 동일
+
+*/
+
+/* 텍스트 박스 하단 버튼 영역 - start */
+.wrap_box_textarea .wrap_btn {overflow:hidden; padding:0 1px; margin-top:4px;}
+.wrap_box_textarea .wrap_btn .box_attach {float:left; clear:none;}
+.wrap_box_textarea .wrap_btn .box_sns {float:right; clear:none;}
+.wrap_box_textarea .wrap_btn .box_attach .btn_attach {float:left; position:relative; margin-left:-1px; font-size:0; line-height:0;}
+.wrap_box_textarea .wrap_btn .box_attach .btn_attach .attach {position:relative;}
+.wrap_box_textarea .wrap_btn .box_attach .btn_attach .attach .odd_span {display:block; overflow:hidden; width:31px; height:28px; line-height:28px; text-indent:-999px; background:url(//cdnticket.melon.co.kr/resource/image/web/detailview/detail_ico_attach.png) no-repeat left top;}
+.wrap_box_textarea .wrap_btn .box_attach .btn_attach .attach.sound .odd_span {background-position:left top;}
+.wrap_box_textarea .wrap_btn .box_attach .btn_attach .attach.photo .odd_span {background-position:-40px top;}
+.wrap_box_textarea .wrap_btn .box_attach .btn_attach .attach.video .odd_span {background-position:-80px top;}
+.wrap_box_textarea .wrap_btn .box_attach .btn_attach .attach.link .odd_span {background-position:-120px top;}
+/*.wrap_box_textarea .wrap_btn .box_sns .btn_sns {float:left; position:relative; margin-right:-1px; font-size:0; line-height:0;}
+.wrap_box_textarea .wrap_btn .box_sns .btn_sns .odd_span {display:block; overflow:hidden; width:31px; height:28px; line-height:28px; text-indent:-999px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_btn_sns2_140822.png) no-repeat left top}
+.wrap_box_textarea .wrap_btn .box_sns .btn_sns.twitter .odd_span {background-position:-30px top;}
+.wrap_box_textarea .wrap_btn .box_sns .btn_sns.facebook .odd_span {background-position:left top;}*/
+/* 텍스트 박스 하단 버튼 영역 - end */
+	
+/* 상단 후기 입력 영역02 - start */
+.wrap_txt_write02 {overflow:hidden; position:relative; margin-top:20px; padding:20px 24px; background-color:#fcfcfc;}
+.wrap_txt_write02 .thumb {position:relative; float:left; margin-top:53px;}
+
+	/* 텍스트 박스 영역 */
+.wrap_txt_write02 .wrap_box_textarea {float:right; position:relative;}
+.wrap_txt_write02 .wrap_box_textarea .box_textarea {overflow:hidden; position:relative; width:785px; height:100px; padding-right:101px; background-color:#fff;}
+.wrap_txt_write02 .wrap_box_textarea .box_textarea .wrap_form_input {float:left;}
+.wrap_txt_write02 .wrap_box_textarea .box_textarea .wrap_form_input label {font-size:12px; line-height:18px; color:#aaa;}
+.wrap_txt_write02 .wrap_box_textarea .box_textarea .txt_comment {float:left; width:751px; padding:12px 16px; height:74px; border:1px solid #dadada; font-size:12px; line-height:18px; font-family:AppleSDGothicNeo-Regular, "돋움",Dotum; vertical-align:middle; resize:none; border-radius:0; box-shadow:none; -webkit-appearance:none; outline:0 none;}
+.wrap_txt_write02 .wrap_box_textarea .box_textarea .num_board {display:inline-block;position:absolute;bottom:5px;right:7px;width:auto;font-size:11px;line-height:18px;color:#b2b2b2;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.wrap_txt_write02 .wrap_box_textarea .box_textarea .num_board .min {color:#666;}
+.wrap_txt_write02 .wrap_box_textarea .btn_reg_write {position:absolute; top:53px; right:0; width:93px; height:100px; background-color:#fff; border:1px solid #dadada; font-weight:bold;}
+.wrap_txt_write02 .wrap_box_textarea .btn_reg_write .txt {display:inline-block;font-size:14px;line-height:80px;color:#333;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+
+/* 상단 후기 입력 영역02 - end */
+
+
+/* 답변 영역02 */
+.section_detailview_product .box_question_answer02 {overflow:hidden;}
+
+/* box_question_answer02 공통 */
+.box_question_answer02 .icon_reg_mobile {display:inline-block; overflow:hidden; width:7px; height:11px; vertical-align:-1px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bg_sprite_cmt.png) no-repeat -91px 0;}
+
+.box_question_answer02 .wrap_btn {overflow:hidden; width:100%;}
+.box_question_answer02 .wrap_btn button.btn_text {float:left; margin-top:9px;}
+.box_question_answer02 .wrap_btn .btn_text .text {display:inline-block;font-size:12px;line-height:18px;color:#333;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.box_question_answer02 .wrap_btn .btn_text .text strong {font-weight:bold;}
+.box_question_answer02 .wrap_btn .odd_span .icon {width:5px;height:3px; display:inline-block;background:url(//cdnticket.melon.co.kr/resource/image/web/common/qna_comment.png) no-repeat; vertical-align:3px;}
+.box_question_answer02 .wrap_btn .btn_text .icon {background-position:0 top;}
+.box_question_answer02 .wrap_btn .btn_text .icon,
+.box_question_answer02 .wrap_btn .btn_text .icon {*vertical-align:middle;}
+.box_question_answer02 .wrap_btn .view .icon {background-position:0 -3px;}/* 댓글 열렸을때 */
+
+.box_question_answer02 .wrap_btn .wrap_btn_right  {overflow:hidden; float:right; margin-top:9px;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_recm {display:inline-block; padding-right:15px; vertical-align:top;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_recm .btn_recm {margin-left:9px;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_recm .btn_recm.positive {margin-left:0;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_recm .btn_recm {margin-left:9px;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_recm .btn_recm {height:19px; vertical-align:middle;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_recm .btn_recm .odd_span {position:relative; height:19px; padding-left:24px; letter-spacing:0; color:#666; font-size:12px; line-height:19px; font-family:AppleSDGothicNeo-Regular, "Dotum", "돋음", "Apple Gothic", sans-serif; text-decoration:none; color:#aaa;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_recm .btn_recm .icon {display:block; position:absolute; left:0; width:17px; height:19px; background:url(//cdnticket.melon.co.kr/resource/image/web/detailview/detail_btn_recm.png) left top no-repeat; font-size:0; line-height:0;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_recm .btn_recm.positive .icon {background-position:0 0;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_recm .btn_recm.positive.on .icon {background-position:0 -20px;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_recm .btn_recm.negative .icon {background-position:-50px 0;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_recm .btn_recm.negative.on .icon {background-position:-50px -20px;}
+
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_report {display:inline-block; position:static; vertical-align:top;}/* 본인이 쓴 글일때, 수정,삭제 */
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_report .odd_span {display:inline-block; font-size:12px;line-height:19px;color:#aaa;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_mod {display:inline-block; position:static; vertical-align:top;}/* 본인이 쓴 글일때, 수정,삭제 */
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_mod button {padding-left:17px; background:url(//cdnticket.melon.co.kr/resource/image/web/detailview/detail_bg_bar.gif) 7px center no-repeat;}
+.box_question_answer02 .wrap_btn .wrap_btn_right .wrap_btn_mod .odd_span {display:inline-block; font-size:12px;line-height:19px;color:#aaa;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+
+.box_question_answer02 .box_qna .list_qna li .btn_report {position:absolute;bottom:16px;right:22px;width:26px;height:26px;font-size:12px;line-height:18px;color:#aaa;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}/* 타인이 쓴 글일때, 신고버튼 */
+
+	/* 텍스트 박스 영역 */
+.box_question_answer02 .wrap_box_textarea {position:relative; padding:0 86px 0 17px; margin-bottom:15px;}
+.box_question_answer02 .wrap_box_textarea .box_textarea {overflow:hidden; position:relative; width:auto; height:78px; background-color:#fff;}
+.box_question_answer02 .wrap_box_textarea .box_textarea .wrap_form_input label {font-size:12px; line-height:18px; color:#aaa;}
+.box_question_answer02 .wrap_box_textarea .box_textarea .txt_comment {position:relative; width:598px; padding:12px 16px; height:52px; border:1px solid #dadada; font-size:12px; line-height:18px; font-family:AppleSDGothicNeo-Regular, "돋움",Dotum; vertical-align:middle; resize:none; border-radius:0; box-shadow:none; -webkit-appearance:none; outline:0 none;}
+.box_question_answer02 .wrap_box_textarea .box_textarea .num_board {display:inline-block;position:absolute;bottom:5px;right:7px;width:auto;font-size:11px;line-height:18px;color:#b2b2b2;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.box_question_answer02 .wrap_box_textarea .box_textarea .num_board .min {color:#666;}
+.box_question_answer02 .wrap_box_textarea .btn_reg_write {position:absolute; top:0; right:0; width:80px; height:78px; background-color:#fff; border:1px solid #dadada; font-weight:bold;}
+.box_question_answer02 .wrap_box_textarea .btn_reg_write .txt {display:inline-block; font-family:AppleSDGothicNeo-Regular, "돋움",Dotum; font-size:14px; line-height:80px; color:#333;}
+.box_question_answer02 .wrap_box_textarea .btn_reg_cancel {position:absolute; top:82px; right:0; width:80px; height:28px; background-color:#fff; border:1px solid #dadada;}
+.box_question_answer02 .wrap_box_textarea .btn_reg_cancel .txt {display:inline-block; font-family:AppleSDGothicNeo-Regular, "돋움",Dotum; font-size:12px; line-height:28px; color:#333;}
+
+	/* 정렬 영역 */
+.box_question_answer02 .box_sorting {overflow:hidden; padding:37px 0 21px; font-family:AppleSDGothicNeo-Regular, "맑은고딕","Malgun Gothic"; font-size:20px; line-height:28px; color:#000;}
+.box_question_answer02 .box_sorting .total_cnt {float:left;}
+.box_question_answer02 .box_sorting .total_cnt strong {font-weight:normal;}
+.box_question_answer02 .box_sorting .list_sort {float:right;}
+.box_question_answer02 .box_sorting .list_sort li {float:left; padding:0 20px; font-size:16px; line-height:28px; background:url(//cdnticket.melon.co.kr/resource/image/web/detailview/detail_bg_bar.gif) left 9px no-repeat;}
+.box_question_answer02 .box_sorting .list_sort li.on {color:#00b523;}
+.box_question_answer02 .box_sorting .list_sort li:first-child {background:none;}
+.box_question_answer02 .box_sorting .list_sort li:last-child {padding-right:0;}
+
+	/* qna 리스트 */
+.box_question_answer02 .box_qna {overflow:hidden;border-top:1px solid #e6e6e6;}
+.box_question_answer02 .box_qna .list_qna {padding-bottom:30px;}
+.box_question_answer02 .box_qna .list_qna li {overflow:hidden; padding:22px 0; border-bottom:1px solid #e6e6e6;}
+
+	/* 질문 */
+.box_question_answer02 .list_qna li .question {overflow:hidden;position:relative;padding:0 24px 0 249px;}
+.box_question_answer02 .list_qna li .question .user {float:left;width:224px;margin-left:-224px; letter-spacing:0;}
+.box_question_answer02 .list_qna li .question .user .thumb {display:inline-block; float:left; position:relative;}
+.box_question_answer02 .list_qna li .question .user .nick_name {overflow:hidden; display:inline-block; max-width:125px; padding:3px 0 4px 10px; font-size:12px; line-height:18px; color:#aaa; font-family:AppleSDGothicNeo-Regular, "돋움",Dotum; vertical-align:middle; white-space:nowrap; text-overflow:ellipsis;}
+.box_question_answer02 .list_qna li .question .user .nick_name .btn_flexible_ico4 {padding-right:5px; vertical-align:top; line-height:18px;}
+.box_question_answer02 .list_qna li .question .user .nick_name .btn_flexible_ico4 span {line-height:18px;}
+
+.box_question_answer02 .list_qna li .question .comment {float:left; width:100%;}
+.box_question_answer02 .list_qna li .question .comment .txt {display:block; overflow:hidden; padding-top:1px;font-size:12px;line-height:18px; color:#333; font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.box_question_answer02 .list_qna li .question .comment .txt .btn_flexible_ico4 {vertical-align:top;}
+.box_question_answer02 .list_qna li .question .comment .txt .icon_new {display:inline-block; width:16px; height:16px; vertical-align:top; background:url(//cdnticket.melon.co.kr/resource/image/web/detailview/detail_ico_new.png) center center no-repeat;}
+.box_question_answer02 .list_qna li .question .comment .txt .btn_folding {margin-left:4px; vertical-align:0;}
+.box_question_answer02 .list_qna li .question .comment .txt .btn_folding .text {font-family:AppleSDGothicNeo-Regular, "돋움",Dotum; font-size:11px; color:#333;}
+.box_question_answer02 .list_qna li .question .comment .txt .btn_folding .icon {display:inline-block; width:14px; height:14px; vertical-align:middle; line-height:14px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_icon.png) -174px top no-repeat;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum {margin-top:25px; padding:0 0 15px;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum {display:block; overflow:hidden; position:relative; width:100%; padding-left:0; border:none; background:none;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .image {float:left; margin-left:0; vertical-align:middle; line-height:0;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .image a {display:block; position:relative;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .cntt {display:block; float:left; padding:8px 0 0 15px; vertical-align:middle; word-break:break-all; color:#555;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .cntt .wrap_btn {float:left; width:58px; padding:0; margin:8px 0;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .cntt .wrap_btn .btn_icon {display:inline-block;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .cntt .wrap_btn .btn_icon.play span.odd_span {display:inline-block; overflow:hidden; width:23px; height:23px; font-size:0px; line-height:0; vertical-align:middle; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_green.png) no-repeat -760px top;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .cntt .wrap_btn .btn_icon.down span.odd_span {display:inline-block; overflow:hidden; width:23px; height:23px; font-size:0px; line-height:0; vertical-align:middle; background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_sprite_gray.png) no-repeat -1560px top;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .cntt dl {float:left; width:593px; margin:10px 0 0 20px;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .title {display:block; overflow:hidden; float:left; width:auto; max-width:290px; vertical-align:top; font-size:12px; line-height:14px; font-weight:bold; white-space:nowrap; word-wrap:normal; word-break:break-all; text-overflow:ellipsis;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .title a {color:#333;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .artist_name {float:left; width:278px; padding-left:12px; margin-left:12px; line-height:14px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/cmt/bl_artist.png) no-repeat left top;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .artist_name .ellipsis {display:inline-block; overflow:hidden; width:auto; max-width:270px; vertical-align:top; white-space:nowrap; text-overflow:ellipsis;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .artist_name .wrap_artist {display:inline-block; position:relative; height:14px; vertical-align:top;}
+.box_question_answer02 .list_qna li .question .comment .wrap_cmt_box_thum .cmt_box_thum .info {clear:both; padding-top:3px; vertical-align:top; font-size:12px; line-height:14px; color:#999;}
+.box_question_answer02 .list_qna li .question .comment .time_data {display:block;font-size:11px;line-height:18px;color:#aaa;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;letter-spacing:0;}
+
+	/* 댓글 */
+.box_question_answer02 .list_qna li .answer {overflow:hidden; position:relative; padding:22px 24px 0 249px; ;background-color:#fcfcfc;}
+.box_question_answer02 .list_qna li .answer .wrap_btn {position:absolute; right:24px; bottom:0;}
+.box_question_answer02 .list_qna li .answer .tit_name {display:inline-block; float:left; width:107px; height:18px; padding:0 16px 0 17px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/qna_comment.png) no-repeat 0 -20px;font-size:12px;line-height:18px;color:#aaa;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.box_question_answer02 .list_qna li .answer .tit_name .ico {display:inline-block;height:16px;} 
+.box_question_answer02 .list_qna li .answer .tit_name .counselor {display:inline-block; overflow:hidden; max-width:95px; font-size:12px;line-height:18px;color:#aaa;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum; vertical-align:top; white-space:nowrap; text-overflow:ellipsis;}
+.box_question_answer02 .list_qna li .answer .comment {overflow:hidden;float:left;width:400px;}
+.box_question_answer02 .list_qna li .answer .comment .txt {display:block;font-size:12px;line-height:18px;color:#333;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.box_question_answer02 .list_qna li .answer .comment .data {display:block; padding-top:2px;font-size:12px;line-height:18px;color:#aaa;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum; letter-spacing:0;}
+
+.box_question_answer02 .list_qna li .answer.write .wrap_insert {overflow:hidden; position:relative; width:auto; height:30px; padding:0 86px 0 17px;}
+.box_question_answer02 .list_qna li .answer.write .wrap_insert .arrow {display:inline-block; position:absolute; top:0; left:0; width:17px; height:18px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/qna_comment.png) no-repeat 0 -20px; font-size:12px; line-height:28px; color:#aaa; font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+.box_question_answer02 .list_qna li .answer.write .wrap_insert .wrap_input {position:relative; height:26px; padding:0 80px 0 7px; border:1px solid #dadada; background:#fff;}
+.box_question_answer02 .list_qna li .answer.write .wrap_insert .wrap_input input {width:100%; height:26px; border:none; font-size:12px; font-family:AppleSDGothicNeo-Regular, "돋움",Dotum; line-height:26px;}
+.box_question_answer02 .list_qna li .answer.write .wrap_insert .wrap_input label {position:absolute; left:7px; top:0; height:28px; font-family:AppleSDGothicNeo-Regular, "돋움",Dotum; font-size:11px; line-height:28px; color:#aaa;}
+.box_question_answer02 .list_qna li .answer.write .wrap_insert .wrap_input .wrap_status {position:absolute; top:0; right:7px; width:64px; height:28px; padding-left:7px; font-size:11px; line-height:28px; letter-spacing:0; color:#b2b2b2; background:url(//cdnticket.melon.co.kr/resource/image/web/detailview/detail_bg_bar.gif) left 6px no-repeat;}
+.box_question_answer02 .list_qna li .answer.write .wrap_insert .wrap_input .wrap_status strong {color:#666;}
+.box_question_answer02 .list_qna li .answer.write .btn_reg_write {position:absolute; top:0; right:0; width:80px; height:28px; background-color:#fff; border:1px solid #dadada; font-weight:bold;}
+.box_question_answer02 .list_qna li .answer.write .btn_reg_write .txt {display:inline-block; font-size:12px; line-height:28px; color:#333; font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;}
+
+	/* 질문 없을 시 */
+.box_question_answer02 .search_wrong {padding:114px 0;font-size:18px;line-height:20px;color:#1a1a1a;font-family:AppleSDGothicNeo-Regular, "돋움",Dotum;text-align:center;}
+
+/* 기획전 */
+.wrap_event_banner.exhibition {height:328px;}/* 배너 wrap */
+.wrap_big_banner.exhibition {height:328px;}/* 왼쪽배너 */
+.wrap_sub_banner.exhibition {height:328px;}/* 오른쪽배너 */
+.wrap_exhibition {padding-top:40px;}
+.wrap_exhibition .wrap_exhibition_list {padding-top:20px;}
+
+/* 공연리스트 */
+.box_ranking_list{margin-top:1px}
+.box_ranking_list table{border-top: 1px solid #e9e9e9}
+.box_ranking_list tbody td{padding: 14px 20px 14px;text-align:center;border-bottom: 1px solid #e9e9e9;font-size:12px;}
+.box_ranking_list tbody td.fst{position:relative;}
+.box_ranking_list tbody td.lst{padding: 6px 0 27px;}
+.box_ranking_list tbody td .ranking {position:absolute;top: 49px;left: 54px;width: 34px;height:32px;font-size:30px;color:#333;line-height:32px;text-align:center;}
+.box_ranking_list tbody td .change {position:absolute;top:84px;left:62px;width:19px;height:20px;font-size:14px;line-height:18px;color:#888;text-align:center;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";}
+.box_ranking_list tbody td .change .ico_change {display:inline-block;height:20px;padding-left:11px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/ico_change.png) no-repeat;vertical-align:top}
+.box_ranking_list tbody td .change .ico_up {background-position:0 0;color:#f0780b;}
+.box_ranking_list tbody td .change .ico_down {background-position:0 -20px;color:#00be37;}
+.box_ranking_list tbody td .show_infor{position: relative;height:126px;text-align: left;overflow: hidden;}
+.box_ranking_list tbody td .show_infor .img{position:absolute;top:0;left:0;}
+.box_ranking_list tbody td .show_infor .infor_text{position:relative; padding-left: 119px;font-size:12px; }
+.box_ranking_list tbody td .show_infor .infor_text .ico_wrap {display: block; overflow: hidden; height: 20px; padding-top: 8px;}
+.box_ranking_list tbody td .show_infor .infor_text .show_title{display:block;overflow:hidden;margin-top: 4px;font-size:16px;}
+.box_ranking_list tbody td .show_infor .infor_text .show_title a{line-height:18px;color:#333;}
+.box_ranking_list tbody td .show_infor .infor_text .show_title a:hover{color:#000;}
+.box_ranking_list tbody td.show_date{padding-left:60px;padding-top:40px;line-height: 22px; color:#666; text-align: left; vertical-align:top; letter-spacing: 0}
+.box_ranking_list tbody td.show_loc{padding-top:40px;vertical-align:top; }
+.box_ranking_list tbody td .percent{padding-bottom: 10px;font-size:24px;color:#888;}
+.box_ranking_list tbody td .btn_rank{padding: 4px 20px;border:1px solid #e9e9e9;}
+.box_ranking_list tbody td .ranking.top, .box_ranking_list tbody td .percent.top{color:#00be37;}
+.box_ranking_list tbody td .show_title span, .box_ranking_list tbody td.show_loc span{color:#00b523}
+
+.control_list{overflow:hidden; margin-bottom:10px;position:relative;z-index:99}
+.wrap_main_concert .control_list{padding-top:17px}
+.control_list .view_type_control{float:left; font-size:0}
+.control_list .view_type_control button{overflow:hidden; width:36px; height:36px; padding:0; border:1px solid #eee; text-indent:-9999px; background:url(//cdnticket.melon.co.kr/resource/image/web/common/btn_ctrl_view.png) no-repeat -36px 0;}
+.control_list .view_type_control button:first-child{border-right:1px solid #00cd3c;}
+.control_list .view_type_control button:first-child.on, .control_list .view_type_control button:first-child:hover{background-position:-36px -36px;border:1px solid #00cd3c;}
+.control_list .view_type_control button:last-child{background-position:0 -36px;border-left:none}
+.control_list .view_type_control button:last-child.on, .control_list .view_type_control button:last-child:hover{background-position:0 0;border:1px solid #00cd3c;border-left:none;width:35px;}
+
+.tapping{display:none!important}/*script 예약어*/
+.tapping.on{display:block!important}
+.wrap_main_concert {padding-top:3px;margin-bottom:30px}
+.list_concert.list_search_result{margin-top:0px}
+
+/* 목록 빈영역 */
+.wrap_event_ing .wrap_main_event_list .list_event li.list_blank{padding: 24px 23px 0;border: 1px solid #eee;width:268px;height:260px;}
+.wrap_event_ing .wrap_main_event_list .list_event li.list_blank .thumb{height:120px;}
+
+/* 20160920 종료이벤트 당첨혜택 말줄임 속성 추가 */
+.wrap_event_list .list_event.list_finish_event li .box_info .info .txt_info {width:510px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;vertical-align:top}
+
+/* 20161006 전체 이벤트 */
+.wrap_slider .control.indicator.tab ul.nth01 li {width:100%;}
+.wrap_slider .control.indicator.tab ul.nth01 li a span{padding:0 28px;}
+.thumb_660x328 .frame{background:none;width:658px;height:327px;z-index:10;left:0px;border:1px solid #000;border-bottom:none;opacity:0.03; filter:alpha(opacity=3);}
+.thumb_660x328 img{width:660px;height:328px}
+
+.thumb_340x328 .frame{background:none;width:338px;height:327px;z-index:10;left:0px;border:1px solid #000;border-bottom:none;opacity:0.03; filter:alpha(opacity=3);}
+.thumb_340x328 img{width:340px;height:328px}
+
+.wrap_slider .control.indicator.tab ul li span.bullet {position:absolute;top:14px;right:15px;width:10px;height:10px;background:url(//cdnticket.melon.co.kr/resource/image/web/common/rolling_10x10.png) 0 -10px no-repeat; text-indent:-9999px;}
+.wrap_slider .control.indicator.tab ul li.on span.bullet {background-position:0 0;}
+.wrap_slider .control.indicator.tab ul li:nth-child(1) span.bullet{right:41px;}
+.wrap_slider .control.indicator.tab ul li:nth-child(2) span.bullet{right:28px;}
+.wrap_slider .control.indicator.tab ul li:nth-child(3) span.bullet{right:15px;}
+
+.wrap_slider .control.indicator.tab ul.nth01 li:nth-child(1) span.bullet{right:15px;}
+
+.wrap_slider .control.indicator.tab ul.nth02 li:nth-child(1) span.bullet{right:28px;}
+.wrap_slider .control.indicator.tab ul.nth02 li:nth-child(2) span.bullet{right:15px;}
+
+.wrap_event_ing .wrap_main_event_list .list_event li .inner .box_info .btn_winner{position:absolute;right:0;bottom:2px;color:#444;text-decoration:underline;padding-right:8px;}
+.wrap_event_ing .wrap_main_event_list .list_event li .inner .box_info .btn_winner:after{content:""; display:block; clear:both;width:5px;height:7px;position:absolute;top:5px;right:0;background:url(//cdnticket.melon.co.kr/resource/image/web/common/bg_btn_icon.png) -306px -12px no-repeat;}
+.wrap_event_ing .wrap_main_event_list .list_event li.end_event .frame{border:0 none;opacity:1; filter:alpha(opacity=30);}
+.wrap_event_ing .wrap_main_event_list .list_event li.end_event .frame:before{content:""; display:block; clear:both;background-color:#000;opacity:0.5; filter:alpha(opacity=50);width:268px;height:120px}
+.wrap_event_ing .wrap_main_event_list .list_event li.end_event .frame:after{content:"종료"; display:block; clear:both;position:absolute;top:46px;color:#fff;font-size:18px;font-family:AppleSDGothicNeo-Regular, "맑은 고딕","Malgun Gothic";width:100%;text-align:center}
+.wrap_main_event_list .paging_comm{margin-top:10px;margin-bottom:26px}
+.wrap_event_finish .wrap_event_list .paging_comm{margin-bottom:26px}
+.wrap_prize_board .wrap_prize_board .paging_comm{margin-bottom:26px}
+.wrap_event_participation .wrap_event_list .paging_comm{margin-bottom:26px}
+
+/* 티켓 플친 프로모션*/
+.wrap_promotion.evt12 {padding: 0; margin: 0; background-color: #fff;}
+.wrap_promotion.evt12 img {max-width: 100%; width: 100%; vertical-align: middle;}
+.wrap_promotion.evt12 .section02 ul {overflow: hidden;}
+.wrap_promotion.evt12 .section02 ul li {float: left; width: 50%;}
+.wrap_promotion.evt12 .section02 .tab-c {display: none;}
+.wrap_promotion.evt12 .section02 .tab-c.on {display: block;}

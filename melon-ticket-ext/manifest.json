@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Melon Ticket Optimizer",
+  "version": "1.0.0",
+  "description": "Melon ticket reservation optimizer with direct NetFunnel protocol",
+  "permissions": ["storage", "alarms", "cookies"],
+  "host_permissions": [
+    "https://tktapi.melon.com/*",
+    "https://zam.melon.com/*",
+    "https://ticket.melon.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://ticket.melon.com/performance/index.htm*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

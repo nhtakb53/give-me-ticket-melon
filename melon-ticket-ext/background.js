@@ -410,6 +410,30 @@ function buildFormData(config, sessionKey, trafficCtrlYn, scheduleNo, nfKey) {
 }
 
 // ============================================================================
+// 정밀 대기 (T 시점까지 대기)
+// ============================================================================
+
+async function waitUntilT(T, offset, margin) {
+  const spinTarget = T - margin;
+
+  // T-2s 전까지 sleep
+  while (Date.now() + offset < spinTarget - 2000) {
+    if (aborted) return;
+    await sleep(1);
+  }
+
+  // T-2s ~ T-10ms: 1ms 정밀 폴링
+  while (Date.now() + offset < spinTarget - 10) {
+    await sleep(1);
+  }
+
+  // T-10ms ~ T: busy-wait 스핀
+  while (Date.now() + offset < spinTarget) {
+    // spin
+  }
+}
+
+// ============================================================================
 // 메인 실행 시퀀스
 // ============================================================================
 
@@ -440,9 +464,7 @@ async function runSequence(config) {
       log('PHASE1', '초기 오프셋 측정 실패 — 오프셋 0으로 진행');
     }
 
-    // pre-fetch 리드 타임 결정
-    const preFetchLeadMs = Math.ceil(apiRtt * 1.5) || 300;
-    diag('TIMING', `preFetchLeadMs=${preFetchLeadMs}ms (apiRtt=${apiRtt.toFixed(1)}ms)`);
+    diag('TIMING', `apiRtt=${apiRtt.toFixed(1)}ms`);
 
     // ── 목표 시각(T) 계산 ──
     const T = parseFireTime(config.fireTime);
@@ -504,134 +526,122 @@ async function runSequence(config) {
 
     if (aborted) return;
 
-    // ── Pre-fetch (T - preFetchLeadMs) ──
+    // ================================================================
+    // T-5s: sessionKey + NetFunnel 키 사전 확보
+    //
+    // 핵심 변경: 모든 키를 T 전에 미리 확보하여
+    // T 시점에는 즉시 폼 제출 (0ms 오버헤드)
+    //
+    // T-5s: sessionKey pre-fetch (prodKey.json)
+    //   → trafficCtrlYn=Y면: NetFunnel 대기열 진입 (ts.wseq)
+    //   → 대기열 폴링 (code=201이면)
+    // T-5s+RTT*2: 모든 키 확보 완료
+    // T-2s: 정밀 폴링
+    // T: 즉시 폼 제출!
+    // ================================================================
+
     await setState({ phase: 'PREFETCH' });
+    const prefetchT0 = performance.now();
+    diag('PREFETCH', 'T-5s: sessionKey + NetFunnel 키 사전 확보 시작');
 
-    // T - preFetchLeadMs 까지 정밀 대기
-    const preFetchFireTime = T - preFetchLeadMs;
-    while (Date.now() + offset < preFetchFireTime - 50) {
-      if (aborted) return;
-      await sleep(1);
-    }
-
-    diag('PREFETCH', `sessionKey 사전 획득 시작 (T까지 약 ${preFetchLeadMs}ms)`);
-    const prefetchPromise = preFetchSessionKey(config);
-
-    // ── T - 2s: 정밀 폴링 ──
-    const spinTarget = T - margin2;
-    while (Date.now() + offset < spinTarget - 2000) {
-      if (aborted) return;
-      await sleep(1);
-    }
-
-    log('FIRE_PREP', '정밀 폴링 시작 (T-2s)');
-    while (Date.now() + offset < spinTarget - 10) {
-      await sleep(1);
-    }
-
-    // T-10ms: busy-wait 스핀 (SW 스레드는 페이지와 분리)
-    while (Date.now() + offset < spinTarget) {
-      // spin
-    }
-
-    // ── T 시점: 발사! ──
-    await setState({ phase: 'FIRE' });
-    const fireT0 = performance.now();
-    log('FIRE', '발사!');
-
-    // pre-fetch 결과 확인
-    const prefetchResult = await prefetchPromise;
+    // ── 1단계: sessionKey 획득 ──
+    const prefetchResult = await preFetchSessionKey(config);
 
     if (!prefetchResult) {
-      log('FIRE', 'pre-fetch 실패 → Content Script fallback');
+      log('PREFETCH', 'sessionKey 획득 실패 → fallback 대기');
+      // T까지 대기 후 fallback
+      await waitUntilT(T, offset, margin2);
       await sendToContentScript({ type: 'FALLBACK', config });
       await setState({ phase: 'ERROR', error: 'pre-fetch 실패 — fallback 실행' });
       return;
     }
 
+    if (aborted) return;
+
     const { sessionKey, trafficCtrlYn, nfActionId, scheduleNo } = prefetchResult;
+    diag('PREFETCH', `sessionKey 확보 (${(performance.now() - prefetchT0).toFixed(1)}ms): tYn=${trafficCtrlYn}`);
 
-    if (trafficCtrlYn !== 'Y') {
-      // 넷퍼넬 비활성화 → 직접 폼 제출
-      log('FIRE', '넷퍼넬 비활성화 → 직접 폼 제출');
-      diag('FIRE', `T이후 소요: ${(performance.now() - fireT0).toFixed(2)}ms`);
-      await sendToContentScript({
-        type: 'SUBMIT_FORM',
-        data: buildFormData(config, sessionKey, trafficCtrlYn, scheduleNo, ''),
-      });
-      await setState({ phase: 'DONE', message: `완료 (넷퍼넬 OFF, ${(performance.now() - fireT0).toFixed(1)}ms)` });
-      return;
-    }
+    // ── 2단계: NetFunnel 대기열 진입 (trafficCtrlYn=Y인 경우) ──
+    let nfKey = '';
 
-    // ── 넷퍼넬 활성화: 직접 대기열 진입 ──
-    diag('FIRE', `NetFunnel 대기열 진입 시작 (T이후 ${(performance.now() - fireT0).toFixed(2)}ms)`);
+    if (trafficCtrlYn === 'Y') {
+      diag('PREFETCH', `NetFunnel 대기열 진입 시작: aid=${nfActionId}`);
 
-    let queueResult;
-    try {
-      queueResult = await enterQueue(nfActionId);
-    } catch (err) {
-      log('FIRE', `대기열 진입 실패: ${err.message} → fallback`);
-      await sendToContentScript({ type: 'FALLBACK', config });
-      await setState({ phase: 'ERROR', error: `대기열 진입 실패: ${err.message}` });
-      return;
-    }
-
-    const totalToQueue = performance.now() - fireT0;
-    diag('FIRE', `대기열 응답: code=${queueResult.code} (${totalToQueue.toFixed(1)}ms)`);
-
-    if (queueResult.code === NF_SUCCESS || queueResult.code === NF_BYPASS) {
-      // 즉시 진입 성공!
-      const nfKey = queueResult.params.key || '';
-      log('FIRE', `즉시 진입 성공! key=${nfKey}`);
-
-      await sendToContentScript({
-        type: 'SUBMIT_FORM',
-        data: buildFormData(config, sessionKey, trafficCtrlYn, scheduleNo, nfKey),
-      });
-
-      await setState({
-        phase: 'DONE',
-        message: `즉시 진입 성공! (${totalToQueue.toFixed(1)}ms)`,
-      });
-      return;
-    }
-
-    if (queueResult.code === NF_BLOCK || queueResult.code === NF_IP_BLOCK) {
-      await setState({ phase: 'ERROR', error: `서버 차단: code=${queueResult.code}` });
-      return;
-    }
-
-    if (queueResult.code === NF_CONTINUE) {
-      // 대기열 폴링
-      const nfKey = queueResult.params.key || '';
-      const ttl = queueResult.params.ttl || '1';
-      const nwait = parseInt(queueResult.params.nwait || '0', 10);
-
-      await setState({ phase: 'QUEUE_POLL', nwait });
-      log('QUEUE', `대기열 진입. nwait=${nwait}, ttl=${ttl}s`);
-
+      let queueResult;
       try {
-        const pollResult = await pollQueue(nfKey, ttl, nfActionId, config);
-        const pollKey = pollResult.params.key || nfKey;
-
-        await sendToContentScript({
-          type: 'SUBMIT_FORM',
-          data: buildFormData(config, sessionKey, trafficCtrlYn, scheduleNo, pollKey),
-        });
-
-        await setState({
-          phase: 'DONE',
-          message: `대기열 통과! (총 ${((performance.now() - fireT0) / 1000).toFixed(1)}초)`,
-        });
+        queueResult = await enterQueue(nfActionId);
       } catch (err) {
-        await setState({ phase: 'ERROR', error: `폴링 실패: ${err.message}` });
+        log('PREFETCH', `대기열 진입 실패: ${err.message} → fallback 대기`);
+        await waitUntilT(T, offset, margin2);
+        await sendToContentScript({ type: 'FALLBACK', config });
+        await setState({ phase: 'ERROR', error: `대기열 진입 실패: ${err.message}` });
+        return;
       }
-      return;
+
+      if (aborted) return;
+
+      diag('PREFETCH', `대기열 응답: code=${queueResult.code} (${(performance.now() - prefetchT0).toFixed(1)}ms)`);
+
+      if (queueResult.code === NF_BLOCK || queueResult.code === NF_IP_BLOCK) {
+        await setState({ phase: 'ERROR', error: `서버 차단: code=${queueResult.code}` });
+        return;
+      }
+
+      if (queueResult.code === NF_SUCCESS || queueResult.code === NF_BYPASS) {
+        nfKey = queueResult.params.key || '';
+        log('PREFETCH', `즉시 진입 성공! key=${nfKey.substring(0, 20)}...`);
+      }
+
+      if (queueResult.code === NF_CONTINUE) {
+        // 대기열 폴링 (T 전에 완료되어야 함)
+        const pollKey = queueResult.params.key || '';
+        const ttl = queueResult.params.ttl || '1';
+        const nwait = parseInt(queueResult.params.nwait || '0', 10);
+
+        await setState({ phase: 'QUEUE_POLL', nwait });
+        log('PREFETCH', `대기열 폴링 시작: nwait=${nwait}, ttl=${ttl}s`);
+
+        try {
+          const pollResult = await pollQueue(pollKey, ttl, nfActionId, config);
+          nfKey = pollResult.params.key || pollKey;
+          log('PREFETCH', `대기열 통과! key=${nfKey.substring(0, 20)}...`);
+        } catch (err) {
+          await setState({ phase: 'ERROR', error: `폴링 실패: ${err.message}` });
+          return;
+        }
+      }
     }
 
-    // 알 수 없는 코드
-    log('FIRE', `알 수 없는 응답 코드: ${queueResult.code}`);
-    await setState({ phase: 'ERROR', error: `알 수 없는 NetFunnel 코드: ${queueResult.code}` });
+    if (aborted) return;
+
+    const totalPrefetch = performance.now() - prefetchT0;
+    diag('PREFETCH', `모든 키 확보 완료 (${totalPrefetch.toFixed(1)}ms)`);
+    log('PREFETCH', `sessionKey ✓, nfKey ${trafficCtrlYn === 'Y' ? '✓' : '(불필요)'} — T까지 대기`);
+
+    // ── 폼 데이터 사전 구성 ──
+    const formData = buildFormData(config, sessionKey, trafficCtrlYn, scheduleNo, nfKey);
+
+    // ── T까지 정밀 대기 ──
+    await setState({ phase: 'WAITING', message: '키 확보 완료 — T 대기 중' });
+    await waitUntilT(T, offset, margin2);
+    if (aborted) return;
+
+    // ── T 시점: 즉시 폼 제출! (모든 키 이미 확보) ──
+    await setState({ phase: 'FIRE' });
+    const fireT0 = performance.now();
+    log('FIRE', '발사! — 사전 확보된 키로 즉시 폼 제출');
+
+    await sendToContentScript({
+      type: 'SUBMIT_FORM',
+      data: formData,
+    });
+
+    const fireElapsed = performance.now() - fireT0;
+    diag('FIRE', `T이후 폼 제출까지: ${fireElapsed.toFixed(2)}ms`);
+    await setState({
+      phase: 'DONE',
+      message: `완료! T→폼제출: ${fireElapsed.toFixed(1)}ms (키 사전확보: ${totalPrefetch.toFixed(0)}ms)`,
+    });
 
   } catch (err) {
     log('ERROR', `치명적 오류: ${err.message}`);

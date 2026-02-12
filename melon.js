@@ -1,7 +1,7 @@
 const CONFIG = {
-  prodId: "212081",          // ✅ 상품 ID
+  prodId: "212768",          // ✅ 상품 ID
   scheduleNo: 100001,        // ✅ 회차 번호
-  fireTime: "20:47:45",      // ✅ 시간 설정 (HH:mm:ss)
+  fireTime: "20:00:00",      // ✅ 시간 설정 (HH:mm:ss)
   offsetSamples: 30,         // 초기 오프셋 샘플 수 (중앙값 사용)
   offsetGapMs: 60,           // 샘플간 간격 (ms)
   recalSamples: 10,          // T-5s 재보정 샘플 수

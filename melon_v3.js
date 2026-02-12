@@ -10,16 +10,16 @@
 // ============================================================================
 
 const CONFIG = {
-  prodId: "212768",          // 상품 ID
+  prodId: "212780",          // 상품 ID
   scheduleNo: 100001,        // 회차 번호
-  fireTime: "20:00:00",      // 시간 설정 (HH:mm:ss)
+  fireTime: "20:37:50",      // 시간 설정 (HH:mm:ss)
   offsetSamples: 30,         // 초기 오프셋 샘플 수 (중앙값 사용)
   offsetGapMs: 60,           // 샘플간 간격 (ms)
   recalSamples: 10,          // T-5s 재보정 샘플 수
   recalGapMs: 40,            // 재보정 간격 (ms)
-  sellTypeCode: "ST0002",    // ST0001: 일반예매, ST0002: 선예매
-  reservationType: "ST0002", // ST0001: 일반예매, ST0002: 선예매
-  netfunnelName: "preReservationOneStopZAM", // reservationZAM: 일반예매, preReservationOneStopZAM: 선예매
+  sellTypeCode: "ST0001",    // ST0001: 일반예매, ST0002: 선예매
+  reservationType: "ST0001", // ST0001: 일반예매, ST0002: 선예매
+  netfunnelName: "reservationZAM", // reservationZAM: 일반예매, preReservationOneStopZAM: 선예매
   maxRetries: 3,             // 예매 요청 최대 재시도 횟수
   retryDelayMs: 300,         // 재시도 간격 (ms)
 

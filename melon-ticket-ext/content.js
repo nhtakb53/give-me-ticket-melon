@@ -5,8 +5,10 @@
 //   1. 페이지 데이터 수집 → SW에 전달
 //   2. READY 버튼 오버레이 (팝업 차단기 대응)
 //   3. 폼 제출 (대기열 통과 후)
-//   4. Fallback 실행 (SW 실패 시)
-//   5. 상태 오버레이 표시
+//   4. CAPTCHA (인증예매) 입력 UI
+//   5. 원본 코드 경로 실행
+//   6. Fallback 실행 (SW 실패 시)
+//   7. 상태 오버레이 표시
 // ============================================================================
 
 const log = (tag, msg) => console.log(`[MelonExt:${tag}] ${msg}`);
@@ -217,6 +219,26 @@ async function submitForm(data) {
     setFormField(frm, 'netfunnel_key', data.netfunnel_key);
   }
 
+  // ── NetFunnel_ID 쿠키 + sessionStorage 설정 ──
+  // 쿠키는 background.js에서 chrome.cookies.set()으로 이미 설정됨
+  // 여기서는 document.cookie 백업 + sessionStorage 설정
+  if (data.netfunnelResult) {
+    // document.cookie 백업 (chrome.cookies.set 실패 대비)
+    try {
+      const expiry = new Date();
+      expiry.setMinutes(expiry.getMinutes() + 10);
+      document.cookie = 'NetFunnel_ID=' + escape(data.netfunnelResult) +
+        ';expires=' + expiry.toGMTString() + ';domain=.melon.com;path=/;';
+    } catch (e) { /* ignore */ }
+    // sessionStorage 설정 (원본 라이브러리 동작 재현)
+    try {
+      sessionStorage.setItem('NetFunnel_ID', data.netfunnelResult);
+    } catch (e) { /* ignore */ }
+    log('SUBMIT', `NetFunnel_ID 설정 완료: ${data.netfunnelResult.substring(0, 50)}...`);
+  } else {
+    log('SUBMIT', `netfunnelResult 없음 — 쿠키 미설정`);
+  }
+
   // ── 디버그: 최종 전송 payload 로그 ──
   const payload = {};
   for (const name of allFields) {
@@ -270,63 +292,141 @@ function createOneForm() {
 }
 
 // ============================================================================
-// 4. Fallback 실행 (SW에서 직접 NetFunnel 실패 시)
+// 4. CAPTCHA (인증예매) 입력 UI
 // ============================================================================
 
-function executeFallback(config) {
-  log('FALLBACK', '페이지 원본 AMD 모듈로 기존 예약 흐름 실행');
+let captchaOverlay = null;
 
-  // 페이지 컨텍스트에 스크립트 주입
-  const script = document.createElement('script');
-  script.textContent = `
-    (function() {
-      try {
-        var reservationCommonService = require('js/app/performance/service/reservationCommonService');
-        var netfunnelService = require('js/app/performance/service/netfunnelService');
+function showCaptchaOverlay(data) {
+  // 기존 오버레이 제거
+  if (captchaOverlay) captchaOverlay.remove();
 
-        var params = {
-          prodId: '${config.prodId}',
-          scheduleNo: ${config.scheduleNo || 100001},
-          v: 1
-        };
-
-        reservationCommonService.service.generateSessionKey(params).then(function(result) {
-          var dto = {
-            prodId: '${config.prodId}',
-            scheduleNo: result.scheduleNo || ${config.scheduleNo || 100001},
-            pocCode: '${config.pocCode || 'SC0002'}',
-            sellTypeCode: '${config.sellTypeCode}',
-            reservationType: '${config.sellTypeCode}',
-            sellCondNo: typeof getCondNo === 'function' ? getCondNo() : '0',
-            trafficCtrlYn: result.trafficCtrlYn,
-            sessionKey: result.key || result.sessionKey
-          };
-
-          if (result.trafficCtrlYn === 'Y') {
-            dto.nf_action_id = result.nflActId;
-            dto.netfunnelType = 'Y';
-            dto.netfunnelName = '${config.netfunnelName || 'reservationZAM'}';
-            try { dto.netfunnelSkinTitle = document.getElementById('global_ticket_title').value; } catch(e) {}
-            netfunnelService.service.netfunnelInit(dto);
-          } else {
-            dto.netfunnelType = 'N';
-            reservationCommonService.service.oneStopProcess(dto);
-          }
-          console.log('[MelonExt:FALLBACK] 기존 방식 실행 완료');
-        }).catch(function(err) {
-          console.error('[MelonExt:FALLBACK] 실패:', err);
-        });
-      } catch(err) {
-        console.error('[MelonExt:FALLBACK] AMD 모듈 로드 실패:', err);
-      }
-    })();
+  captchaOverlay = document.createElement('div');
+  captchaOverlay.id = 'melon-ext-captcha-overlay';
+  captchaOverlay.style.cssText = `
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7); z-index: 999999;
+    display: flex; align-items: center; justify-content: center;
   `;
-  document.documentElement.appendChild(script);
-  script.remove();
+
+  const box = document.createElement('div');
+  box.style.cssText = `
+    background: #fff; border-radius: 12px; padding: 28px 36px;
+    text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    min-width: 360px;
+  `;
+
+  // 타이틀
+  const title = document.createElement('div');
+  title.textContent = '인증예매 — 보안문자 입력';
+  title.style.cssText = 'font-size: 17px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e;';
+
+  // CAPTCHA 이미지
+  const img = document.createElement('img');
+  img.id = 'melon-ext-captcha-img';
+  img.src = 'data:image/png;base64,' + data.imageBase64;
+  img.style.cssText = 'display: block; margin: 0 auto 12px; border: 1px solid #ddd; border-radius: 4px;';
+
+  // 새로고침 버튼
+  const reloadBtn = document.createElement('button');
+  reloadBtn.textContent = '새로고침';
+  reloadBtn.style.cssText = `
+    padding: 6px 16px; font-size: 13px; background: #f0f0f0; color: #333;
+    border: 1px solid #ccc; border-radius: 4px; cursor: pointer; margin-bottom: 12px;
+  `;
+  reloadBtn.addEventListener('click', () => {
+    if (!isExtensionValid()) return;
+    chrome.runtime.sendMessage({ type: 'CAPTCHA_RESPONSE', data: { reload: true } });
+  });
+
+  // 입력 필드
+  const input = document.createElement('input');
+  input.id = 'melon-ext-captcha-input';
+  input.type = 'text';
+  input.placeholder = '보안문자를 입력하세요';
+  input.autocomplete = 'off';
+  input.style.cssText = `
+    display: block; width: 100%; box-sizing: border-box; padding: 10px 14px;
+    font-size: 16px; border: 2px solid #4a90d9; border-radius: 6px;
+    margin-bottom: 8px; text-align: center; letter-spacing: 2px;
+  `;
+
+  // 에러 메시지
+  const errorMsg = document.createElement('div');
+  errorMsg.id = 'melon-ext-captcha-error';
+  errorMsg.style.cssText = 'color: #e74c3c; font-size: 13px; margin-bottom: 8px; min-height: 18px;';
+
+  // 확인 버튼
+  const submitBtn = document.createElement('button');
+  submitBtn.textContent = '확인';
+  submitBtn.style.cssText = `
+    padding: 12px 40px; font-size: 15px; font-weight: 700;
+    background: #4a90d9; color: #fff; border: none; border-radius: 8px;
+    cursor: pointer; width: 100%;
+  `;
+
+  function submitCaptcha() {
+    const val = input.value.trim();
+    if (!val) {
+      errorMsg.textContent = '문자를 입력해 주세요';
+      return;
+    }
+    if (!isExtensionValid()) return;
+    errorMsg.textContent = '검증 중...';
+    submitBtn.disabled = true;
+    chrome.runtime.sendMessage({ type: 'CAPTCHA_RESPONSE', data: { userInput: val } });
+  }
+
+  submitBtn.addEventListener('click', submitCaptcha);
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') submitCaptcha();
+  });
+
+  box.appendChild(title);
+  box.appendChild(img);
+  box.appendChild(reloadBtn);
+  box.appendChild(input);
+  box.appendChild(errorMsg);
+  box.appendChild(submitBtn);
+  captchaOverlay.appendChild(box);
+  document.body.appendChild(captchaOverlay);
+
+  // 포커스
+  setTimeout(() => input.focus(), 100);
+  log('CAPTCHA', 'CAPTCHA 입력 오버레이 표시');
+}
+
+function updateCaptchaImage(imageBase64) {
+  const img = document.getElementById('melon-ext-captcha-img');
+  if (img) img.src = 'data:image/png;base64,' + imageBase64;
+  const input = document.getElementById('melon-ext-captcha-input');
+  if (input) { input.value = ''; input.focus(); }
+  const btn = captchaOverlay && captchaOverlay.querySelector('button:last-child');
+  if (btn) btn.disabled = false;
+}
+
+function showCaptchaError(errorText) {
+  const el = document.getElementById('melon-ext-captcha-error');
+  if (el) el.textContent = errorText;
+  const btn = captchaOverlay && captchaOverlay.querySelector('button:last-child');
+  if (btn) btn.disabled = false;
+}
+
+function removeCaptchaOverlay() {
+  if (captchaOverlay) {
+    captchaOverlay.remove();
+    captchaOverlay = null;
+  }
 }
 
 // ============================================================================
-// 5. 상태 오버레이
+// 5. (제거됨) executeOriginalFlow, executeFallback는 background.js에서
+//    chrome.scripting.executeScript({ world: 'MAIN' })로 직접 실행
+//    MV3 CSP가 인라인 <script> 주입을 차단하므로 이 방식이 필수
+// ============================================================================
+
+// ============================================================================
+// 6. 상태 오버레이
 // ============================================================================
 
 let statusOverlay = null;
@@ -408,6 +508,37 @@ let statusInterval = setInterval(updateStatusOverlay, 500);
 // ============================================================================
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  // ── CAPTCHA 관련 메시지 ──
+  if (msg.type === 'SHOW_CAPTCHA') {
+    showCaptchaOverlay(msg.data);
+    sendResponse({ ok: true });
+    return true;
+  }
+
+  if (msg.type === 'CAPTCHA_COMPLETE') {
+    // CAPTCHA 검증 성공 → chkcapt를 sessionStorage에 저장
+    try {
+      sessionStorage.setItem('chkcapt', msg.data.chkcapt);
+      log('CAPTCHA', `chkcapt 저장 완료: ${msg.data.chkcapt.substring(0, 30)}...`);
+    } catch (e) {
+      log('CAPTCHA', `chkcapt 저장 실패: ${e.message}`);
+    }
+    removeCaptchaOverlay();
+    sendResponse({ ok: true });
+    return true;
+  }
+
+  if (msg.type === 'CAPTCHA_RETRY') {
+    // CAPTCHA 검증 실패 → 에러 표시 + 새 이미지
+    showCaptchaError(msg.data.error);
+    if (msg.data.imageBase64) {
+      updateCaptchaImage(msg.data.imageBase64);
+    }
+    sendResponse({ ok: true });
+    return true;
+  }
+
+  // ── 기존 메시지 핸들러 ──
   if (msg.type === 'SHOW_READY_BUTTON') {
     showReadyButton();
     sendResponse({ ok: true });
@@ -425,11 +556,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     return true; // async sendResponse
   }
 
-  if (msg.type === 'FALLBACK') {
-    executeFallback(msg.config);
-    sendResponse({ ok: true });
-    return true;
-  }
+  // EXECUTE_ORIGINAL, FALLBACK는 background.js에서 chrome.scripting.executeScript로 직접 실행
 });
 
 // ============================================================================
@@ -440,4 +567,4 @@ window.addEventListener('beforeunload', () => {
   clearInterval(statusInterval);
 });
 
-log('INIT', 'Content Script 로드 완료');
+log('INIT', 'Content Script v1.2.0 로드 완료 (scripting.executeScript)');

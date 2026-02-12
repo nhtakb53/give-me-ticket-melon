@@ -59,6 +59,7 @@ function renderStatus(state) {
   const phaseLabels = {
     IDLE: '대기',
     ARMED: '무장 완료',
+    CAPTCHA_CHECK: 'CAPTCHA 입력 대기...',
     PHASE1_OFFSET: '시간 동기화 중...',
     WAITING: '대기 중...',
     RECALIBRATE: '재보정 중...',

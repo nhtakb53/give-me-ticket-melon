@@ -2,7 +2,7 @@
 // background.js — Service Worker: 타이밍 + 직접 NetFunnel 프로토콜
 //
 // 상태 머신:
-//   IDLE → ARMED → PHASE1_OFFSET → WAITING → RECALIBRATE → PREFETCH → FIRE → QUEUE_POLL → DONE
+//   IDLE → ARMED → CAPTCHA_CHECK → PHASE1_OFFSET → WAITING → RECALIBRATE → PREFETCH → FIRE → DONE
 //
 // 핵심: host_permissions로 CORS 우회 → fetch로 직접 ts.wseq 대기열 진입
 // ============================================================================
@@ -10,6 +10,9 @@
 const OFFSET_URL_BASE = 'https://tktapi.melon.com/poc/foruInfo.json';
 const PROD_KEY_URL = 'https://tktapi.melon.com/api/product/prodKey.json';
 const TS_HOST = 'https://zam.melon.com/ts.wseq';
+const CAPTCHA_IMAGE_URL = 'https://ticket.melon.com/reservation/ajax/captChaImage.json';
+const CAPTCHA_CHECK_URL = 'https://ticket.melon.com/reservation/ajax/checkCaptcha.json';
+const CAPTCHA_COMPLETE_URL = 'https://ticket.melon.com/reservation/ajax/checkCaptchaComplete.json';
 
 // NetFunnel opcodes
 const OP_CHK_ENTER = 5002;       // 대기열 폴링
@@ -126,7 +129,7 @@ async function warmupConnections(config) {
     const t0 = performance.now();
     try {
       await fetch(
-        `${PROD_KEY_URL}?prodId=${config.prodId}&scheduleNo=${config.scheduleNo}&v=1&_warmup=${Date.now()}`,
+        `${PROD_KEY_URL}?prodId=${config.prodId}&scheduleNo=${config.scheduleNo}&v=1`,
         { method: 'GET', credentials: 'include', cache: 'no-store' }
       );
       const rtt = performance.now() - t0;
@@ -352,6 +355,156 @@ async function sendToContentScript(message) {
 }
 
 // ============================================================================
+// CAPTCHA (인증예매) 처리
+// ============================================================================
+
+async function fetchCaptchaImage(config) {
+  const url = `${CAPTCHA_IMAGE_URL}?prodId=${config.prodId}&scheduleNo=${config.scheduleNo}&t=${Date.now()}`;
+  try {
+    const res = await fetch(url, { credentials: 'include', cache: 'no-store' });
+    const data = await res.json();
+    if (data.CAPTIMAGE && data.CAPTDATA) {
+      log('CAPTCHA', 'CAPTCHA 이미지 로드 성공');
+      return { imageBase64: data.CAPTIMAGE, captData: data.CAPTDATA };
+    }
+    return null;
+  } catch (err) {
+    log('CAPTCHA', `이미지 로드 실패: ${err.message}`);
+    return null;
+  }
+}
+
+async function validateCaptcha(config, userInput, captData) {
+  try {
+    log('CAPTCHA', `검증 요청: userInput="${userInput}", captData=${captData.substring(0, 30)}...`);
+    const body = new URLSearchParams({
+      userCaptStr: userInput,
+      chkcapt: captData,
+      prodId: config.prodId,
+      scheduleNo: String(config.scheduleNo),
+      pocCode: config.pocCode || 'SC0002',
+      sellTypeCode: config.sellTypeCode,
+    });
+    const res = await fetch(CAPTCHA_CHECK_URL, {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString(),
+    });
+    log('CAPTCHA', `검증 응답 status: ${res.status}`);
+    const data = await res.json();
+    log('CAPTCHA', `검증 결과: ${JSON.stringify(data)}`);
+    return data;
+  } catch (err) {
+    log('CAPTCHA', `검증 오류: ${err.message}`);
+    return { CODE: 'ERROR' };
+  }
+}
+
+async function checkCaptchaComplete(prodId, chkcapt) {
+  try {
+    const body = new URLSearchParams({ chkcapt, prodId });
+    const res = await fetch(CAPTCHA_COMPLETE_URL, {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString(),
+    });
+    const data = await res.json();
+    return data.CODE === '0000';
+  } catch (err) {
+    return false;
+  }
+}
+
+// CAPTCHA 응답 대기용 Promise resolver
+let captchaResolve = null;
+
+function waitForCaptchaResponse() {
+  return new Promise((resolve) => {
+    captchaResolve = resolve;
+  });
+}
+
+/**
+ * ARM 시점에 CAPTCHA 확인 + 입력 처리
+ * CAPTCHA가 필요하면 이미지를 보여주고 사용자 입력을 기다림
+ * 불필요하면 즉시 반환
+ */
+async function handleCaptchaIfNeeded(config) {
+  // 1. CAPTCHA 이미지 시도 — 반환되면 인증예매 상품
+  const captchaImg = await fetchCaptchaImage(config);
+
+  if (!captchaImg) {
+    log('CAPTCHA', 'CAPTCHA 불필요 — 건너뜀');
+    return true;
+  }
+
+  log('CAPTCHA', '인증예매 상품 — CAPTCHA 필요');
+  await setState({ phase: 'CAPTCHA_CHECK', message: 'CAPTCHA 입력 대기 중...' });
+
+  let captData = captchaImg.captData;
+  let imageBase64 = captchaImg.imageBase64;
+
+  // Content Script에 CAPTCHA 이미지 전송
+  await sendToContentScript({
+    type: 'SHOW_CAPTCHA',
+    data: { imageBase64, captData },
+  });
+
+  // 사용자 입력 대기 루프
+  while (!aborted) {
+    const response = await waitForCaptchaResponse();
+    if (aborted) return false;
+
+    // 새로고침 요청
+    if (response.reload) {
+      const newImg = await fetchCaptchaImage(config);
+      if (newImg) {
+        captData = newImg.captData;
+        imageBase64 = newImg.imageBase64;
+      }
+      await sendToContentScript({
+        type: 'SHOW_CAPTCHA',
+        data: { imageBase64, captData },
+      });
+      continue;
+    }
+
+    // 검증
+    log('CAPTCHA', `사용자 입력 수신: "${response.userInput}"`);
+    const result = await validateCaptcha(config, response.userInput, captData);
+    log('CAPTCHA', `validateCaptcha 반환: CODE=${result.CODE}, DATA=${result.DATA ? result.DATA.substring(0, 30) + '...' : 'null'}`);
+
+    if (result.CODE === '0000') {
+      log('CAPTCHA', 'CAPTCHA 검증 성공 → CAPTCHA_COMPLETE 전송');
+      // Content Script에 chkcapt 저장 요청
+      await sendToContentScript({
+        type: 'CAPTCHA_COMPLETE',
+        data: { chkcapt: result.DATA },
+      });
+      log('CAPTCHA', 'CAPTCHA_COMPLETE 전송 완료');
+      await setState({ phase: 'ARMED', message: 'CAPTCHA 완료 — 무장 완료' });
+      return true;
+    }
+
+    // 실패 — 새 이미지 로드 + 재시도
+    log('CAPTCHA', `CAPTCHA 검증 실패 (CODE=${result.CODE}) — 재시도`);
+    const newImg = await fetchCaptchaImage(config);
+    if (newImg) {
+      captData = newImg.captData;
+      imageBase64 = newImg.imageBase64;
+    }
+    await sendToContentScript({
+      type: 'CAPTCHA_RETRY',
+      data: { error: '문자를 정확히 입력해 주세요', imageBase64, captData },
+    });
+  }
+
+  return false;
+}
+
+// ============================================================================
 // Service Worker 생존 전략 (MV3 30초 유휴 종료 대응)
 // ============================================================================
 
@@ -527,31 +680,94 @@ async function runSequence(config) {
     if (aborted) return;
 
     // ================================================================
-    // T-5s: sessionKey + NetFunnel 키 사전 확보
+    // v3 타이밍 매칭:
+    //   T - RTT×1.5: sessionKey 사전 획득 시작 (prodKey.json)
+    //   T:           prefetch 결과 사용 + NetFunnel 대기열 진입 (ts.wseq)
+    //   T + RTT:     즉시 폼 제출
     //
-    // 핵심 변경: 모든 키를 T 전에 미리 확보하여
-    // T 시점에는 즉시 폼 제출 (0ms 오버헤드)
-    //
-    // T-5s: sessionKey pre-fetch (prodKey.json)
-    //   → trafficCtrlYn=Y면: NetFunnel 대기열 진입 (ts.wseq)
-    //   → 대기열 폴링 (code=201이면)
-    // T-5s+RTT*2: 모든 키 확보 완료
-    // T-2s: 정밀 폴링
-    // T: 즉시 폼 제출!
+    // v3에서는 sessionKey를 T 직전(~300ms)에 획득하여 신선한 상태로 사용.
+    // T-5초에 미리 획득하면 서버에서 만료 판정할 수 있음.
     // ================================================================
 
+    // preFetchLeadMs: v3와 동일하게 측정된 API RTT의 1.5배 사용
+    const preFetchLeadMs = Math.ceil(apiRtt * 1.5) || 300;
+    diag('TIMING', `preFetchLeadMs=${preFetchLeadMs}ms (apiRtt=${apiRtt.toFixed(1)}ms)`);
+
+    // ── T - preFetchLeadMs 시점까지 대기 ──
+    await setState({ phase: 'WAITING', message: `T 대기 중 (prefetch: T-${preFetchLeadMs}ms)` });
+
+    const prefetchStartTarget = T - margin2 - preFetchLeadMs;
+    while (Date.now() + offset < prefetchStartTarget - 2000) {
+      if (aborted) return;
+      await sleep(100);
+    }
+    while (Date.now() + offset < prefetchStartTarget) {
+      if (aborted) return;
+      await sleep(1);
+    }
+
+    if (aborted) return;
+
+    // ── sessionKey 사전 획득 시작 (async — T까지 대기와 병렬) ──
     await setState({ phase: 'PREFETCH' });
     const prefetchT0 = performance.now();
-    diag('PREFETCH', 'T-5s: sessionKey + NetFunnel 키 사전 확보 시작');
+    diag('PREFETCH', `sessionKey 사전 획득 시작 (T까지 약 ${preFetchLeadMs}ms 남음)`);
 
-    // ── 1단계: sessionKey 획득 ──
-    const prefetchResult = await preFetchSessionKey(config);
+    const prefetchPromise = preFetchSessionKey(config);
+
+    // ── T까지 정밀 대기 (prefetch와 병렬 진행) ──
+    await waitUntilT(T, offset, margin2);
+    if (aborted) return;
+
+    // ── T 시점: prefetch 결과 확인 (이미 완료됐을 가능성 높음) ──
+    const prefetchResult = await prefetchPromise;
+    const prefetchElapsed = performance.now() - prefetchT0;
 
     if (!prefetchResult) {
-      log('PREFETCH', 'sessionKey 획득 실패 → fallback 대기');
-      // T까지 대기 후 fallback
-      await waitUntilT(T, offset, margin2);
-      await sendToContentScript({ type: 'FALLBACK', config });
+      log('PREFETCH', 'sessionKey 획득 실패 → fallback');
+      // chrome.scripting.executeScript로 페이지에서 직접 fallback 실행
+      const fallbackTabs = await chrome.tabs.query({ url: 'https://ticket.melon.com/performance/index.htm*' });
+      for (const tab of fallbackTabs) {
+        await chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          world: 'MAIN',
+          func: (cfg) => {
+            try {
+              var reservationCommonService = require('js/app/performance/service/reservationCommonService');
+              var netfunnelService = require('js/app/performance/service/netfunnelService');
+              var params = { prodId: cfg.prodId, scheduleNo: cfg.scheduleNo || 100001, v: 1 };
+              reservationCommonService.service.generateSessionKey(params).then(function (result) {
+                var dto = {
+                  prodId: cfg.prodId,
+                  scheduleNo: result.scheduleNo || cfg.scheduleNo || 100001,
+                  pocCode: cfg.pocCode || 'SC0002',
+                  sellTypeCode: cfg.sellTypeCode,
+                  reservationType: cfg.sellTypeCode,
+                  sellCondNo: typeof getCondNo === 'function' ? getCondNo() : '0',
+                  trafficCtrlYn: result.trafficCtrlYn,
+                  sessionKey: result.key || result.sessionKey,
+                };
+                if (result.trafficCtrlYn === 'Y') {
+                  dto.nf_action_id = result.nflActId;
+                  dto.netfunnelType = 'Y';
+                  dto.netfunnelName = cfg.netfunnelName || 'reservationZAM';
+                  try { dto.netfunnelSkinTitle = document.getElementById('global_ticket_title').value; } catch (e) {}
+                  netfunnelService.service.netfunnelInit(dto);
+                } else {
+                  dto.netfunnelType = 'N';
+                  reservationCommonService.service.oneStopProcess(dto);
+                }
+                console.log('[MelonExt:FALLBACK] 기존 방식 실행 완료');
+              }).catch(function (err) {
+                console.error('[MelonExt:FALLBACK] 실패:', err);
+              });
+            } catch (err) {
+              console.error('[MelonExt:FALLBACK] AMD 모듈 로드 실패:', err);
+            }
+          },
+          args: [config],
+        });
+      }
       await setState({ phase: 'ERROR', error: 'pre-fetch 실패 — fallback 실행' });
       return;
     }
@@ -559,88 +775,81 @@ async function runSequence(config) {
     if (aborted) return;
 
     const { sessionKey, trafficCtrlYn, nfActionId, scheduleNo } = prefetchResult;
-    diag('PREFETCH', `sessionKey 확보 (${(performance.now() - prefetchT0).toFixed(1)}ms): tYn=${trafficCtrlYn}`);
+    diag('PREFETCH', `sessionKey 확보 (${prefetchElapsed.toFixed(1)}ms): tYn=${trafficCtrlYn}, aid=${nfActionId}`);
 
-    // ── 2단계: NetFunnel 대기열 진입 (trafficCtrlYn=Y인 경우) ──
-    let nfKey = '';
-
-    if (trafficCtrlYn === 'Y') {
-      diag('PREFETCH', `NetFunnel 대기열 진입 시작: aid=${nfActionId}`);
-
-      let queueResult;
-      try {
-        queueResult = await enterQueue(nfActionId);
-      } catch (err) {
-        log('PREFETCH', `대기열 진입 실패: ${err.message} → fallback 대기`);
-        await waitUntilT(T, offset, margin2);
-        await sendToContentScript({ type: 'FALLBACK', config });
-        await setState({ phase: 'ERROR', error: `대기열 진입 실패: ${err.message}` });
-        return;
-      }
-
-      if (aborted) return;
-
-      diag('PREFETCH', `대기열 응답: code=${queueResult.code} (${(performance.now() - prefetchT0).toFixed(1)}ms)`);
-
-      if (queueResult.code === NF_BLOCK || queueResult.code === NF_IP_BLOCK) {
-        await setState({ phase: 'ERROR', error: `서버 차단: code=${queueResult.code}` });
-        return;
-      }
-
-      if (queueResult.code === NF_SUCCESS || queueResult.code === NF_BYPASS) {
-        nfKey = queueResult.params.key || '';
-        log('PREFETCH', `즉시 진입 성공! key=${nfKey.substring(0, 20)}...`);
-      }
-
-      if (queueResult.code === NF_CONTINUE) {
-        // 대기열 폴링 (T 전에 완료되어야 함)
-        const pollKey = queueResult.params.key || '';
-        const ttl = queueResult.params.ttl || '1';
-        const nwait = parseInt(queueResult.params.nwait || '0', 10);
-
-        await setState({ phase: 'QUEUE_POLL', nwait });
-        log('PREFETCH', `대기열 폴링 시작: nwait=${nwait}, ttl=${ttl}s`);
-
-        try {
-          const pollResult = await pollQueue(pollKey, ttl, nfActionId, config);
-          nfKey = pollResult.params.key || pollKey;
-          log('PREFETCH', `대기열 통과! key=${nfKey.substring(0, 20)}...`);
-        } catch (err) {
-          await setState({ phase: 'ERROR', error: `폴링 실패: ${err.message}` });
-          return;
-        }
-      }
-    }
-
-    if (aborted) return;
-
-    const totalPrefetch = performance.now() - prefetchT0;
-    diag('PREFETCH', `모든 키 확보 완료 (${totalPrefetch.toFixed(1)}ms)`);
-    log('PREFETCH', `sessionKey ✓, nfKey ${trafficCtrlYn === 'Y' ? '✓' : '(불필요)'} — T까지 대기`);
-
-    // ── 폼 데이터 사전 구성 ──
-    const formData = buildFormData(config, sessionKey, trafficCtrlYn, scheduleNo, nfKey);
-
-    // ── T까지 정밀 대기 ──
-    await setState({ phase: 'WAITING', message: '키 확보 완료 — T 대기 중' });
-    await waitUntilT(T, offset, margin2);
-    if (aborted) return;
-
-    // ── T 시점: 즉시 폼 제출! (모든 키 이미 확보) ──
+    // ================================================================
+    // 2단계: T 시점 — 원본 AMD 모듈(netfunnelInit)로 실행
+    //
+    // v3와 동일한 방식: 페이지 컨텍스트에서 원본 코드를 호출
+    // → NetFunnel_Action (JSONP) → 쿠키 설정 → 폼 제출
+    // 이렇게 하면 서버가 기대하는 전체 코드 경로를 100% 재현
+    // ================================================================
     await setState({ phase: 'FIRE' });
     const fireT0 = performance.now();
-    log('FIRE', '발사! — 사전 확보된 키로 즉시 폼 제출');
+    log('FIRE', '발사! (원본 코드 경로)');
 
-    await sendToContentScript({
-      type: 'SUBMIT_FORM',
-      data: formData,
-    });
+    // chrome.scripting.executeScript로 페이지 MAIN world에서 직접 실행
+    // (MV3 CSP 우회 — 인라인 <script> 주입 불가)
+    const tabs = await chrome.tabs.query({ url: 'https://ticket.melon.com/performance/index.htm*' });
+    if (tabs.length === 0) throw new Error('멜론 상품 페이지 탭을 찾을 수 없습니다');
+
+    const executeData = {
+      prodId: config.prodId,
+      scheduleNo: config.scheduleNo,
+      pocCode: config.pocCode,
+      sellTypeCode: config.sellTypeCode,
+      trafficCtrlYn,
+      sessionKey,
+      nfActionId,
+      netfunnelName: config.netfunnelName,
+    };
+
+    for (const tab of tabs) {
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        world: 'MAIN',
+        func: (data) => {
+          try {
+            var reservationCommonService = require('js/app/performance/service/reservationCommonService');
+            var netfunnelService = require('js/app/performance/service/netfunnelService');
+
+            var dto = {
+              prodId: data.prodId,
+              scheduleNo: data.scheduleNo || 100001,
+              pocCode: data.pocCode || 'SC0002',
+              sellTypeCode: data.sellTypeCode,
+              reservationType: data.sellTypeCode,
+              sellCondNo: typeof getCondNo === 'function' ? getCondNo() : '0',
+              trafficCtrlYn: data.trafficCtrlYn,
+              sessionKey: data.sessionKey,
+            };
+
+            if (data.trafficCtrlYn === 'Y') {
+              dto.nf_action_id = data.nfActionId;
+              dto.netfunnelType = 'Y';
+              dto.netfunnelName = data.netfunnelName || 'reservationZAM';
+              try { dto.netfunnelSkinTitle = document.getElementById('global_ticket_title').value; } catch (e) {}
+              console.log('[MelonExt:EXECUTE] netfunnelInit 호출 (tYn=Y), dto:', JSON.stringify(dto));
+              netfunnelService.service.netfunnelInit(dto);
+            } else {
+              dto.netfunnelType = 'N';
+              console.log('[MelonExt:EXECUTE] oneStopProcess 호출 (tYn=N), dto:', JSON.stringify(dto));
+              reservationCommonService.service.oneStopProcess(dto);
+            }
+            console.log('[MelonExt:EXECUTE] 원본 코드 실행 완료');
+          } catch (err) {
+            console.error('[MelonExt:EXECUTE] 실행 실패:', err);
+          }
+        },
+        args: [executeData],
+      });
+    }
 
     const fireElapsed = performance.now() - fireT0;
-    diag('FIRE', `T이후 폼 제출까지: ${fireElapsed.toFixed(2)}ms`);
+    diag('FIRE', `T→원본코드실행: ${fireElapsed.toFixed(2)}ms`);
     await setState({
       phase: 'DONE',
-      message: `완료! T→폼제출: ${fireElapsed.toFixed(1)}ms (키 사전확보: ${totalPrefetch.toFixed(0)}ms)`,
+      message: `완료! (원본 코드 경로) T→실행: ${fireElapsed.toFixed(1)}ms, sessionKey: ${prefetchElapsed.toFixed(0)}ms`,
     });
 
   } catch (err) {
@@ -681,18 +890,38 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     // keepalive 시작
     startKeepalive();
 
-    // T-60초에 wakeup alarm
-    const T = parseFireTime(config.fireTime);
-    const wakeupTime = T - 60000;
-    if (wakeupTime > Date.now()) {
-      chrome.alarms.create('wakeup', { when: wakeupTime });
-      log('ARM', `wakeup alarm: ${new Date(wakeupTime).toISOString()}`);
-    } else {
-      // 이미 T-60초 이내 → 즉시 시작
-      log('ARM', 'T-60초 이내 → 즉시 시퀀스 시작');
-      runSequence(config);
-    }
+    // 즉시 응답 후 비동기로 CAPTCHA 확인 + ARM 처리
+    sendResponse({ ok: true });
 
+    (async () => {
+      // CAPTCHA 확인 (인증예매 상품이면 사용자 입력 대기)
+      const captchaOk = await handleCaptchaIfNeeded(config);
+      if (!captchaOk || aborted) return;
+
+      // T-60초에 wakeup alarm
+      const T = parseFireTime(config.fireTime);
+      const wakeupTime = T - 60000;
+      if (wakeupTime > Date.now()) {
+        chrome.alarms.create('wakeup', { when: wakeupTime });
+        log('ARM', `wakeup alarm: ${new Date(wakeupTime).toISOString()}`);
+      } else {
+        log('ARM', 'T-60초 이내 → 즉시 시퀀스 시작');
+        runSequence(config);
+      }
+    })();
+
+    return true;
+  }
+
+  if (msg.type === 'CAPTCHA_RESPONSE') {
+    // Content Script에서 CAPTCHA 사용자 입력 수신
+    log('CAPTCHA', `CAPTCHA_RESPONSE 수신: ${JSON.stringify(msg.data)}, captchaResolve=${!!captchaResolve}`);
+    if (captchaResolve) {
+      captchaResolve(msg.data);
+      captchaResolve = null;
+    } else {
+      log('CAPTCHA', 'WARNING: captchaResolve가 null — 메시지 무시됨');
+    }
     sendResponse({ ok: true });
     return true;
   }
@@ -743,7 +972,9 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.set({ state: { phase: 'IDLE' } });
 });
 
-// SW 시작 시 상태 복구
+// SW 시작 시 버전 확인 + 상태 복구
+log('SW', '=== Melon Ticket Optimizer v1.2.0 (scripting.executeScript) ===');
+
 (async () => {
   const { state, config } = await chrome.storage.local.get(['state', 'config']);
   if (state && config && state.phase === 'ARMED') {

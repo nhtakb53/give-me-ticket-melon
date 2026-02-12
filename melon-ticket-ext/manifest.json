@@ -3,7 +3,7 @@
   "name": "Melon Ticket Optimizer",
   "version": "1.0.0",
   "description": "Melon ticket reservation optimizer with direct NetFunnel protocol",
-  "permissions": ["storage", "alarms", "cookies"],
+  "permissions": ["storage", "alarms", "cookies", "scripting"],
   "host_permissions": [
     "https://tktapi.melon.com/*",
     "https://zam.melon.com/*",
